@@ -1,0 +1,21 @@
+/*!
+    \file  readme.txt
+    \brief description of DMA ram to ram
+*/
+
+/*
+    Copyright (C) 2017 GigaDevice
+
+    2014-12-26, V1.0.0, firmware for GD32F10x
+    2017-06-20, V2.0.0, firmware for GD32F10x
+*/
+  
+  This example is based on the GD32107C-EVAL board, it provides a description 
+of how to use DMA channel(1 to 4) to transfer data from RAM to RAM.DMA Channel(1 to 4) is 
+configured to transfer the contents of data buffer stored in "source_address" to the 
+reception buffer declared in RAM(destination_address1~destination_address4).
+
+  The start of transfer is triggered by software. At the end of the transfer, a comparison 
+between the source and destination buffers is done to check that all data have been correctly 
+transferred.If transfer correctly the corresponding LED light.If transfer not correctly,the 
+corresponding LED is off.

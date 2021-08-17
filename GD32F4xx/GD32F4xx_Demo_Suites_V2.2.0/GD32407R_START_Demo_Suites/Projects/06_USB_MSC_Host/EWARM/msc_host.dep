@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>400505247</fileChecksum>
+  <configuration>
+    <name>USBFS</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\src\gd32f4xx_it.c</file>
+      <file>$PROJ_DIR$\..\src\main.c</file>
+      <file>$PROJ_DIR$\..\src\gd32f4xx_usb_hw.c</file>
+      <file>$PROJ_DIR$\..\src\usbh_usr.c</file>
+      <file>$PROJ_DIR$\..\src\system_gd32f4xx.c</file>
+      <file>$PROJ_DIR$\..\fat_fs\src\ff.c</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\gd32f407r_start.c</file>
+      <file>$PROJ_DIR$\..\fat_fs\src\ffunicode.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_exti.c</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_usb_hw.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_it.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_usr.o</file>
+      <file>$PROJ_DIR$\USBFS\Exe\usbh_msc.hex</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_misc.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_pmu.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_gpio.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_exti.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\ffunicode.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f407r_start.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\system_gd32f4xx.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\ff.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\main.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_misc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\CMSIS\GD\GD32F4xx\Source\IAR\startup_gd32f407.s</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_pmu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_rcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_syscfg.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_bbb.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_core.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_fatfs.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_scsi.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Source\drv_usb_core.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Source\drv_usb_host.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Source\drv_usbh_int.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_core.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_enum.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_pipe.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_transc.c</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_syscfg.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_rcu.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_timer.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_timer.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_bbb.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_syscfg.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_rcu.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_pmu.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_misc.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_gpio.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_exti.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f407r_start.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\ffunicode.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\ff.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\system_gd32f4xx.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_usr.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_usb_hw.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32f4xx_it.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\startup_gd32f407.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_transc.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_pipe.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_enum.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_core.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usbh_int.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_host.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_core.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_scsi.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_fatfs.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_core.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_fatfs.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_scsi.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_core.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_core.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_msc_bbb.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_host.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usbh_int.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_core.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_enum.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_pipe.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbh_transc.pbi</file>
+      <file>$PROJ_DIR$\USBFS\Obj\msc_host.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_exti.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Include\drv_usb_regs.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_rtc.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm4.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h</file>
+      <file>$PROJ_DIR$\..\inc\gd32f4xx_libopt.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmSimd.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_dac.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_syscfg.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_trng.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Include\usbh_core.h</file>
+      <file>$PROJ_DIR$\..\inc\gd32f4xx_it.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Include\drv_usb_core.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_crc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_dci.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_fwdgt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_iref.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_spi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Include\drv_usb_host.h</file>
+      <file>$PROJ_DIR$\..\inc\usb_conf.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\ustd\common\usb_ch9_std.h</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\gd32f407r_start.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_can.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_ctc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_dbg.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_dma.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_fmc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_pmu.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_sdio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_timer.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_usart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Include\gd32f4xx_enet.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Include\drv_usbh_int.h</file>
+      <file>$PROJ_DIR$\..\inc\usbh_conf.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Include\drv_usb_hw.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\ustd\class\msc\msc_scsi.h</file>
+      <file>$PROJ_DIR$\..\fat_fs\inc\ff.h</file>
+      <file>$PROJ_DIR$\..\inc\usbh_usr.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Include\usbh_msc_scsi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Include\usbh_msc_core.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\..\fat_fs\inc\ffconf.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Include\usbh_enum.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\ustd\class\msc\usb_msc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Include\usbh_msc_bbb.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\ustd\class\msc\msc_bbb.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$PROJ_DIR$\..\fat_fs\inc\diskio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Include\usbh_pipe.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Include\usbh_transc.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\GD\GD32F407xK.icf</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Lib\IAR\iar_cortexM4l_math.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\gd32f4xx_it.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83 82 84 85 86 87 89 88 90 91 92 93 94 95 96 97 99 98 100 101 102 103 104 105 106 107 108 109 110 112 111 113 114 116 115 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 136 111 85 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 113 100 98 137 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 142 119 89 129 112 84 125 133 101 118 82 123 127 131 135 98 146 141 114 88 90 91 117 120 121 122 124 126 128 130 132 134 110 97 111 100 143 116 115 102 92 93 86 103 94 104 83 105 95 106 87 107 96 108 109 113 139 138 85 140 144 145 137 148 147 149 150</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 100 85 113 141 140 145 98 137 111 144 148 143 147 142 139 146 149 150</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\gd32f4xx_usb_hw.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89 125 101 133 119 129 102 84 118 82 123 127 131 135 88 90 91 117 120 121 122 124 126 128 130 132 134 112 114 116 115 92 93 86 103 94 104 83 105 95 106 87 107 96 108 109 110 97 138</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\usbh_usr.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122 102 140 82 101 130 89 121 126 134 143 144 84 111 112 114 124 128 132 113 146 138 149 92 145 88 90 91 123 125 127 129 131 133 135 118 141 142 97 151 117 119 120 98 137 85 100 116 115 93 86 103 94 104 83 105 95 106 87 107 96 108 109 148 139 152 110 147 150</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 152 82 102 117 119 120 118 92 97 151 141 140 145 84 98 137 111 85 112 89 88 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 109 114 113 100 144 148 138 143 147 142 139 146 149 150</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\system_gd32f4xx.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 133 116 89 125 119 129 102 84 118 82 123 127 131 135 115 117 120 121 122 124 126 128 130 132 134 88 90 101 91 92 93 86 103 94 104 83 105 95 106 87 107 96 108 109 110 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\fat_fs\src\ff.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84 82 102 153 145 92 140 117 118 119 120</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 140 145 84 82 102 117 119 120 118 92 153</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Utilities\gd32f407r_start.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122 89 120 130 118 115 117 121 126 134 124 128 132 116 84 102 119 82 123 125 127 129 131 133 135 88 90 101 91 92 93 86 103 94 104 83 105 95 106 87 107 96 108 109 110 97 114</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 114 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\fat_fs\src\ffunicode.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102 84 82 145 92 140 117 118 119 120</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 140 145 84 82 102 117 119 120 118 92</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 16</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89 82 92 95 93 94 96 118 88 90 91 84 86 83 87 101 102 103 104 105 106 107 108 109 116 115 117 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 110 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 128 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_exti.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82 86 87 84 83 89 88 90 91 92 93 94 95 96 101 102 103 104 105 106 107 108 109 110 97 116 115 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\USBFS\Exe\usbh_msc.hex</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 156 66 65 64 21 18 19 17 16 11 14 15 41 40 42 10 22 59 20 63 62 44 69 68 67 61 60 12 157 158 159 160 161</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_misc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 109 105 115 82 102 93 103 107 89 104 106 108 116 84 92 86 94 83 95 87 96 110 97 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\CMSIS\GD\GD32F4xx\Source\IAR\startup_gd32f407.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_pmu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 105 109 84 91 82 102 93 103 107 89 104 106 108 110 97 88 90 101 92 86 94 83 95 87 96 116 115 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 130 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 87 131 107 132 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_rcu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120 122 89 130 88 90 91 117 121 126 134 118 82 124 128 132 84 101 119 123 125 127 129 131 133 135 102 116 115 92 93 86 103 94 104 83 105 95 106 87 107 96 108 109 110 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 122 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_syscfg.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82 109 105 97 102 93 103 107 89 110 88 90 91 104 106 108 84 101 92 86 94 83 95 87 96 116 115 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 95 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_standard_peripheral\Source\gd32f4xx_timer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116 84 83 89 86 87 102 92 93 94 95 96 115 82 103 104 105 106 107 108 109 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 110 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 132 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 96 133 108 134 135 110 97 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_bbb.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 74</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 102 82 93 103 89 98 137 84 105 109 149 155 100 101 104 106 108 146 142 85 88 90 91 92 86 94 83 95 87 96 143 136 111 113 112 114 116 115 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 147 150 154 110 97 139</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 154 98 137 111 85 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 113 100 143 147 142 139 146 149 150 155 136</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_core.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104 82 89 116 93 108 113 106 100 155 142 112 84 102 103 105 107 109 149 152 114 115 92 86 94 83 95 87 96 110 137 85 146 151 154 147 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 139 98 97 143 111 150</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 143 147 113 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 142 139 146 98 137 111 85 100 149 150 154 155 152 151</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_fatfs.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 105 137 114 109 82 102 93 103 107 89 85 115 104 106 108 140 84 146 143 116 92 86 94 83 95 87 96 149 100 153 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 110 97 145 147 139 112 142 113 98 111 150</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 153 140 145 143 147 113 142 139 146 98 137 111 85 100 149 150</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\class\msc\Source\usbh_msc_scsi.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84 142 83 89 112 101 86 87 110 150 113 92 93 94 95 96 97 111 82 149 114 88 90 91 102 103 104 105 106 107 108 109 151 152 147 116 115 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 146 98 143 139 137 85 100</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 143 147 113 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 142 139 146 98 137 111 85 100 149 150 152 151</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Source\drv_usb_core.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84 114 85 83 112 86 87 89 82 115 92 93 94 95 96 116 102 103 104 105 106 107 108 109 110 138 113 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 100 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 100 85 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 113 138</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Source\drv_usb_host.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85 105 109 112 115 82 102 93 103 107 89 114 104 106 108 110 111 116 84 92 86 94 83 95 87 96 97 113 100 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 138</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 100 85 113 111</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\driver\Source\drv_usbh_int.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89 92 95 97 115 93 94 96 85 112 114 84 86 83 87 110 111 136 116 102 82 103 104 105 106 107 108 109 98 113 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 100 137</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 100 85 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 113 111 136 98 137</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_core.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 77</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83 89 84 110 86 87 136 115 92 93 94 95 96 97 113 82 146 116 102 103 104 105 106 107 108 109 111 151 154 98 152 112 114 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 85 138 137 100</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 154 98 137 111 85 113 100 146 136 152 151</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_enum.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93 89 96 84 98 137 94 92 95 100 101 86 83 87 146 85 88 90 91 82 102 103 104 105 106 107 108 109 118 112 155 111 113 114 116 115 117 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 154 110 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 154 98 137 111 85 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 113 100 155 146</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_pipe.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97 88 91 93 96 90 94 89 92 95 98 85 82 84 86 83 87 110 111 100 101 102 103 104 105 106 107 108 109 112 137 113 114 116 115 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 154</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 154 98 137 111 85 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 113 100</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F4xx_Firmware_Library\GD32F4xx_usb_library\host\core\Source\usbh_transc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89 82 104 114 93 108 110 106 112 115 102 103 105 107 109 155 116 84 92 86 94 83 95 87 96 113 154 88 90 101 91 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 111 85 138 97 98 137 100</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 112 89 88 84 82 102 117 119 120 118 92 101 93 121 115 91 116 90 122 86 123 103 124 94 125 104 126 83 127 105 128 95 129 106 130 87 131 107 132 96 133 108 134 135 110 97 109 114 154 98 137 111 85 113 100 155</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>USBHS</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

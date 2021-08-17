@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>4</fileVersion>
+    <fileChecksum>497519610</fileChecksum>
+    <configuration>
+        <name>GD32E230</name>
+        <outputs>
+            <file>$PROJ_DIR$\..\gd32e23x_it.c</file>
+            <file>$PROJ_DIR$\..\main.c</file>
+            <file>$PROJ_DIR$\..\systick.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\CMSIS\GD\GD32E23x\Source\system_gd32e23x.c</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\Project.pbd</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\..\systick.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\..\..\..\Utilities\gd32e230v_start.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_gpio.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_timer.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\CMSIS\GD\GD32E23x\Include\gd32e23x.h</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\startup_gd32e23x.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\system_gd32e23x.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230v_start.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230v_start.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\system_gd32e23x.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_misc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_spi.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_rcu.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_rtc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_exti.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_pmu.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_fmc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_crc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_adc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_gpio.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_dma.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_cmp.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_fwdgt.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_dbg.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_i2c.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_syscfg.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\CMSIS\GD\GD32E23x\Include\system_gd32e23x.h</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_dbg.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_rtc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_wwdgt.h</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_it.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_i2c.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_pmu.h</file>
+            <file>$PROJ_DIR$\..\gd32e23x_it.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_dma.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_exti.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_fmc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_fwdgt.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_gpio.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_i2c.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_misc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_pmu.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_rcu.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_rtc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_spi.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_syscfg.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_timer.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_usart.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_wwdgt.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_usart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_misc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_dbg.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_rcu.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_spi.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_fwdgt.h</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_it.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_exti.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_adc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_fmc.h</file>
+            <file>$PROJ_DIR$\..\gd32e23x_libopt.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_crc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_cmp.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_syscfg.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Include\gd32e23x_dma.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\core_cm23.h</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_wwdgt.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_timer.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_usart.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_cmp.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_adc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_crc.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_adc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_cmp.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_crc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_dbg.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_dma.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_exti.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_fmc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_fwdgt.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_gpio.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_i2c.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_misc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_pmu.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_rcu.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_rtc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_spi.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_syscfg.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_timer.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_usart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_wwdgt.c</file>
+            <file>$PROJ_DIR$\..\..\..\Utilities\gd32e230k_start.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\CMSIS\GD\GD32E230\Source\IAR\startup_gd32e230.s</file>
+            <file>$PROJ_DIR$\..\gd32e230_it.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\CMSIS\GD\GD32E230\Source\system_gd32e230.c</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_it.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\main.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\systick.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\system_gd32e230.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_adc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_cmp.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_crc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_dbg.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_dma.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_exti.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_fmc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_fwdgt.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_gpio.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_i2c.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_misc.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_adc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_cmp.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_crc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_dbg.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_dma.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_exti.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_fmc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_fwdgt.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_gpio.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_i2c.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_misc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_pmu.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_rcu.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_rtc.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_spi.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_syscfg.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_timer.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_usart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_wwdgt.c</file>
+            <file>$PROJ_DIR$\..\..\..\Utilities\gd32e230v_start.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\CMSIS\GD\GD32E23x\Source\IAR\startup_gd32e23x.s</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_pmu.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_rcu.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_rtc.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_spi.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_syscfg.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_timer.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_usart.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_wwdgt.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230k_start.o</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\startup_gd32e230.o</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Lib\IAR\iar_cortexM0l_math.a</file>
+            <file>$PROJ_DIR$\GD32E230\Exe\Project_import_lib.o</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tlf.a</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_it.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\systick.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\system_gd32e230.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_adc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_cmp.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_crc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_dbg.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_dma.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_exti.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_fmc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_fwdgt.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_gpio.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_i2c.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_misc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_pmu.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_rcu.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_rtc.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_spi.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_syscfg.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_timer.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_usart.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230_wwdgt.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230k_start.pbi</file>
+            <file>$PROJ_DIR$\GD32E230\Exe\Project.out</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_it.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\systick.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\system_gd32e23x.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e230v_start.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_adc.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_cmp.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_crc.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_dbg.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_dma.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_exti.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_fmc.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_fwdgt.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_gpio.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_i2c.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_misc.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_pmu.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_rcu.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_rtc.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_spi.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_syscfg.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_timer.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_usart.__cstat.et</file>
+            <file>$PROJ_DIR$\GD32E230\Obj\gd32e23x_wwdgt.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\config\linker\GD\GD32E23xx8.icf</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\..\gd32e23x_it.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 43</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 69</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75 6</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 67 79 81 17 7 72 8 74 68 64 78 38 66 63 6 39 73 76 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75 46</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 112</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 189</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 164</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75 9 6 10 11</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 7 16 12 15 14 80 65 45 75 17 6 81 79 8 5 13 47 71 70 44 41 42 9 10 39 73 76 74 78 72 38 68 66 67 63 64 11</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\systick.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 113</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 190</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 165</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75 6</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 16 39 76 12 15 73 14 80 7 65 45 75 17 5 13 47 71 70 44 41 42 6 81 79 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\CMSIS\GD\GD32E23x\Source\system_gd32e23x.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 191</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 8 68 74 64 17 81 7 79 72 67 78 38 66 63 39 73 76 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 187</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_adc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 167</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_cmp.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 116</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 168</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_crc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 117</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 169</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_dbg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 170</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_dma.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 119</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 171</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_exti.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 120</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 172</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_fmc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 121</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 173</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_fwdgt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 122</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 174</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 175</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_i2c.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 124</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 176</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_misc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 125</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 177</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_pmu.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 147</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 178</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_rcu.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 148</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 179</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_rtc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 149</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 180</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 150</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 181</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_syscfg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 151</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 182</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 152</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 183</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_usart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 153</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 184</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\GD32E230_standard_peripheral\Source\gd32e230_wwdgt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 154</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 185</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Utilities\gd32e230k_start.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 155</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 186</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\CMSIS\GD\GD32E230\Source\IAR\startup_gd32e230.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 156</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\gd32e230_it.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 111</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 163</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E230_Firmware_Library\CMSIS\GD\GD32E230\Source\system_gd32e230.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 114</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 166</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_adc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 193</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 86</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 71 17 81 7 8 12 5 13 14 76 79 80 47 39 73 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 47 70 41 5 13 7 71 44 42 39 73 76 12 14 80 65 15 45 16 75 81 79 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_cmp.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 194</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 85</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 75 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 12 45 80 17 7 73 14 65 75 39 76 15 16 5 13 47 71 70 44 41 42 81 79 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_crc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 30</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 195</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 87</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 74 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 76 12 15 39 16 73 14 80 7 65 45 75 5 13 47 71 70 44 41 42 81 79 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_dbg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 36</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 196</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 65 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 8 68 74 64 81 7 79 72 67 78 38 66 63 39 73 76 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_dma.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 197</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 48</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 78 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 7 63 17 38 78 66 81 79 8 74 72 68 67 64 39 73 76 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_exti.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 27</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 198</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 49</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 70 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 72 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 76 12 15 39 16 73 14 80 7 65 45 75 17 5 13 47 71 70 44 41 42 81 79 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_fmc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 199</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 50</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 74 17 64 8 68 81 7 79 72 67 78 38 66 63 39 73 76 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_fwdgt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 35</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 200</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 51</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 68 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 74 17 64 8 68 81 7 79 72 67 78 38 66 63 39 73 76 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 201</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 52</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 15 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 76 12 15 39 16 73 14 80 7 65 45 75 5 13 47 71 70 44 41 42 81 79 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_i2c.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 37</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 202</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 53</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_misc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 23</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 54</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 64 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 8 68 74 64 72 67 39 73 76 78 38 66 63 81 7 79 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_pmu.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 28</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 204</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 55</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 12 15 16 81 7 79 14 80 65 45 75 5 13 47 71 70 44 41 42 39 73 76 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_rcu.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 25</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 205</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 56</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 66 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 73 38 63 39 76 78 66 8 74 72 68 67 64 81 7 79 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_rtc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 26</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 206</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 57</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 63 17 73 38 39 76 78 66 8 74 72 68 67 64 81 7 79 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 207</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 58</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 67 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 44 5 7 17 13 71 42 47 70 41 81 79 12 14 80 65 15 45 16 75 39 73 76 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_syscfg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 77</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 208</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 59</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 38 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 70 7 47 41 5 13 71 44 42 81 79 12 14 80 65 15 45 16 75 39 73 76 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 209</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 60</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 16 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 42 13 71 5 7 44 47 70 41 81 79 12 14 80 65 15 45 16 75 39 73 76 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_usart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 84</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 210</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 61</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 63 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 12 15 16 81 7 79 14 80 65 45 75 17 5 13 47 71 70 44 41 42 39 73 76 8 74 78 72 38 68 66 67 63 64</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\GD32E23x_standard_peripheral\Source\gd32e23x_wwdgt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 82</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 211</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 62</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 42 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 76 66 39 78 17 73 38 63 8 74 72 68 67 64 81 7 79 12 5 13 14 80 47 71 65 70 15 44 45 41 16 42 75</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Utilities\gd32e230v_start.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 21</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 192</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 9 17 81 7 8 12 5 13 14 76 79 80 47 39 73 71 74 65 78 70 72 15 38 44 68 45 66 41 67 16 63 42 64 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 39 16 76 12 15 73 14 80 7 65 45 75 17 5 13 47 71 70 44 41 42 81 79 8 74 78 72 38 68 66 67 63 64 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\GD32E23x_Firmware_Library\CMSIS\GD\GD32E23x\Source\IAR\startup_gd32e23x.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\GD32E230\Exe\Project.out</name>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 212 21 31 34 30 36 33 27 29 35 32 37 43 23 28 25 26 24 77 83 84 82 112 18 19 113 159 161 158 157 162</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+</project>

@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>911475935</fileChecksum>
+  <configuration>
+    <name>GD32F130_150</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\startup_gd32f1x0.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_gd32f1x0.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_adc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_can.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_cec.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_cmp.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_crc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_dac.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_dbg.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_dma.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_exti.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_fmc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_fwdgt.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_gpio.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_i2c.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_ivref.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_misc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_opa.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_pmu.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_rcu.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_rtc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_slcd.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_spi.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_syscfg.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_timer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_tsi.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_usart.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_wwdgt.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_eval.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\gd32f1x0_libopt.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_i2c.o</file>
+      <file>$PROJ_DIR$\..\..\Firmware\CMSIS\core_cm3.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\CMSIS\GD\GD32F1x0\Include\gd32f1x0.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_gpio.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_fwdgt.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_ivref.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_misc.o</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_fwdgt.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_adc.o</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_timer.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_wwdgt.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_dbg.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_cec.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_syscfg.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_exti.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_usart.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_pmu.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_tsi.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_dac.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_adc.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_cmp.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_misc.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_i2c.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_rtc.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_rcu.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_dma.o</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_crc.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_dma.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_fmc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\systick.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_spi.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\..\..\Utilities\gd32f1x0_eval.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\..\gd32f1x0_it.h</file>
+      <file>$PROJ_DIR$\..\..\Firmware\CMSIS\GD\GD32F1x0\Include\system_gd32f1x0.h</file>
+      <file>$PROJ_DIR$\..\main.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_can.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_cmp.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_it.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_dbg.o</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_dac.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\Project.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_cec.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_gd32f1x0.o</file>
+      <file>$PROJ_DIR$\Debug\Exe\Project.out</file>
+      <file>$PROJ_DIR$\..\gd32f1x0_it.c</file>
+      <file>$PROJ_DIR$\..\main.c</file>
+      <file>$PROJ_DIR$\..\systick.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\CMSIS\GD\GD32F1x0\Source\IAR\startup_gd32f1x0.s</file>
+      <file>$PROJ_DIR$\..\..\Firmware\CMSIS\GD\GD32F1x0\Source\system_gd32f1x0.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_syscfg.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_adc.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_can.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_cec.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_cmp.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_crc.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dac.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dbg.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dma.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_exti.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_fmc.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_fwdgt.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_i2c.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_ivref.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_misc.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_opa.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_pmu.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_rcu.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_rtc.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_slcd.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_spi.c</file>
+      <file>$PROJ_DIR$\..\..\Utilities\gd32f1x0_eval.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_timer.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_tsi.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_usart.c</file>
+      <file>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_wwdgt.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_crc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_exti.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_fmc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_rtc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_spi.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_slcd.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_rcu.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_syscfg.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_pmu.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_opa.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_timer.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_tsi.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_usart.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_wwdgt.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_eval.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f1x0_it.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\gd32f1x0_it.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 82</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71 84 60 35 79 63 34 41 78 62 48 50 66 51 65 31 69 55 54 64 40 67 57 75 74 32 85 30 68 47 56 45 49 46 58 52 59 43 44 53 73</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 141</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69 85 46 35 68 47 43 79 70 30 45 52 53 76 74 32 56 49 58 59 44 66 75 34 78 84 51 71 41 65 31 55 62 54 63 64 48 40 60 67 50 57 77 72</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\systick.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30 71 60 35 79 63 85 41 78 62 48 50 74 32 51 65 31 69 55 54 64 40 67 57 66 34 84 68 47 56 45 49 46 58 52 59 43 44 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\CMSIS\GD\GD32F1x0\Source\IAR\startup_gd32f1x0.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\CMSIS\GD\GD32F1x0\Source\system_gd32f1x0.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 91</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 55 67 35 69 64 78 51 65 31 54 40 57 34 84 71 41 62 63 48 60 50 74 32 85 30 68 47 56 45 49 46 58 52 59 43 44 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_syscfg.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 132</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 68 79 47 35 69 46 78 45 52 53 34 84 30 56 49 58 59 44 74 32 85 51 71 41 65 31 55 62 54 63 64 48 40 60 67 50 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_can.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_cec.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71 84 60 79 63 34 41 78 62 48 50 35 51 65 31 69 55 54 64 40 67 57 74 32 85 30 68 47 56 45 49 46 58 52 59 43 44 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_cmp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50 35 30 41 62 79 78 48 85 71 63 60 74 32 51 65 31 69 55 54 64 40 67 57 34 84 68 47 56 45 49 46 58 52 59 43 44 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_crc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 125</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 30 35 49 32 59 74 56 58 44 85 68 69 47 45 46 52 43 53 34 78 84 51 71 41 65 31 55 62 54 63 64 48 40 60 67 50 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dac.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 56 74 58 32 79 30 49 59 35 85 68 69 47 45 46 52 43 53 34 78 84 51 71 41 65 31 55 62 54 63 64 48 40 60 67 50 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dbg.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64 69 35 32 55 67 74 51 65 31 54 40 57 85 30 71 41 79 78 62 63 48 60 50 34 84 68 47 56 45 49 46 58 52 59 43 44 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_exti.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 126</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_fmc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 127</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_fwdgt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_i2c.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_ivref.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_misc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_opa.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_pmu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 133</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_rcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 131</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_rtc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 128</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_slcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 130</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_spi.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 129</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Utilities\gd32f1x0_eval.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 135</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_tsi.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 136</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_usart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 137</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_wwdgt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+    </file>
+    <forcedrebuild>
+      <name>[REBUILD_ALL]</name>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>GD32F170_190</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[REBUILD_ALL]</name>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

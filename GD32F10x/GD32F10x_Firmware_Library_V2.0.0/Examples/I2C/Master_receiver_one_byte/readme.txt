@@ -1,0 +1,26 @@
+/*!
+    \file  readme.txt
+    \brief description of the master receiver one byte
+*/
+
+/*
+    Copyright (C) 2017 GigaDevice
+
+    2014-12-26, V1.0.0, firmware for GD32F10x
+    2017-06-20, V2.0.0, firmware for GD32F10x
+*/
+
+  This demo is based on the GD32107C-EVAL board, it shows the I2C programming 
+mode in master receiving mode which the master only want to receive one byte of
+data. In this demo,I2C1 is operated as master receiver,and the SCL line and SDA 
+line of I2C1 interface are controled by the I/O pin PB6 and PB7 respectively.
+
+  This demo shows the receiving one byte process of the master. And it will store 
+the received data in the i2c_receiver array.
+
+  This demo doesn't perform the data transfer actually, which is due to no 
+specific slave.In the specific application, we must send the correct slave 
+address, and the master and the slave may need to be connected by the jumper 
+if necessary.
+
+  P4 must be fitted.

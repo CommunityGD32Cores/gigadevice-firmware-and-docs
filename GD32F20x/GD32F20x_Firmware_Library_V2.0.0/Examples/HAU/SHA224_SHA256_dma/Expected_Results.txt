@@ -1,0 +1,26 @@
+
+message to be hashed:
+
+The GD32 F2 series is the result of a perfect symbiosis of the real-time control capabilities of an MCU and the signal processing performance of a DSP, and thus complements the GD32 portfolio with a new class of devices, digital signal controllers (DSC).  
+
+SHA224 message digest (224 bits):
+
+0x94d85610    
+0xccfa9b1b    
+0x729c97bc    
+0x1008b5dd    
+0x519ebfe6    
+0x8dad80b2    
+0xa3fce4f3    
+  
+
+SHA256 message digest (256 bits):
+
+0x3a78ae01    
+0xe2ea5317    
+0xd4557586    
+0x61302ee4    
+0xbdcb9417    
+0x64f6707a    
+0x7064f10f    
+0xbdab2f2    
