@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>4091830734</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\gd32f20x_it.c</file>
+      <file>$PROJ_DIR$\..\main.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_sdio.c</file>
+      <file>$PROJ_DIR$\..\rtc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\CMSIS\GD\GD32F20x\Source\system_gd32f20x.c</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\gd32f207c_eval.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_bkp.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_can.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau_aes.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau_des.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau_tdes.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_crc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dac.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dbg.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dci.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dma.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_enet.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_exmc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_exti.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_fmc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_fwdgt.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_hau.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_hau_sha_md5.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_i2c.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_misc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_pmu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_rcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_rtc.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_trng.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_aes.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_pmu.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_wwdgt.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_hau_sha_md5.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_tdes.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_enet.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_trng.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_crc.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_fwdgt.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_tli.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_rcu.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dbg.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dac.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_enet.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_des.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_adc.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f207c_eval.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_gpio.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_gd32f20x.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_bkp.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_hau_sha_md5.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_misc.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_it.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_can.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_aes.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_fwdgt.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_fmc.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_rtc.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_sdio.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_spi.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_timer.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_tli.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_crc.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_exmc.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_exti.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_trng.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_usart.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_wwdgt.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dbg.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dci.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_tdes.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dac.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_pmu.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_i2c.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_rcu.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_hau.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dma.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dbg.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dci.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dma.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_enet.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_exmc.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_exti.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_fmc.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_fwdgt.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_hau.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_hau_sha_md5.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_i2c.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_misc.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_pmu.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_rcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_rtc.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_sdio.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_spi.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_tli.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_trng.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_usart.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_wwdgt.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm3.h</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\CMSIS\GD\GD32F20x\Source\IAR\startup_gd32f20x_cl.s</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\CMSIS\GD\GD32F20x\Include\gd32f20x.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_i2c.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_enet.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_exti.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_dbg.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_pmu.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_trng.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_sdio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_timer.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_usart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_rtc.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_dac.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_hau.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_bkp.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\gd32f207c_eval.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\GD\GD32F20xxC.icf</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_misc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\CMSIS\GD\GD32F20x\Include\system_gd32f20x.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_tli.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_exmc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_crc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_dma.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_fmc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_fwdgt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_rcu.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_spi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_wwdgt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_can.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_cau.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Include\gd32f20x_dci.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\rtc.o</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\CMSIS\GD\GD32F20x\Source\system_gd32f20x.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_bkp.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau_aes.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau_tdes.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau_des.c</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau.c</file>
+      <file>$PROJ_DIR$\..\gd32f20x_it.h</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_can.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\..\..\..\Library\Utilities\gd32f207c_eval.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dac.o</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_can.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_i2c.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_gpio.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.o</file>
+      <file>$PROJ_DIR$\..\systick.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_usart.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\rtc.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_sdio.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_timer.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_crc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_rtc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_spi.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_gpio.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_exti.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dci.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dac.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f207c_eval.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f207c_eval.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\rtc.pbi</file>
+      <file>$PROJ_DIR$\..\rtc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_spi.c</file>
+      <file>$PROJ_DIR$\..\systick.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_tli.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_trng.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_usart.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_wwdgt.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\CMSIS\GD\GD32F20x\Source\IAR\startup_gd32f20x_cl.s</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_it.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_misc.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_adc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dma.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_fmc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_exti.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_exmc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_crc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_gd32f20x_cl.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_bkp.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_can.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dci.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_tdes.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_aes.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_pmu.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_fwdgt.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_hau.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_hau_sha_md5.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dbg.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_enet.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_des.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\..\gd32f20x_libopt.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_usart.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_gd32f20x.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_gd32f20x.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_spi.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_rtc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_sdio.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_adc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_cau_des.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_timer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_bkp.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_hau.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\Project.out</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_misc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_exmc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_dma.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_fmc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_it.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_wwdgt.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_rcu.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\gd32f20x_tli.o</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 238</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\gd32f20x_it.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 196</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 243</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 57</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 156 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 209</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 202</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144 131 184 186 185</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_sdio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 231</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 120 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\rtc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 149</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 183</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 171</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 184 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144 186 185</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\CMSIS\GD\GD32F20x\Source\system_gd32f20x.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 227</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 228</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Utilities\gd32f207c_eval.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 181</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 182</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 131 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 200</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 233</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 146 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_bkp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 236</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 212</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 128 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_can.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 162</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 213</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 58</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 145 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 210</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 147 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau_aes.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 216</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 147 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau_des.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 223</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 234</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 147 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_cau_tdes.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 215</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 76</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 147 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_crc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 174</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 208</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dac.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 160</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 180</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 77</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 125 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dbg.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 221</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 117 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dci.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 214</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 75</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 148 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 241</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 201</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_enet.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 222</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 113 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144 32 224</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_exmc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 240</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 207</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 137 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_exti.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 178</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 206</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 114 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_fmc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 242</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 205</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 140 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_fwdgt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 218</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 141 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 164</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 115 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_hau.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 219</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 237</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 126 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_hau_sha_md5.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 220</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 126 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 116 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_i2c.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 163</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 116 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 141 117 134 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_misc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 197</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 239</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 118 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_pmu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 217</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 78</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 118 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 142 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_rcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 245</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 142 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 119 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_rtc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 175</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 123 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_crc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 174</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dac.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 160</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 180</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dbg.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 221</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dci.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 214</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 241</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 201</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_enet.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 222</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_exmc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 240</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 207</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_exti.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 178</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 206</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_fmc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 242</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 205</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_fwdgt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 218</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 164</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_hau.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 219</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 237</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_hau_sha_md5.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 220</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_i2c.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 163</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_misc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 197</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 239</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_pmu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 217</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_rcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 245</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_rtc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 175</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_sdio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 231</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_spi.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 176</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 229</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 173</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 235</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_tli.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 246</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_trng.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_usart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 226</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 170</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_wwdgt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 244</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\CMSIS\GD\GD32F20x\Source\IAR\startup_gd32f20x_cl.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 211</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 200</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 233</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\CMSIS\GD\GD32F20x\Source\system_gd32f20x.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 227</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 228</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_bkp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 236</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 212</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau_aes.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 216</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau_tdes.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 215</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau_des.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 223</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 234</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_cau.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 210</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Firmware\GD32F20x_standard_peripheral\Source\gd32f20x_can.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 162</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 213</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Library\Utilities\gd32f207c_eval.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 181</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 182</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_spi.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 176</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 229</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 143 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\systick.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 166</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 165</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122 144 167</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 173</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 235</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 121 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_tli.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 246</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 136 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_trng.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 119 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 123 120 143 121 136 122 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_usart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 226</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 170</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 122 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\GD32F20x_standard_peripheral\Source\gd32f20x_wwdgt.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 244</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 111 109 232 158 108 107 204 203 195 168 161 198 199 169 135 225 146 128 145 138 147 125 148 139 113 32 224 137 114 140 115 126 116 141 117 134 118 142 119 123 120 143 121 136 122</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\GD32F20x_Firmware_Library\CMSIS\GD\GD32F20x\Source\IAR\startup_gd32f20x_cl.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 211</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\Project.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 132 181 200 236 162 210 216 223 215 174 160 221 214 241 222 240 178 242 218 164 219 220 163 196 197 217 245 175 172 176 173 246 31 226 36 209 149 211 227 130 124 129 127</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+
