@@ -1,0 +1,341 @@
+--- site-packages/pyocd/__main__.py	2021-03-29 17:11:14.798154500 +0800
++++ site-packages/pyocd/__main__.py	2021-03-29 17:32:15.760825400 +0800
+@@ -225,6 +225,15 @@
+             help="Skip programming the first N bytes. This can only be used with binary files.")
+         flashOptions.add_argument("file", metavar="PATH",
+             help="File to program into flash.")
++        flashOptions.add_argument("--disable-smart-flash", action="store_true", default=False,
++            help="FlashBuilder will scan target memory to attempt to avoid \
++            programming contents that are not changing with this program request. False forces \
++            all requested data to be programmed.")
++        flashOptions.add_argument("--disable-keep-unwritten", action="store_true", default=False,
++            help="Depending on the sector versus page size and the amount of data \
++            written, there may be ranges of flash that would be erased but not written with new \
++            data. This parameter sets whether the existing contents of those unwritten ranges will \
++            be read from memory and restored while programming.")
+         subparsers.add_parser('flash', parents=[commonOptions, connectParser, flashParser],
+             help="Program an image to device flash.")
+ 
+@@ -568,7 +577,9 @@
+         with session:
+             programmer = FileProgrammer(session,
+                             chip_erase=self._args.erase,
+-                            trust_crc=self._args.trust_crc)
++                            trust_crc=self._args.trust_crc,
++                            smart_flash=not self._args.disable_smart_flash,
++                            keep_unwritten=not self._args.disable_keep_unwritten)
+             programmer.program(self._args.file,
+                             base_address=self._args.base_address,
+                             skip=self._args.skip,
+--- site-packages/pyocd/board/board_ids.py	2021-03-29 17:11:14.801146200 +0800
++++ site-packages/pyocd/board/board_ids.py	2021-03-29 17:29:17.820684900 +0800
+@@ -197,6 +197,7 @@
+     "1549": BoardInfo(  "LPC1549",              "lpc1549jbd100",    None,                   ),
+     "1600": BoardInfo(  "Bambino 210",          "lpc4330",          "l1_lpc4330.bin",       ),
+     "1605": BoardInfo(  "Bambino 210E",         "lpc4330",          "l1_lpc4330.bin",       ),
++    "1709": BoardInfo(  "GD32W51x EVB",         "gd32w51x",         None,                   ),
+     "1900": BoardInfo(  "CY8CKIT-062-WIFI-BT",  "cy8c6xx7",         "l1_cy8c6xx7.bin",      ),
+     "1901": BoardInfo(  "CY8CPROTO-062-4343W",  "cy8c6xxa",         "l1_cy8c6xxa.bin",      ),
+     "1902": BoardInfo(  "CY8CKIT-062-BLE",      "cy8c6xx7",         "l1_cy8c6xx7.bin",      ),
+--- site-packages/pyocd/target/builtin/__init__.py	2021-03-29 17:11:15.006597500 +0800
++++ site-packages/pyocd/target/builtin/__init__.py	2021-03-29 17:53:04.222872200 +0800
+@@ -106,6 +106,7 @@
+ from . import target_HC32L07x
+ from . import target_MPS3_AN522
+ from . import target_MPS3_AN540
++from . import target_GD32W51x
+ 
+ ## @brief Dictionary of all builtin targets.
+ BUILTIN_TARGETS = {
+@@ -234,4 +235,6 @@
+           'hc32l072' : target_HC32L07x.HC32L072,
+           'hc32l073' : target_HC32L07x.HC32L073,
+           'hc32f072' : target_HC32L07x.HC32F072,
++          'gd32w51x' : target_GD32W51x.GD32W51x_SIP,
++          'gd32w51x_qspi' : target_GD32W51x.GD32W51x_QSPI,
+          }
+--- site-packages/pyocd/target/builtin/target_GD32W51x.py	1970-01-01 08:00:00.000000000 +0800
++++ site-packages/pyocd/target/builtin/target_GD32W51x.py	2021-03-29 17:58:35.040791300 +0800
+@@ -0,0 +1,281 @@
++# pyOCD debugger
++# Copyright (c) 2018 Arm Limited
++# SPDX-License-Identifier: Apache-2.0
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ...flash.flash import Flash
++from ...coresight.coresight_target import CoreSightTarget
++from ...core.memory_map import (FlashRegion, RamRegion, MemoryMap)
++from ...debug.svd.loader import SVDFile
++
++# Chip erase takes a really long time.
++CHIP_ERASE_WEIGHT = 15.0
++
++class DBGMCU:
++    CR = 0xE0042004
++    CR_VALUE = 0x7 # DBG_STANDBY | DBG_STOP | DBG_SLEEP
++
++    APB1_FZ = 0xE0042008
++    APB1_FZ_VALUE = 0x06e01dff
++
++    APB2_FZ = 0xE004200C
++    APB2_FZ_VALUE = 0x00070003
++    
++    SAU = 0xE000EDD0
++    SAU_VALUE = 2
++
++FLASH_ALGO_SIP = {
++    'load_address' : 0x30000000,
++
++    # Flash algorithm as a hex string
++    'instructions': [
++    0xE00ABE00, 0x062D780D, 0x24084068, 0xD3000040, 0x1E644058, 0x1C49D1FA, 0x2A001E52, 0x4770D1F2,
++    0xf000b510, 0x2038f824, 0xfa68f000, 0xfa6ff000, 0xbd102000, 0xf000b510, 0xf000fa82, 0x2000f82c,
++    0xb510bd10, 0xf8cff000, 0xbd102000, 0xf000b510, 0x2000f885, 0x4613bd10, 0x460ab510, 0xf0004619,
++    0x2000f932, 0x0000bd10, 0x69c048f7, 0x48f64770, 0x4bf66901, 0xf0114af6, 0xbf1c0f80, 0x60426043,
++    0xf3c169c1, 0x290001c0, 0x6b01bf1f, 0x0f80f011, 0x62426243, 0x48ec4770, 0xf0416901, 0x61010180,
++    0xf3c169c1, 0x290001c0, 0x4770bf08, 0xf0416b01, 0x63010180, 0x49e44770, 0x69ca2000, 0x02c0f3c2,
++    0x6acab192, 0x0f01f012, 0x2001d001, 0x6aca4770, 0x0f10f012, 0x2003d001, 0x6ac94770, 0x0f08f011,
++    0x4770bf08, 0x47702002, 0xf01268ca, 0xd1ec0f01, 0xf01268ca, 0xd1ee0f10, 0xf01168c9, 0xd1f10f08,
++    0x4ad14770, 0x20004601, 0xf3c369d3, 0xb16303c0, 0xf0136ad3, 0xd10c0f01, 0xf0136ad3, 0xd10e0f10,
++    0xf0136ad3, 0xd1100f08, 0x68d3e010, 0x0f01f013, 0x2001d001, 0x68d3e00a, 0x0f10f013, 0x2003d001,
++    0x68d3e004, 0x0f08f013, 0x2002d000, 0x28011e49, 0x4770bf18, 0xd1d62900, 0x47702004, 0x4604b510,
++    0x2070f44f, 0xffcdf7ff, 0xc2dcf8df, 0x101cf8dc, 0x01c0f3c1, 0x2800b1d9, 0xbd10bf18, 0x0030f8dc,
++    0x0002f040, 0x0030f8cc, 0x4034f8cc, 0x0030f8dc, 0x0040f040, 0x0030f8cc, 0x2070f44f, 0xffb1f7ff,
++    0x1030f8dc, 0x0102f021, 0x1030f8cc, 0x2800bd10, 0xbd10bf18, 0x0010f8dc, 0x0002f040, 0x0010f8cc,
++    0x4014f8cc, 0x0010f8dc, 0x0040f040, 0x0010f8cc, 0x2070f44f, 0xff95f7ff, 0x1010f8dc, 0x0102f021,
++    0x1010f8cc, 0xb500bd10, 0x2070f44f, 0xff89f7ff, 0xc254f8df, 0x101cf8dc, 0x01c0f3c1, 0x2800b1c9,
++    0xbd00bf18, 0x0030f8dc, 0x0004f040, 0x0030f8cc, 0x0030f8dc, 0x0040f040, 0x0030f8cc, 0x2070f44f,
++    0xff6ff7ff, 0x1030f8dc, 0x0104f021, 0x1030f8cc, 0x2800bd00, 0xbd00bf18, 0x0010f8dc, 0x0004f040,
++    0x0010f8cc, 0x0010f8dc, 0x0040f040, 0x0010f8cc, 0x2070f44f, 0xff55f7ff, 0x1010f8dc, 0x0104f021,
++    0x1010f8cc, 0xb530bd00, 0x468c4604, 0x2070f44f, 0xff47f7ff, 0x69e94d74, 0x01c0f3c1, 0x2800b189,
++    0xbd30bf18, 0xf0406b28, 0x63280001, 0xc000f8c4, 0x2070f44f, 0xff35f7ff, 0xf0216b29, 0x63290101,
++    0x2800bd30, 0xbd30bf18, 0xf0406928, 0x61280001, 0xc000f8c4, 0x2070f44f, 0xff23f7ff, 0xf0216929,
++    0x61290101, 0xb530bd30, 0x46944605, 0xf44f460c, 0xf7ff2070, 0x495cff16, 0xf3c269ca, 0xb1aa02c0,
++    0xbf182800, 0x6b0abd30, 0x0201f042, 0xf1bc630a, 0xd0060f00, 0x2b04f854, 0x2b04f845, 0x0c04f1bc,
++    0x6b0ad1f8, 0x0201f022, 0xbd30630a, 0xbf182800, 0x690abd30, 0x0201f042, 0xf1bc610a, 0xd0060f00,
++    0x2b04f854, 0x2b04f845, 0x0c04f1bc, 0x690ad1f8, 0x0201f022, 0xbd30610a, 0x69014843, 0x60814943,
++    0x60814943, 0x48404770, 0xf4216901, 0x61017100, 0x493d4770, 0x69086408, 0x4080f440, 0xf44f6108,
++    0xe6ce2070, 0x6c004838, 0xf06f4770, 0xf3c1437c, 0xea030109, 0x43114202, 0x28004a33, 0x6511bf08,
++    0x2801d003, 0x65d1bf0c, 0x69104770, 0x4080f440, 0xf44f6110, 0xe6b42070, 0xf8d0482b, 0xb2c0008c,
++    0x4b294770, 0xf8d3b500, 0xf01cc08c, 0xd1220fff, 0x4c7cf06f, 0x0109f3c1, 0x4202ea0c, 0x28004311,
++    0x6499bf08, 0x2801d00b, 0x6559bf08, 0x2802d007, 0x6619bf08, 0x2803d003, 0x6659bf08, 0x6918d10b,
++    0x4080f440, 0xf44f6118, 0xf7ff2070, 0x2800fe8a, 0x2001bf04, 0x2000bd00, 0xf06fbd00, 0xf3c1437c,
++    0xea030109, 0x43114202, 0x28004a0f, 0x6711bf04, 0x28014770, 0x6751bf04, 0x28024770, 0x6791bf04,
++    0x28034770, 0x67d1bf08, 0xf06f4770, 0xf3c14360, 0xea03010c, 0x430a4202, 0xf8414903, 0xf3c02f80,
++    0x6048000c, 0x00004770, 0x50022000, 0x45670123, 0xcdef89ab, 0xb5004a46, 0x308cf8d2, 0x0ffff013,
++    0xf06fd119, 0xea03437c, 0xf0414101, 0x28004100, 0x64d1bf08, 0x2801d003, 0x6591bf08, 0x6910d10b,
++    0x4080f440, 0xf44f6110, 0xf7ff2070, 0x2800fe3a, 0x2001bf04, 0x2000bd00, 0x4935bd00, 0xf8c12001,
++    0x4770008c, 0x69ca4932, 0x02c0f3c2, 0x6b0ab11a, 0x63084310, 0x690a4770, 0x61084310, 0x492c4770,
++    0xf3c269ca, 0xb12202c0, 0xea226b0a, 0x63080000, 0x690a4770, 0x0000ea22, 0x47706108, 0x69ca4924,
++    0x02c0f3c2, 0x6ac9b11a, 0xd0054201, 0x68c9e002, 0xd0014201, 0x47702001, 0x47702000, 0x69ca491c,
++    0x02c0f3c2, 0xbf142a00, 0x60c862c8, 0xb5104770, 0x69e04c17, 0x00c0f3c0, 0xbf082800, 0x6920bd10,
++    0x60a04814, 0x60a04814, 0x32fff240, 0x20022100, 0xff37f7ff, 0xf4206920, 0x61207000, 0xb510bd10,
++    0x69e04c0b, 0x00c0f3c0, 0xbf082800, 0x6920bd10, 0x60a04808, 0x60a04808, 0x32fff240, 0x20024611,
++    0xff1ff7ff, 0xf4206920, 0x61207000, 0x0000bd10, 0x50022000, 0x45670123, 0xcdef89ab, 0x00000000
++    ],
++
++    # Relative function addresses
++    'pc_init': 0x30000021,
++    'pc_unInit': 0x30000035,
++    'pc_program_page': 0x30000057,
++    'pc_erase_sector': 0x3000004d,
++    'pc_eraseAll': 0x30000043,
++
++    'static_base' : 0x30000000 + 0x00000020 + 0x0000055c,
++    'begin_stack' : 0x30000800,
++    'begin_data' : 0x30000000 + 0x1000,
++    'page_size' : 0x400,
++    'analyzer_supported' : False,
++    'analyzer_address' : 0x00000000,
++    'page_buffers' : [0x30001000, 0x30001400],   # Enable double buffering
++    'min_program_length' : 0x400,
++
++    # Flash information
++    'flash_start': 0xc000000,
++    'flash_size': 0x200000,
++    'sector_sizes': (
++        (0x0, 0x1000),
++    )
++}
++
++FLASH_ALGO_QSPI = {
++    'load_address' : 0x30000000,
++
++    # Flash algorithm as a hex string
++    'instructions': [
++    0xE00ABE00, 0x062D780D, 0x24084068, 0xD3000040, 0x1E644058, 0x1C49D1FA, 0x2A001E52, 0x4770D1F2,
++    0xbab6f000, 0x407ff020, 0xbacff000, 0x69c04802, 0x00c0f3c0, 0x00004770, 0x50022000, 0xf000b510,
++    0x2001f80d, 0xfa22f000, 0xbd102000, 0x460a4613, 0x407ff020, 0xf0004619, 0x0000bad8, 0x6801480b,
++    0x0101f041, 0x4a096001, 0x32082100, 0x68026011, 0x401a4b07, 0x4a056002, 0x0010f243, 0x60101d12,
++    0x300c4802, 0xf0006001, 0x0000bcaf, 0x50023800, 0xfef6ffff, 0xf000b510, 0x2000fa79, 0xb5f0bd10,
++    0x6a456a04, 0xf04f2300, 0xf04f0c01, 0xfa0c0e0f, 0x4216f603, 0x009ed006, 0xf706fa0e, 0xfa0143bc,
++    0x433cf706, 0xb29b1c5b, 0xd3f02b08, 0xfa0c2308, 0x4216f603, 0x009ed007, 0xfa0e3e20, 0x43bdf706,
++    0xf706fa01, 0x1c5b433d, 0x2b10b29b, 0x6204d3ef, 0xbdf06245, 0x4df0e92d, 0x68c66805, 0xf04f2400,
++    0xf04f0b01, 0xfa0b0a03, 0x421ff704, 0x0067d00e, 0xfc07fa0a, 0x050cea25, 0x060cea26, 0xf807fa01,
++    0xfc07fa02, 0x0505ea48, 0x0606ea4c, 0xb2a41c64, 0xd3e82c10, 0x60c66005, 0x8df0e8bd, 0x2901b5f0,
++    0xd0186841, 0x60414399, 0x21006884, 0x27032601, 0xf501fa06, 0xd008421d, 0xfa07004d, 0xea24fc05,
++    0xfa02040c, 0xea4cfc05, 0x1c490404, 0x2910b289, 0x6084d3ee, 0x4319bdf0, 0x0000e7e5, 0x68014802,
++    0x0102f041, 0x47706001, 0x50025800, 0x41f0e92d, 0x4606460c, 0xff4af7ff, 0x49254a25, 0x39281f13,
++    0x0c04f102, 0x6e00f04f, 0xb1f82708, 0x35e04d20, 0x06806828, 0x6820d4fc, 0x68606010, 0x68a06018,
++    0x0000f8cc, 0x0204e9d4, 0x680a4310, 0x0240f422, 0x60084310, 0x62b068e0, 0x46304671, 0xf858f000,
++    0x07006828, 0x4812d5fc, 0xe01e30e4, 0x3d204d10, 0x06806828, 0x6820d4fc, 0x68606010, 0x68a06018,
++    0x0000f8cc, 0x0204e9d4, 0x680a4310, 0x0240f422, 0x60084310, 0x62b068e0, 0x46304671, 0xf838f000,
++    0x07006828, 0x4802d5fc, 0x6007381c, 0x81f0e8bd, 0x50025828, 0x4605b570, 0xfef8f7ff, 0xb1802602,
++    0x68204c11, 0xd4fc0680, 0x46282100, 0xf820f000, 0x28006a68, 0x6820d116, 0xd5fc0780, 0x1d00480a,
++    0x4c0ae00f, 0x06806820, 0x2100d4fc, 0xf0004628, 0x6a68f80f, 0xd1052800, 0x07806820, 0x4803d5fc,
++    0x60061d00, 0x0000bd70, 0x50025908, 0x50025808, 0x41f0e92d, 0x4604460d, 0xfec8f7ff, 0x6a610001,
++    0x6040f04f, 0xb129d072, 0xd0034285, 0x6aa14a5d, 0x60111e49, 0x495b4b5b, 0x1d09330c, 0x69a21d0e,
++    0x6a27e081, 0xd06f2f00, 0x601a68a2, 0xb19a69e2, 0x370be9d4, 0xf8b4433b, 0x6a67c014, 0x478cea47,
++    0x6927433b, 0x6a27433b, 0x68e7433b, 0x4313433b, 0x431369a2, 0xe0456822, 0x020be9d4, 0x8aa34310,
++    0xea426a62, 0x43104283, 0x43106922, 0x43106a22, 0xe00d69a2, 0xd0014285, 0x60306860, 0x81f0e8bd,
++    0x030be9d4, 0x8aa64318, 0xea436a63, 0x43184386, 0x68224310, 0x43284310, 0xe7ef6008, 0x2a006a22,
++    0x68a2d06c, 0x69e2601a, 0xe9d4b37a, 0x433b370b, 0xc014f8b4, 0xea476a67, 0x433b478c, 0x433b6927,
++    0x433b6a27, 0x433b68e7, 0x69a24313, 0xe9d4e00a, 0x433b370b, 0xc014f8b4, 0xea476a67, 0x433b478c,
++    0x433b68e7, 0x432b4313, 0xe7c3600b, 0x6a60e00e, 0xd0c32800, 0x230be9d4, 0x8aa3431a, 0x4083ea40,
++    0x432a4302, 0xe7b9600a, 0xe029e010, 0x4285b129, 0x4a1dd003, 0x1e496aa1, 0x4b1b6011, 0x330c491a,
++    0x69a21d09, 0x2a001d0e, 0xe77ad0b8, 0x2b0069e3, 0xe9d4d0a6, 0xea477c0b, 0xf8b4070c, 0xf8d4e014,
++    0xea4cc024, 0xea474c8e, 0xf8d4070c, 0xea47c00c, 0x431f070c, 0x68224317, 0x432f4317, 0xe789600f,
++    0x020be9d4, 0x8aa34310, 0xea426a62, 0x43104283, 0x43106922, 0x43106a22, 0xe78b69a2, 0x2a0069e2,
++    0xe7a4d0b5, 0x50025910, 0x50025810, 0xf240b510, 0x46206401, 0xfac8f000, 0xe8bd4620, 0xf0004010,
++    0xb500bab3, 0xf44fb093, 0x90067080, 0x90002005, 0xf44f2000, 0x90075100, 0x90089001, 0x1003e9cd,
++    0x02c99002, 0xe9cd9005, 0x900b1009, 0x900c2101, 0x010de9cd, 0x1010e9cd, 0x900f2010, 0x90120480,
++    0x4668a90d, 0xfe82f7ff, 0xbd00b013, 0x4604b570, 0xf44fb094, 0xf0006040, 0xf640fa77, 0xf0004001,
++    0x4d38fa73, 0x210322f0, 0xf7ff4628, 0x23f0fdf8, 0x21022200, 0xf7ff4628, 0x23f0fe1d, 0x21002202,
++    0xf7ff4628, 0x4d30fe3b, 0x21032218, 0xf7ff4628, 0x2318fde6, 0x21022200, 0xf7ff4628, 0x2318fe0b,
++    0x21002202, 0xf7ff4628, 0xf640fe29, 0xf0006001, 0x2004fa4b, 0x400de9cd, 0x900f2010, 0x20172400,
++    0x0410e9cd, 0x9412a80d, 0xf8f8f000, 0x7080f44f, 0x0406e9cd, 0x01409400, 0x94089401, 0x0403e9cd,
++    0x94059402, 0x940a9409, 0x940c940b, 0xf8b9f000, 0x94052035, 0x94079000, 0xf04f9408, 0x26017580,
++    0x5609e9cd, 0xf7ff4668, 0xa813fe75, 0xf960f000, 0x004cf89d, 0xd4120781, 0x0002f040, 0x004cf88d,
++    0xe9cd2031, 0x94070400, 0xe9cd9405, 0x46685609, 0xfe60f7ff, 0xf000a813, 0xf7fff9a9, 0xb014ff62,
++    0x0000bd70, 0x50020000, 0x50020400, 0xbf4ef7ff, 0xb08db500, 0xf885f000, 0x7080f44f, 0x20c79006,
++    0x20009000, 0x90039007, 0x90049001, 0x90059002, 0x90099008, 0x900b900a, 0x4668900c, 0xfe3af7ff,
++    0xff3ff7ff, 0x2000b00d, 0xb510bd00, 0x4604b08e, 0xf867f000, 0x7180f44f, 0x21209106, 0x01499100,
++    0x900300c8, 0xe9cd2000, 0x90041007, 0x4001e9cd, 0x90099005, 0x900b900a, 0x4668900c, 0xfe1af7ff,
++    0xff1ff7ff, 0x2000b00e, 0xb570bd10, 0x4615b08e, 0x4604460e, 0xf845f000, 0x7080f44f, 0x20329006,
++    0xf44f9000, 0x90076080, 0x900300c0, 0x90082000, 0xe9cd9004, 0x90054001, 0x500ae9cd, 0x7140f04f,
++    0x9109900c, 0xf7ff4668, 0x4630fdf5, 0xf93ef000, 0xfef7f7ff, 0x2000b00e, 0xb510bd70, 0x460cb08e,
++    0x7180f44f, 0x216b9106, 0xf44f9100, 0x91076180, 0x910300c9, 0x90010109, 0x20009104, 0x91052108,
++    0x200ae9cd, 0x90089002, 0x7140f04f, 0x9109900c, 0xf7ff4668, 0x4620fdcf, 0xf8baf000, 0x2000b00e,
++    0xb510bd10, 0xf44fb094, 0x90067080, 0x20062400, 0x94079000, 0x5000f44f, 0x94089401, 0x0403e9cd,
++    0x94059402, 0x940a9409, 0x4668940b, 0xf7ff940c, 0x2002fdb1, 0x900e900d, 0xe9cd2001, 0x20100410,
++    0x0480900f, 0x20059012, 0xf04f9000, 0x90097080, 0x4668a90d, 0xfd4af7ff, 0xbd10b014, 0x4604b5f8,
++    0xfc94f7ff, 0x00014b20, 0x0204f1a3, 0x4e1f4d1d, 0xf06f6811, 0xf42100ff, 0x91006170, 0xeb006861,
++    0x99002001, 0x0001ea40, 0x60109000, 0x4818d024, 0x06896801, 0x6810d4fc, 0x90004028, 0x9d007821,
++    0xea4568a0, 0x43086101, 0x60109000, 0x40306818, 0xe9d49000, 0x43080104, 0x9c0089a1, 0x4101ea44,
++    0x90004308, 0x68106018, 0x0001f040, 0x68106010, 0x3080f440, 0xbdf86010, 0x1d004803, 0x06896801,
++    0xe7d8d4fc, 0x00ffffef, 0x50025804, 0xffe0f8fe, 0x50025908, 0x41f0e92d, 0x4605460c, 0xfc46f7ff,
++    0x4a1a4b1a, 0x059f2610, 0xb1903a30, 0x31d84917, 0x06806808, 0x6810d4fc, 0xf0206861, 0x43080008,
++    0x68606010, 0xd11b2808, 0x60186820, 0x30dc480f, 0x490ee011, 0x68083928, 0xd4fc0680, 0x68616810,
++    0x0008f020, 0x60104308, 0x28086860, 0x6820d108, 0x48066018, 0x60063824, 0xf4406810, 0x60101080,
++    0x46284639, 0x41f0e8bd, 0xbd42f7ff, 0x50025830, 0x4604b51c, 0xfc0af7ff, 0xb3402202, 0x68004829,
++    0x90001c40, 0x30084827, 0x91016801, 0x680b1f01, 0x6340f023, 0x6380f043, 0x9901600b, 0x48216001,
++    0x38084b20, 0x99003310, 0x6801e009, 0x0f06f011, 0x7819d0fb, 0x1b01f804, 0x1e499900, 0x29009100,
++    0x6801d1f3, 0xd5fc0789, 0x1f004816, 0x4816e027, 0x49156800, 0x31081c40, 0x68089000, 0x1f089001,
++    0xf0236803, 0xf0436340, 0x60036380, 0x60089801, 0x4b0d480d, 0x33103808, 0xe0099900, 0xf0116801,
++    0xd0fb0f06, 0xf8047819, 0x99001b01, 0x91001e49, 0xd1f32900, 0x07896801, 0x4803d5fc, 0x60021f00,
++    0x0000bd1c, 0x50025910, 0x50025810, 0x4604b538, 0xfbacf7ff, 0xb3002202, 0x68004821, 0x90001c40,
++    0x1d00481f, 0xf0216801, 0x60016140, 0x4b1c481c, 0x33103808, 0xe0089900, 0x07496801, 0xf814d5fc,
++    0x70191b01, 0x1e499900, 0x29009100, 0x6801d1f4, 0xd5fc0789, 0x1f004812, 0x4812e01f, 0x1c406800,
++    0x48109000, 0x68011d00, 0x6140f021, 0x480d6001, 0x38084b0c, 0x99003310, 0x6801e008, 0xd5fc0749,
++    0x1b01f814, 0x99007019, 0x91001e49, 0xd1f42900, 0x07896801, 0x4803d5fc, 0x60021f00, 0x0000bd38,
++    0x50025910, 0x50025810, 0xeb014906, 0xf8d11190, 0xf0002800, 0x2001031f, 0x43824098, 0x2800f8c1,
++    0x00004770, 0x50023000, 0xeb014906, 0xf8d11190, 0xf0002800, 0x2001031f, 0x43024098, 0x2800f8c1,
++    0x00004770, 0x50023000, 0xeb014906, 0xf8d11190, 0xf0002800, 0x2001031f, 0x43824098, 0x2800f8c1,
++    0x00004770, 0x50023000, 0xeb014906, 0xf8d11190, 0xf0002800, 0x2001031f, 0x43024098, 0x2800f8c1,
++    0x00004770, 0x50023000, 0xb5084a29, 0x20006811, 0x5180f041, 0x68116011, 0x3180f441, 0x68116011,
++    0x4180f041, 0x46016011, 0x1c499000, 0x29209100, 0x6811dbfb, 0x4100f041, 0xf64f6011, 0x681173ff,
++    0xf4111c40, 0xd1013f00, 0xd1f84298, 0x03806810, 0xe7fed400, 0x30404816, 0xf0416801, 0x60015180,
++    0xf44f4914, 0x60084040, 0x30084811, 0x60016801, 0xf4416801, 0x60014100, 0xf4416801, 0x600151a0,
++    0xf64d1f03, 0x60192128, 0xf0416811, 0x60117180, 0x01896811, 0x6801d5fc, 0x0103f021, 0x68016001,
++    0x0102f041, 0x68016001, 0xd5fc0709, 0x0000bd08, 0x50023800, 0x50007000, 0x00000000
++    ],
++
++    # Relative function addresses
++    'pc_init': 0x3000003d,
++    'pc_unInit': 0x30000095,
++    'pc_program_page': 0x3000004d,
++    'pc_erase_sector': 0x30000025,
++    'pc_eraseAll': 0x30000021,
++
++    'static_base' : 0x30000000 + 0x00000020 + 0x00000a78,
++    'begin_stack' : 0x30000d00,
++    'begin_data' : 0x30000000 + 0x1000,
++    'page_size' : 0x400,
++    'analyzer_supported' : False,
++    'analyzer_address' : 0x00000000,
++    'page_buffers' : [0x30001000, 0x30001400],   # Enable double buffering
++    'min_program_length' : 0x400,
++
++    # Flash information
++    'flash_start': 0xc000000,
++    'flash_size': 0x200000,
++    'sector_sizes': (
++        (0x0, 0x1000),
++    )
++}
++
++class GD32W51x_SIP(CoreSightTarget):
++
++    VENDOR = "GigaDevice"
++
++    MEMORY_MAP = MemoryMap(
++        FlashRegion( start=0x08000000, length=0x200000,  sector_size=0x1000,
++                                                        page_size=0x400,
++                                                        is_boot_memory=True,
++                                                        erase_all_weight=CHIP_ERASE_WEIGHT,
++                                                        algo=FLASH_ALGO_SIP),
++        FlashRegion( start=0x0c000000, length=0x200000,  sector_size=0x1000,
++                                                        page_size=0x400,
++                                                        is_boot_memory=True,
++                                                        erase_all_weight=CHIP_ERASE_WEIGHT,
++                                                        algo=FLASH_ALGO_SIP),
++        RamRegion(   start=0x30000000, length=0x4000)
++        )
++
++    def __init__(self, session):
++        super().__init__(session, self.MEMORY_MAP)
++
++    def post_connect_hook(self):
++        self.write32(DBGMCU.SAU, DBGMCU.SAU_VALUE)
++        self.write32(DBGMCU.CR, DBGMCU.CR_VALUE)
++        self.write32(DBGMCU.APB1_FZ, DBGMCU.APB1_FZ_VALUE)
++        self.write32(DBGMCU.APB2_FZ, DBGMCU.APB2_FZ_VALUE)
++
++class GD32W51x_QSPI(CoreSightTarget):
++
++    VENDOR = "GigaDevice"
++
++    MEMORY_MAP = MemoryMap(
++        FlashRegion( start=0x08000000, length=0x200000,  sector_size=0x1000,
++                                                        page_size=0x100,
++                                                        is_boot_memory=True,
++                                                        erase_all_weight=CHIP_ERASE_WEIGHT,
++                                                        algo=FLASH_ALGO_QSPI),
++        FlashRegion( start=0x0c000000, length=0x200000,  sector_size=0x1000,
++                                                        page_size=0x100,
++                                                        is_boot_memory=True,
++                                                        erase_all_weight=CHIP_ERASE_WEIGHT,
++                                                        algo=FLASH_ALGO_QSPI),
++        RamRegion(   start=0x30000000, length=0x4000)
++        )
++
++    def __init__(self, session):
++        super().__init__(session, self.MEMORY_MAP)
++
++    def post_connect_hook(self):
++        self.write32(DBGMCU.SAU, DBGMCU.SAU_VALUE)
++        self.write32(DBGMCU.CR, DBGMCU.CR_VALUE)
++        self.write32(DBGMCU.APB1_FZ, DBGMCU.APB1_FZ_VALUE)
++        self.write32(DBGMCU.APB2_FZ, DBGMCU.APB2_FZ_VALUE)
+\ No newline at end of file

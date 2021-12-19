@@ -1,0 +1,11 @@
+config DEV_BIND_ENABLED
+    bool "FEATURE_DEV_BIND_ENABLED"
+    select INFRA_COMPAT
+    select COAP_SERVER
+    select MQTT_COMM_ENABLED
+    default y
+    help
+        Enable dev-bind in SDK
+
+
+

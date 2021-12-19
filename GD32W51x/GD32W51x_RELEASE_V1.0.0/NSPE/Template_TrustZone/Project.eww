@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\Secure\IAR_Project\Project_S.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\NSecure\IAR_Project\Project_NS.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>GD32W515_TZ</name>
+            <member>
+                <project>Project_S</project>
+                <configuration>GD32W51x</configuration>
+            </member>
+            <member>
+                <project>Project_NS</project>
+                <configuration>GD32W51x</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>

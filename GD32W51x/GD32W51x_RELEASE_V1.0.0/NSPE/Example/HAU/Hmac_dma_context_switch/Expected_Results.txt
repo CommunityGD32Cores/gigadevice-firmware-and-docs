@@ -1,0 +1,22 @@
+SHA256 message digest (256 bits):
+
+0xc501fc6c    
+0x173778e6    
+0x9744ae06    
+0x944f094c    
+0x9eaf1c56    
+0x2f58debc    
+0x478cdea8    
+0x5a421f58    
+  
+
+SHA224 message digest (224 bits):
+
+0x4a6e86fc    
+0x85dce535    
+0xc605e6bd    
+0x9cda23bb    
+0xc5c896f8    
+0x85d1224d    
+0x7460cd83    
+

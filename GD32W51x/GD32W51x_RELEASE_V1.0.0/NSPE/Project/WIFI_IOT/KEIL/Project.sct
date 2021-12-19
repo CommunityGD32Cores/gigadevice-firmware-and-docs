@@ -1,0 +1,66 @@
+#! armclang --target=arm-arm-none-eabi -march=armv8-m.main -E -xc -I "..\..\..\WIFI_IOT\app" -I "..\..\..\..\config"
+
+#include "nspe_region.h"
+#include "app_cfg.h"
+LR_IROM1 LR_IROM1_ADDR LR_IROM1_SIZE  {    ; load region size_region
+    ER_IROM1 LR_IROM1_ADDR LR_IROM1_SIZE  {  ; load address = execution address
+        *.o (RESET, +First)
+        *(InRoot$$Sections)
+        .ANY (+RO)
+    }
+
+    RW_IRAM_SKB RW_IRAM1_ADDR RW_IRAM1_SIZE {  ; RW data
+        ps_mgmt.o(.bss)
+    }
+
+    RW_IRAM_MEM0  +0 {  ; RW data
+#if defined(PLATFORM_OS_RTTHREAD)
+        wrapper_os.o(.bss.HeapRegion0)
+#else
+        malloc.o(.bss.xHeapRegion_0)
+#endif
+    }
+#ifdef CONFIG_EXTEND_MEMORY
+    RW_IRAM_MEM1  +0 {  ; RW data
+#if defined(PLATFORM_OS_RTTHREAD)
+        wrapper_os.o(.bss.HeapRegion1)
+#else
+        malloc.o(.bss.xHeapRegion_1)
+#endif
+    }
+#endif
+
+    RW_IRAM2 +0  {  ; RW data
+        .ANY (+RW +ZI)
+#if defined(PLATFORM_OS_FREERTOS)
+        port.o (+RO)
+        portasm.o (+RO)
+        portasm_1.o (+RO)
+        tasks.o (.text.xTaskGetSchedulerState)
+        tasks.o (.text.xTaskIncrementTick)
+#endif
+        uart.o (.text.log_uart_interrupt_handler)
+        uart.o (.text.fputc)
+        gd32_it.o (.text.WLAN_Rx_IRQHandler)
+        wrapper_os.o (.text.sys_memset)
+
+#ifdef CONFIG_WIFI_HIGH_PERFORMANCE
+        soc_isr.o(i.wlan_interrupt_rx_handler)
+        soc_rx.o(+RO)
+        wlan_rx.o(+RO)
+        net_intf.o(+RO)
+        ethernetif.o(+RO)
+        tcp_in.o(+RO)
+        sockets.o(+RO)
+        inet_chksum.o(+RO)
+
+        ip4_frag.o(+RO)
+        wlan_tx.o(+RO)
+        soc_tx.o(+RO)
+#else
+        soc_isr.o(i.wlan_interrupt_rx_handler)
+        soc_rx.o(i.soc_rx_tasklet)
+        soc_tx.o(i.soc_send_xframe)
+#endif
+    }
+}

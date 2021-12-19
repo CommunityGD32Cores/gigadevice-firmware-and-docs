@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"psa_audit_api.h": "c",
+			"*.inc": "c"
+		},
+		"C_Cpp.default.cStandard": "c89"
+	}
+}

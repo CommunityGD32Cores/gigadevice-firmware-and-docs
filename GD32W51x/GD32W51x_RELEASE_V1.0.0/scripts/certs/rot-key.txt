@@ -1,0 +1,12 @@
+-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEA8MwByKOEvchpSyVPTdP4uGolrmyiCCyDjngOQsKxV6I=
+-----END PUBLIC KEY-----
+ED25519 Private-Key:
+priv:
+    c2:86:3a:53:14:56:ea:82:08:89:8d:a3:56:9f:17:
+    0a:36:d4:5e:e2:b5:10:e6:9c:e9:4f:6b:c6:80:cc:
+    f1:14
+pub:
+    f0:cc:01:c8:a3:84:bd:c8:69:4b:25:4f:4d:d3:f8:
+    b8:6a:25:ae:6c:a2:08:2c:83:8e:78:0e:42:c2:b1:
+    57:a2

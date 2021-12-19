@@ -1,0 +1,19 @@
+message to be hashed:
+
+The hash processor is a fully compliant implementation of the secure hash algorithm (SHA-1), the MD5 (message-digest algorithm 5) hash algorithm and the HMAC (keyed-hash message authentication code) algorithm suitable for a variety of applications. 
+
+SHA1 message digest (160 bits):
+
+0x854775e    
+0xc2a10c7f    
+0x4b8037d9    
+0xe77ca730    
+0xf05dfa2e    
+ 
+
+MD5 message digest (128 bits):
+
+0x286a76b2    
+0xa5140d12    
+0xbd6c46ab    
+0x15362340    

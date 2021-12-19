@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ProjectWorkspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_mpw.xsd">
+    <SchemaVersion>1.0</SchemaVersion>
+    <Header>### uVision Project, (C) Keil Software</Header>
+    <WorkspaceName>WorkSpace</WorkspaceName>
+    <project>
+        <PathAndName>.\MBL\project\KEIL\Project_MBL.uvprojx</PathAndName>
+        <NodeIsActive>1</NodeIsActive>
+        <NodeIsExpanded>1</NodeIsExpanded>
+    </project>
+    <project>
+        <PathAndName>.\PROT\project\KEIL\secure_main\Project_PROT.uvprojx</PathAndName>
+        <NodeIsExpanded>1</NodeIsExpanded>
+    </project>
+    <project>
+        <PathAndName>.\NSPE\Project\WIFI_IOT\KEIL\Project_NSPE.uvprojx</PathAndName>
+        <NodeIsExpanded>1</NodeIsExpanded>
+    </project>
+</ProjectWorkspace>

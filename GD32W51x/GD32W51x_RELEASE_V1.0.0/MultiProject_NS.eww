@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\MBL\project\IAR\Project_MBL_NS.ewp</path>  
+    </project>
+    <project>
+        <path>$WS_DIR$\NSPE\Project\WIFI_IOT\IAR\Project_WIFI_IOT.ewp</path>  
+    </project>
+    <batchBuild />
+</workspace>
