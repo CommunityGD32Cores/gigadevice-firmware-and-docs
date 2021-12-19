@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>GigaDevice</vendor>
+  <url>http://gd32mcu.21ic.com/data/documents/yingyongruanjian/</url>
+  <name>GD32L23x_DFP</name>
+  <description>GigaDevice GD32L23x Series Device Support and Examples</description>
+  <releases>
+  <release version="0.0.0" date="2021-07-05">
+    First Release version of GD32L23x Device Family Pack.
+  </release>
+  </releases>
+  <keywords>
+    <!-- keywords for indexing -->
+  <keyword>GigaDevice</keyword>
+  <keyword>Device Support</keyword>
+  <keyword>GD32L23x</keyword>
+  </keywords>
+
+  <devices>
+    <!-- ******************************  Cortex-M23  ********************** -->
+    <family Dfamily="GD32L23x Series" Dvendor="GigaDevice:123">
+    <processor Dcore="Cortex-M23" DcoreVersion="r0p0" Dfpu="0" Dmpu="1" Dtz="NO_TZ" Dendian="Little-endian" />
+
+      <description>
+The Arm Cortex-M23 is based on the Armv8-M baseline architecture.
+It is the smallest and most energy efficient Arm processor with Arm TrustZone technology.
+Cortex-M23 is the ideal processor for constrained embedded applications requiring efficient security.
+
+GD32 is a new 32-bit high performance, low power consumption universal microcontroller family
+powered by the ARM Cortex-M23 RISC core,which targeted at various MCU application areas.
+GD32 family integrates features to simplify system design and provide customers wide range of
+comprehensive and superior cost effective MCU portfolios with proven technology and great innovation.
+GD32 family includes entry line, performance line and connectivity line currently.
+      </description>    
+
+      <!-- ************************  Subfamily 'GD32L233'  **************************** -->
+      <subFamily DsubFamily="GD32L233">
+   
+      <description>
+GD32L23x - ARM Cortex-M23 Core
+  Frequency up to 65 MHz
+  Single-cycle multiplier and hardware divider
+  NVIC support 16 internal, 31 external interrupts, each has 4 priority levels
+
+Memories
+  Flash size from 64KB to 256KB
+  SRAM size from 16KB to 32KB
+  3KB ISP loader ROM
+  1KB OTP byte
+
+Low power management
+  Power saving mode: sleep, deep-sleep, standby mode
+  Independent battery supply for real-calendar RTC and backup register
+
+      </description>
+
+      <feature type="WDT"           n="2"/>
+      <feature type="RTC"           n="32768"/>
+      <feature type="ADC"           n="1"       m="12"/>
+      <feature type="Temp"          n="-40"     m="85"/>
+      <feature type="VCC"           n="2.40"    m="3.60"/>
+
+      <!-- *************************  Device 'GD32L233RC'  ***************************** -->
+      <device Dname="GD32L233RC">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0040000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0008000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_256K.FLM" start="0x08000000" size="0x00040000" default="1"/>
+      </device>  
+
+      <!-- *************************  Device 'GD32L233RB'  ***************************** -->
+      <device Dname="GD32L233RB">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0020000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0006000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_128K.FLM" start="0x08000000" size="0x00020000" default="1"/>
+      </device>
+
+      <!-- *************************  Device 'GD32L233R8'  ***************************** -->
+      <device Dname="GD32L233R8">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0010000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0004000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_64K.FLM" start="0x08000000" size="0x00010000" default="1"/>
+      </device>
+
+      <!-- *************************  Device 'GD32L233CC'  ***************************** -->
+      <device Dname="GD32L233CC">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0040000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0008000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_256K.FLM" start="0x08000000" size="0x00040000" default="1"/>
+      </device>  
+
+      <!-- *************************  Device 'GD32L233CB'  ***************************** -->
+      <device Dname="GD32L233CB">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0020000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0006000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_128K.FLM" start="0x08000000" size="0x00020000" default="1"/>
+      </device>
+
+      <!-- *************************  Device 'GD32L233C8'  ***************************** -->
+      <device Dname="GD32L233C8">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0010000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0004000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_64K.FLM" start="0x08000000" size="0x00010000" default="1"/>
+      </device>
+
+      <!-- *************************  Device 'GD32L233KB'  ***************************** -->
+      <device Dname="GD32L233KB">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0020000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0006000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_128K.FLM" start="0x08000000" size="0x00020000" default="1"/>
+      </device>
+
+      <!-- *************************  Device 'GD32L233K8'  ***************************** -->
+      <device Dname="GD32L233K8">
+         <memory    id="IROM1"                   start="0x08000000" size="0x0010000" startup="1" default="1"/>
+         <memory    id="IRAM1"                   start="0x20000000" size="0x0004000" init   ="0" default="1"/>
+	<debug svd="SVD/GD32L23x.svd"/>
+         <algorithm name="Flash/GD32L23x_64K.FLM" start="0x08000000" size="0x00010000" default="1"/>
+      </device>
+ 
+     </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- Compiler Conditions -->
+    <condition id="Compiler ARMCC">
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <!-- Device Conditions -->
+    <condition id="GD32L23x">
+      <description>GigaDevice GD32L23x Devices</description>
+      <require Dvendor="GigaDevice:123" Dname="GD32L23[3]"/>
+      <require Cclass="Device" Cgroup="Startup" />
+    </condition>
+
+   <!-- Device + CMSIS Conditions -->
+    <condition id="GD32L23x CMSIS">
+      <description>GigaDevice GD32L23x Devices and CMSIS-CORE</description>
+     <accept condition="GD32L23x"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Cclass="Device" Cgroup="GD32L23x_libopt"/>    
+      <require Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="RCU"/>              
+    </condition>
+
+    <!-- GD32L23x STDPERIPHERALS RCU Conditions -->
+    <condition id="GD32L23x STDPERIPHERALS RCU">
+      <description>GigaDevice GD32L23x Standard Peripherals Drivers with RCU</description>
+      <require condition="GD32L23x CMSIS"/>
+      <require Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="RCU"/>
+    </condition>
+
+     <!-- GD32L23x STDPERIPHERALS MISC Conditions -->
+    <condition id="GD32L23x STDPERIPHERALS MISC">
+      <description>GigaDevice GD32L23x Standard Peripherals Drivers with MISC</description>
+      <require condition="GD32L23x CMSIS"/>
+      <require Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="MISC"/>
+    </condition>
+
+     <!-- GD32L23x STDPERIPHERALS EVAL Conditions -->
+    <condition id="GD32L23x STDPERIPHERALS EVAL">
+      <description>GigaDevice GD32L23x Standard Peripherals Drivers with EVAL</description>
+      <require condition="GD32L23x CMSIS"/>
+      <require Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="GPIO"/>
+      <require Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="EXTI"/>
+      <require Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="USART"/>
+    </condition>
+
+  </conditions>
+
+<components>
+
+    <!-- GD32L23x_StdPeripherals -->		
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="SPI_I2S" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Serial Peripheral Interface / Inter-IC Sound (SPI_I2S) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_SPI
+        </RTE_Components_h>
+        <files>
+          <!-- SPI flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_spi.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_spi.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+   <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="CMP" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Comparator (CMP) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_CMP
+        </RTE_Components_h>
+        <files>
+          <!-- CMP flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_cmp.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_cmp.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+	
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="CRC" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Cyclic Redundancy Check (CRC) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_CRC
+        </RTE_Components_h>
+        <files>
+          <!-- CRC flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_crc.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_crc.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+	
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="SLCD" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Segment LCD controller (SLCD) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_SLCD
+        </RTE_Components_h>
+        <files>
+          <!-- SPI flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_slcd.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_slcd.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+	
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="FMC" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Flash Memory Controller (FMC) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_FMC
+        </RTE_Components_h>
+        <files>
+          <!-- FMC flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_fmc.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_fmc.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="I2C" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Inter-integrated Circuit (I2C) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_I2C
+        </RTE_Components_h>
+        <files>
+          <!-- I2C flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_i2c.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_i2c.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="PMU" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Power Managment Unit(PMU) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_PMU
+        </RTE_Components_h>
+        <files>
+          <!-- PMU flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_pmu.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_pmu.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="RTC" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Real-time Clock (RTC) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_RTC
+        </RTE_Components_h>
+        <files>
+          <!-- RTC flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_rtc.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_rtc.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="DMA" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Direct Memory Access (DMA) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_DMA
+        </RTE_Components_h>
+        <files>
+          <!-- DMA flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_dma.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_dma.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="EXTI" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>External Interrupt/Event (EXTI) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_EXTI
+        </RTE_Components_h>
+        <files>
+          <!-- EXTI flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_exti.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_exti.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="GPIO" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>General-purpose and Alternate-function I/Os (GPIO) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_GPIO
+        </RTE_Components_h>
+        <files>
+          <!-- GPIO flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_gpio.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_gpio.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="MISC" Cversion="1.0.0" condition="GD32L23x CMSIS">
+      <description>MISC driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_MISC
+        </RTE_Components_h>
+        <files>
+          <!-- MISC flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_misc.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_misc.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="RCU" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS MISC">
+      <description>Reset and Clock Control (RCU) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_RCU
+        </RTE_Components_h>
+        <files>
+          <!-- RCU flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_rcu.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_rcu.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="WWDGT" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Window Watchdog Timer (WWDGT) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_WWDGT
+        </RTE_Components_h>
+        <files>
+          <!-- WWDGT flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_wwdgt.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_wwdgt.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="FWDGT" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Free watchdog timer(FWDGT) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_FWDGT
+        </RTE_Components_h>
+        <files>
+          <!-- FWDGT flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_fwdgt.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_fwdgt.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="TIMER" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>TIMER driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_TIMER
+        </RTE_Components_h>
+        <files>
+          <!-- TIMER flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_timer.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_timer.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="LPTIMER" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>ow Power TIMER driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_LPTIMER
+        </RTE_Components_h>
+        <files>
+          <!-- TIMER flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_lptimer.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_lptimer.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="USART" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Universal Synchronous Asynchronous Receiver Transmitter (USART) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_USART
+        </RTE_Components_h>
+        <files>
+          <!-- USART flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_usart.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_usart.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+  <component Cclass="Device" Cgroup="GD32L23x_StdPeripherals" Csub="LPUART" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS RCU">
+      <description>Low Power Universal  Asynchronous Receiver Transmitter (LPUART) driver for GD32L23x Devices</description>
+        <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPHERALS_LPUART
+        </RTE_Components_h>
+        <files>
+          <!-- USART flie -->
+          <file category="header" name="Device/Firmware/Peripherals/inc/gd32l23x_lpuart.h" />
+          <file category="source" name="Device/Firmware/Peripherals/src/gd32l23x_lpuart.c" attr="config" version="1.0.0" />
+        </files>
+    </component>
+
+
+    <component Cclass="Device" Cgroup="EVAL" Csub="GD32L23x" Cversion="1.0.0" condition="GD32L23x STDPERIPHERALS EVAL">
+      <description>Firmware functions to manage Leds, Keys, COM ports</description>
+      <files>
+        <!-- include folder -->
+        <file category="header" name="Device/Utilities/gd32l23x_eval.h" />
+        <!-- eval file -->
+        <file category="source" name="Device/Utilities/gd32l23x_eval.c" attr="config" version="1.0.0"/>
+      </files>
+    </component>
+
+    <!-- Config GD32L23x -->
+    <component Cclass="Device" Cgroup="GD32L23x_libopt" Cversion="1.0.0" condition="GD32L23x CMSIS">
+      <description>Configuration file</description>
+      <files>
+        <!-- include folder -->
+        <file category="header" name="Device/Include/gd32l23x_libopt.h"/>
+      </files>
+    </component>
+
+   <!-- Startup GD32L23x-->
+    <component Cclass="Device" Cgroup="Startup"  Cversion="1.0.0" condition="GD32L23x">
+      <description>System Startup for GigaDevice GD32L23x Devices</description>
+      <files>
+        <!-- include folder -->
+        <file category="include" name="Device/Include/"/>
+        <file category="header" name="Device/Include/gd32l23x.h"/>
+        <!-- startup file -->
+        <file category="source" name="Device/Source/ARM/startup_gd32l23x.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <!-- system file -->
+        <file category="source" name="Device/Source/system_gd32l23x.c"      attr="config" version="1.0.0"/>
+      </files>
+    </component>
+ </components>
+</package>
