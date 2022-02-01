@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2368972434</fileChecksum>
+  <configuration>
+    <name>USBFS</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\src\app.c</file>
+      <file>$PROJ_DIR$\..\src\gd32e10x_it.c</file>
+      <file>$PROJ_DIR$\..\src\gd32e10x_hw.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\CMSIS\GD\GD32E10x\Source\system_gd32e10x.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_ctc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Utilities\gd32e10x_eval.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_dma.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_exti.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_fmc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_misc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_pmu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_rcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_timer.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_usart.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\CMSIS\GD\GD32E10x\Source\IAR\startup_gd32e10x.s</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\class\cdc\Source\cdc_acm_core.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Source\usbd_core.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Source\usbd_enum.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Source\usbd_transc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Source\drv_usb_core.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Source\drv_usb_dev.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Source\drv_usbd_int.c</file>
+      <file>$PROJ_DIR$\USBFS\Obj\app.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_hw.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_it.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\system_gd32e10x.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_eval.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_ctc.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_dma.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_exti.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_fmc.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_gpio.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_misc.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_pmu.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_rcu.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_timer.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_usart.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbd_enum.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\cdc_acm_core.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbd_core.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbd_transc.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_core.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_dev.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usbd_int.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\startup_gd32e10x.o</file>
+      <file>$PROJ_DIR$\USBFS\Obj\app.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_it.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_hw.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\system_gd32e10x.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_eval.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_ctc.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_dma.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_exti.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_fmc.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_gpio.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_misc.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_pmu.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_rcu.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_timer.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\gd32e10x_usart.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbd_enum.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\cdc_acm_core.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbd_core.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\usbd_transc.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_core.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usb_dev.__cstat.et</file>
+      <file>$PROJ_DIR$\USBFS\Obj\drv_usbd_int.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Lib\IAR\iar_cortexM4l_math.a</file>
+      <file>$PROJ_DIR$\USBFS\Exe\cdc_acm.out</file>
+      <file>$TOOLKIT_DIR$\config\linker\GD\GD32E103xB.icf</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_usart.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_wwdgt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_timer.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_spi.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_rtc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_bkp.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_pmu.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_fwdgt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_fmc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_exti.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_dma.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_dbg.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_dac.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_ctc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_crc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_can.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_rcu.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmSimd.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm4.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\CMSIS\GD\GD32E10x\Include\gd32e10x.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\inc\usb_conf.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Include\drv_usb_hw.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\CMSIS\GD\GD32E10x\Include\system_gd32e10x.h</file>
+      <file>$PROJ_DIR$\..\inc\gd32e10x_libopt.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Utilities\gd32e10x_eval.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\class\cdc\Include\cdc_acm_core.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Include\usbd_enum.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_misc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Include\gd32e10x_exmc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Include\usbd_core.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Include\drv_usb_core.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Include\drv_usb_regs.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\ustd\common\usb_ch9_std.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Include\drv_usb_dev.h</file>
+      <file>$PROJ_DIR$\..\inc\usbd_conf.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\wchar.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\ustd\class\cdc\usb_cdc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Include\drv_usbd_int.h</file>
+      <file>$PROJ_DIR$\..\inc\gd32e10x_it.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Include\usbd_transc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\app.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 113 114 117 118 119 120 121 122 123 124</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\gd32e10x_it.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 47</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 126 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 125 118 119 108 107 99 112 120 121 122</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\gd32e10x_hw.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\CMSIS\GD\GD32E10x\Source\system_gd32e10x.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_ctc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 28</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Utilities\gd32e10x_eval.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 112 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 82 81 80 79 78 77 76 75 74 73 71 72 115 116 127 99 129</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_exti.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 82 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 81 80 79 78 77 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_fmc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 80 79 78 77 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 79 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 78 77 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_misc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 115 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_pmu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 57</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_rcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 58</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 73 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 71 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_standard_peripheral\Source\gd32e10x_usart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 71 98 97 96 106 105 104 103 102 101 100 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 115 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\CMSIS\GD\GD32E10x\Source\IAR\startup_gd32e10x.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\class\cdc\Source\cdc_acm_core.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 113 114 117 118 119 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 120 121 122 123 124</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Source\usbd_core.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 117 118 119 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 120 121 122 114 123 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Source\usbd_enum.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 114 117 118 119 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 120 121 122 123</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\device\core\Source\usbd_transc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 114 117 118 119 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 120 121 122 123 128</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Source\drv_usb_core.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 118 119 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 120 109</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Source\drv_usb_dev.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 118 119 120 121 122</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Firmware\GD32E10x_usbfs_library\driver\Source\drv_usbd_int.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 122 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 110 111 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 71 72 115 116 112 125 118 119 120 121 128 117</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\USBFS\Exe\cdc_acm.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 70 23 39 42 43 44 28 29 27 30 31 32 24 25 33 34 35 36 37 45 26 40 38 41 68 130 131 132 133</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+
