@@ -1,0 +1,22 @@
+ plain data :
+0x20212223 0x24252627   [Block 0] 
+0x28292A2B 0x2C2D2E2F   [Block 1] 
+0xFFEEDDCC 0xBBAA9988   [Block 2] 
+0x77665544 0x33221100   [Block 3] 
+0x10000000 0x20000000   [Block 4] 
+ 
+TDES encrypted data:
+
+0xC9406174 0xF076C814   [Block 0] 
+0x81A2BCB1 0x4ED3E70D   [Block 1] 
+0x54351409 0x6C4E674B   [Block 2] 
+0x4FDE2AEC 0xDBE00AC3   [Block 3] 
+0xEE46220C 0xCAB2CEFB   [Block 4] 
+ 
+TDES decrypted data:
+
+0x20212223 0x24252627   [Block 0] 
+0x28292A2B 0x2C2D2E2F   [Block 1] 
+0xFFEEDDCC 0xBBAA9988   [Block 2] 
+0x77665544 0x33221100   [Block 3] 
+0x10000000 0x20000000   [Block 4] 

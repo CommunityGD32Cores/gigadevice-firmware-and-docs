@@ -1,0 +1,575 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\output\Project.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\output\Project.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6120001: Last Updated: Wed Jul 28 13:51:31 2021
+<BR><P>
+<H3>Maximum Stack Usage =        164 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+main &rArr; rtc_configuration &rArr; rcu_osci_stab_wait &rArr; rcu_flag_get
+<P>
+<H3>
+Mutually Recursive functions
+</H3> <LI><a href="#[11]">ADC_CMP_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[11]">ADC_CMP_IRQHandler</a><BR>
+</UL>
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[11]">ADC_CMP_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[e]">DMA_Channel0_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[f]">DMA_Channel1_2_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[10]">DMA_Channel3_4_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[b]">EXTI0_1_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[c]">EXTI2_3_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[d]">EXTI4_15_IRQHandler</a> from gd32e23x_it.o(.text.EXTI4_15_IRQHandler) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[9]">FMC_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[2]">HardFault_Handler</a> from gd32e23x_it.o(.text.HardFault_Handler) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[20]">I2C0_ER_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[1a]">I2C0_EV_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[21]">I2C1_ER_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[1b]">I2C1_EV_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[7]">LVD_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[1]">NMI_Handler</a> from gd32e23x_it.o(.text.NMI_Handler) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[4]">PendSV_Handler</a> from gd32e23x_it.o(.text.PendSV_Handler) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[a]">RCU_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[8]">RTC_IRQHandler</a> from gd32e23x_it.o(.text.RTC_IRQHandler) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[0]">Reset_Handler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[1c]">SPI0_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[1d]">SPI1_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[3]">SVC_Handler</a> from gd32e23x_it.o(.text.SVC_Handler) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[5]">SysTick_Handler</a> from gd32e23x_it.o(.text.SysTick_Handler) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[23]">SystemInit</a> from system_gd32e23x.o(.text.SystemInit) referenced from startup_gd32e23x.o(.text)
+ <LI><a href="#[12]">TIMER0_BRK_UP_TRG_COM_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[13]">TIMER0_Channel_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[16]">TIMER13_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[17]">TIMER14_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[18]">TIMER15_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[19]">TIMER16_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[14]">TIMER2_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[15]">TIMER5_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[1e]">USART0_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[1f]">USART1_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[6]">WWDGT_IRQHandler</a> from startup_gd32e23x.o(.text) referenced from startup_gd32e23x.o(RESET)
+ <LI><a href="#[24]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_gd32e23x.o(.text)
+ <LI><a href="#[22]">main</a> from main.o(.text.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3>
+<P><STRONG><a name="[24]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(.text)
+</UL>
+<P><STRONG><a name="[56]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+
+<P><STRONG><a name="[25]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+</UL>
+
+<P><STRONG><a name="[27]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+</UL>
+
+<P><STRONG><a name="[57]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+
+<P><STRONG><a name="[58]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+
+<P><STRONG><a name="[59]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+
+<P><STRONG><a name="[5a]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+
+<P><STRONG><a name="[5b]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+
+<P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[11]"></a>ADC_CMP_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_CMP_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_CMP_IRQHandler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[e]"></a>DMA_Channel0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[f]"></a>DMA_Channel1_2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[10]"></a>DMA_Channel3_4_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[b]"></a>EXTI0_1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[c]"></a>EXTI2_3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[9]"></a>FMC_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[20]"></a>I2C0_ER_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[1a]"></a>I2C0_EV_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[21]"></a>I2C1_ER_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[1b]"></a>I2C1_EV_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[7]"></a>LVD_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[a]"></a>RCU_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[1c]"></a>SPI0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[1d]"></a>SPI1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[12]"></a>TIMER0_BRK_UP_TRG_COM_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[13]"></a>TIMER0_Channel_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[16]"></a>TIMER13_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[17]"></a>TIMER14_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[18]"></a>TIMER15_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[19]"></a>TIMER16_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[14]"></a>TIMER2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[15]"></a>TIMER5_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[1e]"></a>USART0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[1f]"></a>USART1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[6]"></a>WWDGT_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_gd32e23x.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[26]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+</UL>
+<BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+</UL>
+
+<P><STRONG><a name="[5c]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+
+<P><STRONG><a name="[d]"></a>EXTI4_15_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, gd32e23x_it.o(.text.EXTI4_15_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = EXTI4_15_IRQHandler &rArr; exti_interrupt_flag_get
+</UL>
+<BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_interrupt_flag_get
+<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_interrupt_flag_clear
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, gd32e23x_it.o(.text.HardFault_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[1]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gd32e23x_it.o(.text.NMI_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[4]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gd32e23x_it.o(.text.PendSV_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[8]"></a>RTC_IRQHandler</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, gd32e23x_it.o(.text.RTC_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = RTC_IRQHandler &rArr; rtc_flag_get
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_flag_get
+<LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_flag_clear
+<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_flag_clear
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[3]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gd32e23x_it.o(.text.SVC_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[5]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, gd32e23x_it.o(.text.SysTick_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysTick_Handler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_decrement
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(RESET)
+</UL>
+<P><STRONG><a name="[23]"></a>SystemInit</STRONG> (Thumb, 172 bytes, Stack size 16 bytes, system_gd32e23x.o(.text.SystemInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SystemInit &rArr; nvic_vector_table_set
+</UL>
+<BR>[Calls]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_vector_table_set
+<LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_config
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_gd32e23x.o(.text)
+</UL>
+<P><STRONG><a name="[3f]"></a>delay_1ms</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, systick.o(.text.delay_1ms))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay_1ms
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[2f]"></a>delay_decrement</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, systick.o(.text.delay_decrement))
+<BR><BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+
+<P><STRONG><a name="[2c]"></a>exti_flag_clear</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, gd32e23x_exti.o(.text.exti_flag_clear))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = exti_flag_clear
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
+</UL>
+
+<P><STRONG><a name="[37]"></a>exti_init</STRONG> (Thumb, 240 bytes, Stack size 48 bytes, gd32e23x_exti.o(.text.exti_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = exti_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_key_init
+</UL>
+
+<P><STRONG><a name="[51]"></a>exti_interrupt_enable</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, gd32e23x_exti.o(.text.exti_interrupt_enable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = exti_interrupt_enable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[29]"></a>exti_interrupt_flag_clear</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, gd32e23x_exti.o(.text.exti_interrupt_flag_clear))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = exti_interrupt_flag_clear
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI4_15_IRQHandler
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_key_init
+</UL>
+
+<P><STRONG><a name="[28]"></a>exti_interrupt_flag_get</STRONG> (Thumb, 48 bytes, Stack size 12 bytes, gd32e23x_exti.o(.text.exti_interrupt_flag_get))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = exti_interrupt_flag_get
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI4_15_IRQHandler
+</UL>
+
+<P><STRONG><a name="[32]"></a>gd_eval_key_init</STRONG> (Thumb, 188 bytes, Stack size 56 bytes, gd32e230c_eval.o(.text.gd_eval_key_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = gd_eval_key_init &rArr; nvic_irq_enable &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_interrupt_flag_clear
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_init
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_mode_set
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;syscfg_exti_line_config
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
+</UL>
+
+<P><STRONG><a name="[38]"></a>gd_eval_led_init</STRONG> (Thumb, 120 bytes, Stack size 48 bytes, gd32e230c_eval.o(.text.gd_eval_led_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = gd_eval_led_init &rArr; gpio_mode_set
+</UL>
+<BR>[Calls]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_output_options_set
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_mode_set
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_config
+</UL>
+
+<P><STRONG><a name="[40]"></a>gd_eval_led_off</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, gd32e230c_eval.o(.text.gd_eval_led_off))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = gd_eval_led_off
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[3e]"></a>gd_eval_led_on</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, gd32e230c_eval.o(.text.gd_eval_led_on))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = gd_eval_led_on
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[42]"></a>gd_eval_led_toggle</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, gd32e230c_eval.o(.text.gd_eval_led_toggle))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = gd_eval_led_toggle
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[43]"></a>gpio_input_bit_get</STRONG> (Thumb, 50 bytes, Stack size 20 bytes, gd32e23x_gpio.o(.text.gpio_input_bit_get))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = gpio_input_bit_get
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[34]"></a>gpio_mode_set</STRONG> (Thumb, 162 bytes, Stack size 64 bytes, gd32e23x_gpio.o(.text.gpio_mode_set))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = gpio_mode_set
+</UL>
+<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_led_init
+<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_key_init
+</UL>
+
+<P><STRONG><a name="[39]"></a>gpio_output_options_set</STRONG> (Thumb, 156 bytes, Stack size 60 bytes, gd32e23x_gpio.o(.text.gpio_output_options_set))
+<BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = gpio_output_options_set
+</UL>
+<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_led_init
+</UL>
+
+<P><STRONG><a name="[3a]"></a>key_config</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, main.o(.text.key_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = key_config &rArr; gd_eval_key_init &rArr; nvic_irq_enable &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_key_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[3b]"></a>led_config</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, main.o(.text.led_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = led_config &rArr; gd_eval_led_init &rArr; gpio_mode_set
+</UL>
+<BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_led_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[22]"></a>main</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 164<LI>Call Chain = main &rArr; rtc_configuration &rArr; rcu_osci_stab_wait &rArr; rcu_flag_get
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_config
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pmu_to_deepsleepmode
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_configuration
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_config
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_config
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_input_bit_get
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_led_toggle
+<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_led_on
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_led_off
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_1ms
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
+</UL>
+<P><STRONG><a name="[3c]"></a>nvic_configuration</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, main.o(.text.nvic_configuration))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = nvic_configuration &rArr; nvic_irq_enable &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[35]"></a>nvic_irq_enable</STRONG> (Thumb, 52 bytes, Stack size 32 bytes, gd32e23x_misc.o(.text.nvic_irq_enable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = nvic_irq_enable &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_configuration
+<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_key_init
+</UL>
+
+<P><STRONG><a name="[31]"></a>nvic_vector_table_set</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, gd32e23x_misc.o(.text.nvic_vector_table_set))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = nvic_vector_table_set
+</UL>
+<BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+</UL>
+
+<P><STRONG><a name="[49]"></a>pmu_backup_write_enable</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, gd32e23x_pmu.o(.text.pmu_backup_write_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[44]"></a>pmu_to_deepsleepmode</STRONG> (Thumb, 88 bytes, Stack size 32 bytes, gd32e23x_pmu.o(.text.pmu_to_deepsleepmode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = pmu_to_deepsleepmode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[48]"></a>rcu_flag_get</STRONG> (Thumb, 64 bytes, Stack size 12 bytes, gd32e23x_rcu.o(.text.rcu_flag_get))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = rcu_flag_get
+</UL>
+<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_osci_stab_wait
+</UL>
+
+<P><STRONG><a name="[4a]"></a>rcu_osci_on</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, gd32e23x_rcu.o(.text.rcu_osci_on))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = rcu_osci_on
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[47]"></a>rcu_osci_stab_wait</STRONG> (Thumb, 604 bytes, Stack size 56 bytes, gd32e23x_rcu.o(.text.rcu_osci_stab_wait))
+<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = rcu_osci_stab_wait &rArr; rcu_flag_get
+</UL>
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_flag_get
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[33]"></a>rcu_periph_clock_enable</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, gd32e23x_rcu.o(.text.rcu_periph_clock_enable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = rcu_periph_clock_enable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_led_init
+<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_key_init
+</UL>
+
+<P><STRONG><a name="[4b]"></a>rcu_rtc_clock_config</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, gd32e23x_rcu.o(.text.rcu_rtc_clock_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = rcu_rtc_clock_config
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[4e]"></a>rtc_alarm_config</STRONG> (Thumb, 92 bytes, Stack size 12 bytes, gd32e23x_rtc.o(.text.rtc_alarm_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = rtc_alarm_config
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[4d]"></a>rtc_alarm_disable</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, gd32e23x_rtc.o(.text.rtc_alarm_disable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = rtc_alarm_disable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[50]"></a>rtc_alarm_enable</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, gd32e23x_rtc.o(.text.rtc_alarm_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[41]"></a>rtc_configuration</STRONG> (Thumb, 196 bytes, Stack size 72 bytes, main.o(.text.rtc_configuration))
+<BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = rtc_configuration &rArr; rcu_osci_stab_wait &rArr; rcu_flag_get
+</UL>
+<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_interrupt_enable
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_init
+<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_flag_clear
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_alarm_enable
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_alarm_disable
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_alarm_config
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_rtc_clock_config
+<LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_periph_clock_enable
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_osci_stab_wait
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rcu_osci_on
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pmu_backup_write_enable
+<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_interrupt_flag_clear
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_interrupt_enable
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exti_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[2b]"></a>rtc_flag_clear</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, gd32e23x_rtc.o(.text.rtc_flag_clear))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = rtc_flag_clear
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[2a]"></a>rtc_flag_get</STRONG> (Thumb, 48 bytes, Stack size 12 bytes, gd32e23x_rtc.o(.text.rtc_flag_get))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = rtc_flag_get
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
+</UL>
+
+<P><STRONG><a name="[4c]"></a>rtc_init</STRONG> (Thumb, 212 bytes, Stack size 32 bytes, gd32e23x_rtc.o(.text.rtc_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = rtc_init &rArr; rtc_register_sync_wait
+</UL>
+<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_register_sync_wait
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_init_mode_exit
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_init_mode_enter
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[52]"></a>rtc_init_mode_enter</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, gd32e23x_rtc.o(.text.rtc_init_mode_enter))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = rtc_init_mode_enter
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_init
+</UL>
+
+<P><STRONG><a name="[53]"></a>rtc_init_mode_exit</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gd32e23x_rtc.o(.text.rtc_init_mode_exit))
+<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_init
+</UL>
+
+<P><STRONG><a name="[4f]"></a>rtc_interrupt_enable</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, gd32e23x_rtc.o(.text.rtc_interrupt_enable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = rtc_interrupt_enable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_configuration
+</UL>
+
+<P><STRONG><a name="[54]"></a>rtc_register_sync_wait</STRONG> (Thumb, 152 bytes, Stack size 16 bytes, gd32e23x_rtc.o(.text.rtc_register_sync_wait))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = rtc_register_sync_wait
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_init
+</UL>
+
+<P><STRONG><a name="[36]"></a>syscfg_exti_line_config</STRONG> (Thumb, 188 bytes, Stack size 44 bytes, gd32e23x_syscfg.o(.text.syscfg_exti_line_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = syscfg_exti_line_config
+</UL>
+<BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gd_eval_key_init
+</UL>
+
+<P><STRONG><a name="[3d]"></a>systick_config</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, systick.o(.text.systick_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = systick_config &rArr; SysTick_Config &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Config
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[5d]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+
+<P><STRONG><a name="[5e]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+
+<P><STRONG><a name="[5f]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[2d]"></a>SysTick_Config</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, systick.o(.text.SysTick_Config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SysTick_Config &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_config
+</UL>
+
+<P><STRONG><a name="[2e]"></a>__NVIC_SetPriority</STRONG> (Thumb, 140 bytes, Stack size 32 bytes, systick.o(.text.__NVIC_SetPriority))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __NVIC_SetPriority
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Config
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_config
+</UL>
+
+<P><STRONG><a name="[55]"></a>system_clock_72m_hxtal</STRONG> (Thumb, 228 bytes, Stack size 12 bytes, system_gd32e23x.o(.text.system_clock_72m_hxtal))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = system_clock_72m_hxtal
+</UL>
+<BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_config
+</UL>
+
+<P><STRONG><a name="[30]"></a>system_clock_config</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_gd32e23x.o(.text.system_clock_config))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = system_clock_config &rArr; system_clock_72m_hxtal
+</UL>
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_clock_72m_hxtal
+</UL>
+<BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+</UL>
+
+<P><STRONG><a name="[46]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, gd32e23x_misc.o(.text.__NVIC_EnableIRQ))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_EnableIRQ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+</UL>
+
+<P><STRONG><a name="[45]"></a>__NVIC_SetPriority</STRONG> (Thumb, 140 bytes, Stack size 32 bytes, gd32e23x_misc.o(.text.__NVIC_SetPriority))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __NVIC_SetPriority
+</UL>
+<BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvic_irq_enable
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>
