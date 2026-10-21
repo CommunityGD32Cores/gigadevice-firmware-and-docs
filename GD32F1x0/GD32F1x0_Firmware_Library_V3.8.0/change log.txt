@@ -1,0 +1,3080 @@
+/*!
+    \file    change log.txt
+    \brief   change log for GD32F1X0 firmware
+
+    \version 2026-01-31, V3.8.0, firmware for GD32F1x0(x=3,5)
+*/
+
+/*
+    Copyright (c) 2026, GigaDevice Semiconductor Inc.
+
+    Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, this 
+       list of conditions and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright notice, 
+       this list of conditions and the following disclaimer in the documentation 
+       and/or other materials provided with the distribution.
+    3. Neither the name of the copyright holder nor the names of its contributors 
+       may be used to endorse or promote products derived from this software without 
+       specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+OF SUCH DAMAGE.
+*/
+
+******************* V3.8.0 2026-01-31 ******************************************************************************************
+______________________Common______________________________________________________________________________________________
+Fix file:
+..\Firmware\CMSIS\CMSIS\GD\GD32F1x0\Source\GCC\Ld\gd32f1x0x4_flash.ld
+..\Firmware\CMSIS\CMSIS\GD\GD32F1x0\Source\GCC\Ld\gd32f1x0x6_flash_f130.ld
+..\Firmware\CMSIS\CMSIS\GD\GD32F1x0\Source\GCC\Ld\gd32f1x0x6_flash_f150.ld
+..\Firmware\CMSIS\CMSIS\GD\GD32F1x0\Source\GCC\Ld\gd32f1x0x8_flash.ld
+..\Firmware\CMSIS\CMSIS\GD\GD32F1x0\Source\GCC\newlib\syscalls.c
+..\Firmware\CMSIS\CMSIS\GD\GD32F1x0\Source\GCC\\startup_gd32f1x0.S
+fix reason:
+Add GCC files for GD32F1x0 chip.
+V3.7.0:
+none
+V3.8.0:
+Add GCC files for GD32F1x0 chip.
+__________________________________________________________________________________________________________________________
+______________________system_gd32f1x0.c___________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\system_gd32f1x0.c
+
+fix reason:
+Modified MISRA-2004 issues.
+
+V3.7.0:
+#define RCU_MODIFY_DE_2(__delay)  do{                                     \
+                                      volatile uint32_t i,reg;            \
+                                      if(0 != __delay){                   \
+                                          /* Insert a software delay */   \
+                                          for(i=0; i<__delay; i++){       \
+                                          }                               \
+                                          reg = RCU_CFG0;                 \
+                                          reg &= ~(RCU_CFG0_AHBPSC);     \
+                                          reg |= RCU_AHB_CKSYS_DIV2;     \
+                                          /* AHB = SYSCLK/2 */           \
+                                          RCU_CFG0 = reg;                \
+                                          /* Insert a software delay */  \
+                                          for(i=0; i<__delay; i++){      \
+                                          }                              \
+                                          reg = RCU_CFG0;                \
+                                          reg &= ~(RCU_CFG0_AHBPSC);     \
+                                          reg |= RCU_AHB_CKSYS_DIV4;     \
+                                          /* AHB = SYSCLK/4 */           \
+                                          RCU_CFG0 = reg;                \
+                                          /* Insert a software delay */  \
+                                          for(i=0; i<__delay; i++){      \
+                                          }                              \
+                                      }                                  \
+                                  }while(0)
+
+V3.8.0:
+#define RCU_MODIFY_DE_2(__delay)  do{                                     \
+                                      volatile uint32_t i,reg;            \
+                                      if(0U != (__delay)){                \
+                                          /* Insert a software delay */   \
+                                          for(i=0U; i<(__delay); i++){    \
+                                          }                               \
+                                          reg = RCU_CFG0;                 \
+                                          reg &= ~(RCU_CFG0_AHBPSC);     \
+                                          reg |= RCU_AHB_CKSYS_DIV2;     \
+                                          /* AHB = SYSCLK/2 */           \
+                                          RCU_CFG0 = reg;                \
+                                          /* Insert a software delay */  \
+                                          for(i=0U; i<(__delay); i++){   \
+                                          }                              \
+                                          reg = RCU_CFG0;                \
+                                          reg &= ~(RCU_CFG0_AHBPSC);     \
+                                          reg |= RCU_AHB_CKSYS_DIV4;     \
+                                          /* AHB = SYSCLK/4 */           \
+                                          RCU_CFG0 = reg;                \
+                                          /* Insert a software delay */  \
+                                          for(i=0U; i<(__delay); i++){   \
+                                          }                              \
+                                      }                                  \
+                                  }while(0)
+__________________________________________________________________________________________________________________________
+______________________SYSCFG_______________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_syscfg.c
+fix reason:
+Modified MISRA-2004 issue 14.7.
+V3.7.0:
+FlagStatus syscfg_flag_get(uint32_t syscfg_flag)
+{
+    if((SYSCFG_CFG2 & syscfg_flag) != (uint32_t)RESET){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus syscfg_flag_get(uint32_t syscfg_flag)
+{
+    FlagStatus status = RESET;
+    if((SYSCFG_CFG2 & syscfg_flag) != (uint32_t)RESET){
+        status = SET;
+    }else{
+        status = RESET;
+    }
+    return status;
+}
+__________________________________________________________________________________________________________________________
+______________________DMA_________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dma.c
+fix reason:
+Modified MISRA-2004 issue 14.7.
+V3.7.0:
+FlagStatus dma_interrupt_flag_get(dma_channel_enum channelx, uint32_t flag)
+{
+    uint32_t interrupt_enable = 0U, interrupt_flag = 0U;
+
+    switch(flag){
+        case DMA_INT_FLAG_FTF:
+            interrupt_flag = DMA_INTF & DMA_FLAG_ADD(flag, channelx);
+            interrupt_enable = DMA_CHCTL(channelx) & DMA_CHXCTL_FTFIE;
+            break;
+        case DMA_INT_FLAG_HTF:
+            interrupt_flag = DMA_INTF & DMA_FLAG_ADD(flag, channelx);
+            interrupt_enable = DMA_CHCTL(channelx) & DMA_CHXCTL_HTFIE;
+            break;
+        case DMA_INT_FLAG_ERR:
+            interrupt_flag = DMA_INTF & DMA_FLAG_ADD(flag, channelx);
+            interrupt_enable = DMA_CHCTL(channelx) & DMA_CHXCTL_ERRIE;
+            break;
+        default:
+            break;
+        }
+
+    if(interrupt_flag && interrupt_enable){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus dma_interrupt_flag_get(dma_channel_enum channelx, uint32_t flag)
+{
+    uint32_t interrupt_enable = 0U, interrupt_flag = 0U;
+    FlagStatus ret;
+
+    switch(flag){
+        case DMA_INT_FLAG_FTF:
+            interrupt_flag = DMA_INTF & DMA_FLAG_ADD(flag, channelx);
+            interrupt_enable = DMA_CHCTL(channelx) & DMA_CHXCTL_FTFIE;
+            break;
+        case DMA_INT_FLAG_HTF:
+            interrupt_flag = DMA_INTF & DMA_FLAG_ADD(flag, channelx);
+            interrupt_enable = DMA_CHCTL(channelx) & DMA_CHXCTL_HTFIE;
+            break;
+        case DMA_INT_FLAG_ERR:
+            interrupt_flag = DMA_INTF & DMA_FLAG_ADD(flag, channelx);
+            interrupt_enable = DMA_CHCTL(channelx) & DMA_CHXCTL_ERRIE;
+            break;
+        default:
+            break;
+        }
+
+    if(interrupt_flag && interrupt_enable){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+    return ret;
+}
+__________________________________________________________________________________________________________________________
+______________________GPIO________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_gpio.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+FlagStatus gpio_input_bit_get(uint32_t gpio_periph, uint32_t pin)
+{
+    if((uint32_t)RESET != (GPIO_ISTAT(gpio_periph)&(pin))){
+        return SET; 
+    }else{
+        return RESET;
+    }
+}
+
+FlagStatus gpio_output_bit_get(uint32_t gpio_periph, uint32_t pin)
+{
+    if((uint32_t)RESET != (GPIO_OCTL(gpio_periph)&(pin))){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus gpio_input_bit_get(uint32_t gpio_periph, uint32_t pin)
+{
+    FlagStatus reval;
+    if((uint32_t)RESET != (GPIO_ISTAT(gpio_periph)&(pin))){
+        reval = SET;
+    }else{
+        reval = RESET;
+    }
+    return reval;
+}
+
+FlagStatus gpio_output_bit_get(uint32_t gpio_periph, uint32_t pin)
+{
+    FlagStatus reval;
+    if((uint32_t)RESET != (GPIO_OCTL(gpio_periph)&(pin))){
+        reval = SET;
+    }else{
+        reval = RESET;
+    }
+    return reval;
+}
+__________________________________________________________________________________________________________________________
+______________________RCU_________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_rcu.c
+fix reason:
+Modify code that does not comply with MISRA issue.
+
+V3.7.0:
+FlagStatus rcu_flag_get(rcu_flag_enum flag)
+{
+    if(RESET != (RCU_REG_VAL(flag) & BIT(RCU_BIT_POS(flag)))){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+FlagStatus rcu_interrupt_flag_get(rcu_int_flag_enum int_flag)
+{
+    if(RESET != (RCU_INT & int_flag)){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus rcu_flag_get(rcu_flag_enum flag)
+{
+    FlagStatus status = RESET;
+    if(RESET != (RCU_REG_VAL(flag) & BIT(RCU_BIT_POS(flag)))){
+        status = SET;
+    }else{
+        /* do nothing */
+    }
+    return status;
+}
+
+FlagStatus rcu_interrupt_flag_get(rcu_int_flag_enum int_flag)
+{
+    FlagStatus status = RESET;
+    if(RESET != (RCU_INT & int_flag)){
+        status = SET;
+    }else{
+        /* do nothing */
+    }
+    return status;
+}
+__________________________________________________________________________________________________________________________
+______________________CRC_________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_crc.c
+fix reason:
+Modify code that does not comply with MISRA issue.
+
+V3.7.0:
+uint32_t crc_block_data_calculate(void *array, uint32_t size, uint8_t data_format)
+{
+    uint8_t *data8;
+    uint16_t *data16;
+    uint32_t *data32;
+    uint32_t index;
+
+    if(INPUT_FORMAT_WORD == data_format){
+        data32 = (uint32_t *)array;
+        for(index = 0U; index < size; index++){
+            REG32(CRC) = data32[index];
+        }
+    }else if(INPUT_FORMAT_HALFWORD == data_format){
+        data16 = (uint16_t *)array;
+        for(index = 0U; index < size; index++){
+            REG16(CRC) = data16[index];
+        }
+    }else{
+        data8 = (uint8_t *)array;
+        for(index = 0U; index < size; index++){
+            REG8(CRC) =  data8[index];
+        }
+    }
+
+    return (CRC_DATA);
+}
+
+V3.8.0:
+uint32_t crc_block_data_calculate(void *array, uint32_t size, uint8_t data_format)
+{
+    uint32_t index;
+    uint32_t data = (uint32_t)array;
+
+    if(INPUT_FORMAT_WORD == data_format) {
+        for(index = 0U; index < size; index++) {
+            REG32(CRC) = *(uint32_t *)data;
+            data += 4U;
+        }
+    } else if(INPUT_FORMAT_HALFWORD == data_format) {
+        for(index = 0U; index < size; index++) {
+            REG16(CRC) = *(uint16_t *)data;
+            data += 2U;
+        }
+    } else {
+        for(index = 0U; index < size; index++) {
+            REG8(CRC) = *(uint8_t *)data;
+            data += 1U;
+        }
+    }
+
+    return (CRC_DATA);
+}
+__________________________________________________________________________________________________________________________
+______________________GPIO________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_cmp.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+uint32_t cmp_output_level_get(cmp_enum cmp_periph)
+{
+    if(CMP0 == cmp_periph){
+        /* get output level of CMP0 */
+        if((uint32_t)RESET != (CMP_CS & CMP_CS_CMP0O)) {
+            return CMP_OUTPUTLEVEL_HIGH;
+        }else{
+            return CMP_OUTPUTLEVEL_LOW;
+        }
+    }else{
+        /* get output level of CMP1 */
+        if((uint32_t)RESET != (CMP_CS & CMP_CS_CMP1O)) {
+            return CMP_OUTPUTLEVEL_HIGH;
+        }else{
+            return CMP_OUTPUTLEVEL_LOW;
+        }
+    }
+}
+
+V3.8.0:
+uint32_t cmp_output_level_get(cmp_enum cmp_periph)
+{
+    uint32_t output_level;
+
+    if(CMP0 == cmp_periph) {
+        /* get output level of CMP0 */
+        if((uint32_t)RESET != (CMP_CS & CMP_CS_CMP0O)) {
+            output_level = CMP_OUTPUTLEVEL_HIGH;
+        }else {
+            output_level = CMP_OUTPUTLEVEL_LOW;
+        }
+    }else {
+        /* get output level of CMP1 */
+        if((uint32_t)RESET != (CMP_CS & CMP_CS_CMP1O)) {
+            output_level = CMP_OUTPUTLEVEL_HIGH;
+        }else {
+            output_level = CMP_OUTPUTLEVEL_LOW;
+        }
+    }
+
+    return output_level;
+}
+__________________________________________________________________________________________________________________________
+______________________DAC_________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dac.c
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_dac.h
+
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+/* get DAC flag */
+FlagStatus dac_flag_get(uint32_t dac_periph, uint32_t interrupt);
+/* clear DAC flag */
+void dac_flag_clear(uint32_t dac_periph, uint32_t interrupt);
+
+FlagStatus dac_flag_get(uint32_t dac_periph, uint32_t flag)
+{
+    if(flag & DAC_STAT_FLAG_MASK0){
+        /* check DAC_STAT0 flag */
+        if(RESET != (DAC_STAT0(dac_periph) & flag)){
+            return SET;
+        }else{
+            return RESET;
+        }
+    }else{
+        /* illegal parameters */
+        return RESET;
+    }
+}
+
+FlagStatus dac_interrupt_flag_get(uint32_t dac_periph, uint32_t int_flag)
+{
+    uint32_t reg1 = 0U, reg2 = 0U;
+
+    if(int_flag & DAC_INT_FLAG_MASK0){
+        /* check underrun interrupt int_flag */
+        reg1 = DAC_STAT0(dac_periph) & int_flag;
+        reg2 = DAC_CTL0(dac_periph) & int_flag;
+    }else{
+        /* illegal parameters */
+    }
+
+    /*get DAC interrupt flag status */
+    if((RESET != reg1) && (RESET != reg2)){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+/* get DAC flag */
+FlagStatus dac_flag_get(uint32_t dac_periph, uint32_t flag);
+/* clear DAC flag */
+void dac_flag_clear(uint32_t dac_periph, uint32_t flag);
+
+FlagStatus dac_flag_get(uint32_t dac_periph, uint32_t flag)
+{
+    FlagStatus Status = RESET;
+    if(flag & DAC_STAT_FLAG_MASK0){
+        /* check DAC_STAT0 flag */
+        if(RESET != (DAC_STAT0(dac_periph) & flag)){
+            Status = SET;
+        }else{
+            Status = RESET;
+        }
+    }else{
+        /* illegal parameters */
+        Status =  RESET;
+    }
+    return Status;
+}
+
+FlagStatus dac_interrupt_flag_get(uint32_t dac_periph, uint32_t int_flag)
+{
+    uint32_t reg1 = 0U, reg2 = 0U;
+    FlagStatus Status = RESET;
+    if(int_flag & DAC_INT_FLAG_MASK0){
+        /* check underrun interrupt int_flag */
+        reg1 = DAC_STAT0(dac_periph) & int_flag;
+        reg2 = DAC_CTL0(dac_periph) & int_flag;
+    }else{
+        /* illegal parameters */
+    }
+
+    /*get DAC interrupt flag status */
+    if((RESET != reg1) && (RESET != reg2)){
+        Status = SET;
+    }else{
+        Status = RESET;
+    }
+    return Status;
+}
+__________________________________________________________________________________________________________________________
+______________________CEC_________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_cec.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+FlagStatus cec_flag_get(uint32_t flag)
+{
+    if(CEC_INTF & flag){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+FlagStatus cec_interrupt_flag_get(uint32_t flag)
+{
+    uint32_t interrupt_enable = 0U,interrupt_flag = 0U;
+    interrupt_flag = (CEC_INTF & flag);
+    interrupt_enable = (CEC_INTEN & flag);
+    if(interrupt_flag && interrupt_enable){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus cec_flag_get(uint32_t flag)
+{
+    FlagStatus ret = RESET;
+    if(CEC_INTF & flag){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+    return ret;
+}
+
+FlagStatus cec_interrupt_flag_get(uint32_t flag)
+{
+    FlagStatus ret = RESET;
+    uint32_t interrupt_enable = 0U,interrupt_flag = 0U;
+    interrupt_flag = (CEC_INTF & flag);
+    interrupt_enable = (CEC_INTEN & flag);
+    if(interrupt_flag && interrupt_enable){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+    return ret;
+}
+__________________________________________________________________________________________________________________________
+______________________TIMER_______________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_timer.c
+
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+FlagStatus timer_interrupt_flag_get(uint32_t timer_periph, uint32_t interrupt)
+{
+    uint32_t val;
+    val = (TIMER_DMAINTEN(timer_periph) & interrupt);
+    if((RESET != (TIMER_INTF(timer_periph) & interrupt) ) && (RESET != val)){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+FlagStatus timer_flag_get(uint32_t timer_periph, uint32_t flag)
+{
+    if(RESET != (TIMER_INTF(timer_periph) & flag)){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus timer_interrupt_flag_get(uint32_t timer_periph, uint32_t interrupt)
+{
+    uint32_t val;
+    FlagStatus ret;
+    val = (TIMER_DMAINTEN(timer_periph) & interrupt);
+    if((RESET != (TIMER_INTF(timer_periph) & interrupt)) && (RESET != val)){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+    return ret;
+}
+
+FlagStatus timer_flag_get(uint32_t timer_periph, uint32_t flag)
+{
+    FlagStatus ret;
+    if(RESET != (TIMER_INTF(timer_periph) & flag)){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+    return ret;
+}
+__________________________________________________________________________________________________________________________
+______________________I2C_________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_i2c.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+FlagStatus i2c_flag_get(uint32_t i2c_periph, i2c_flag_enum flag)
+{
+    if(RESET != (I2C_REG_VAL(i2c_periph, flag) & BIT(I2C_BIT_POS(flag)))){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+FlagStatus i2c_interrupt_flag_get(uint32_t i2c_periph, i2c_interrupt_flag_enum int_flag)
+{
+    uint32_t intenable = 0U, flagstatus = 0U, bufie;
+
+    /* check BUFIE */
+    bufie = I2C_CTL1(i2c_periph)&I2C_CTL1_BUFIE;
+
+    /* get the interrupt enable bit status */
+    intenable = (I2C_REG_VAL(i2c_periph, int_flag) & BIT(I2C_BIT_POS(int_flag)));
+    /* get the corresponding flag bit status */
+    flagstatus = (I2C_REG_VAL2(i2c_periph, int_flag) & BIT(I2C_BIT_POS2(int_flag)));
+
+    if((I2C_INT_FLAG_RBNE == int_flag) || (I2C_INT_FLAG_TBE == int_flag)){
+        if(intenable && bufie){
+            intenable = 1U;
+        }else{
+            intenable = 0U;
+        }
+    }
+
+    if((0U != flagstatus) && (0U != intenable)){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus i2c_flag_get(uint32_t i2c_periph, i2c_flag_enum flag)
+{
+    FlagStatus ret;
+
+    if(RESET != (I2C_REG_VAL(i2c_periph, flag) & BIT(I2C_BIT_POS(flag)))){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+
+    return ret;
+}
+
+FlagStatus i2c_interrupt_flag_get(uint32_t i2c_periph, i2c_interrupt_flag_enum int_flag)
+{
+    uint32_t intenable = 0U, flagstatus = 0U, bufie;
+    FlagStatus ret;
+
+    /* check BUFIE */
+    bufie = I2C_CTL1(i2c_periph)&I2C_CTL1_BUFIE;
+
+    /* get the interrupt enable bit status */
+    intenable = (I2C_REG_VAL(i2c_periph, int_flag) & BIT(I2C_BIT_POS(int_flag)));
+    /* get the corresponding flag bit status */
+    flagstatus = (I2C_REG_VAL2(i2c_periph, int_flag) & BIT(I2C_BIT_POS2(int_flag)));
+
+    if((I2C_INT_FLAG_RBNE == int_flag) || (I2C_INT_FLAG_TBE == int_flag)){
+        if(intenable && bufie){
+            intenable = 1U;
+        }else{
+            intenable = 0U;
+        }
+    }
+
+    if((0U != flagstatus) && (0U != intenable)){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+    return ret;
+}
+__________________________________________________________________________________________________________________________
+______________________EXTI________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_exti.c
+fix reason:
+Modify code that does not comply with MISRA issues.
+
+V3.7.0:
+FlagStatus exti_flag_get(exti_line_enum linex)
+{
+    if(RESET != (EXTI_PD & (uint32_t)linex)){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+FlagStatus exti_interrupt_flag_get(exti_line_enum linex)
+{
+    if(RESET != (EXTI_PD & (uint32_t)linex)){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+void nvic_irq_disable(IRQn_Type nvic_irq)
+{
+    /* disable the selected IRQ.*/
+    NVIC->ICER[nvic_irq >> 0x05U] = (uint32_t)0x01U << (nvic_irq & (uint8_t)0x1FU);
+}
+
+V3.8.0:
+FlagStatus exti_flag_get(exti_line_enum linex)
+{
+    FlagStatus status;
+
+    if(RESET != (EXTI_PD & (uint32_t)linex)){
+        status = SET;
+    }else{
+        status = RESET;
+    }
+
+    return status;
+}
+
+FlagStatus exti_interrupt_flag_get(exti_line_enum linex)
+{
+    FlagStatus status;
+
+    if(RESET != (EXTI_PD & (uint32_t)linex)){
+        status = SET;
+    }else{
+        status = RESET;
+    }
+
+    return status;
+}
+
+void nvic_irq_disable(IRQn_Type nvic_irq)
+{
+    /* disable the selected IRQ.*/
+    NVIC_DisableIRQ(nvic_irq);
+}
+__________________________________________________________________________________________________________________________
+______________________USART_______________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_usart.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+FlagStatus usart_flag_get(uint32_t usart_periph, usart_flag_enum flag)
+{
+    if(RESET != (USART_REG_VAL(usart_periph, flag) & BIT(USART_BIT_POS(flag)))){
+        return SET;
+    }else{
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus usart_flag_get(uint32_t usart_periph, usart_flag_enum flag)
+{
+    FlagStatus ret;
+    if(RESET != (USART_REG_VAL(usart_periph, flag) & BIT(USART_BIT_POS(flag)))){
+        ret = SET;
+    }else{
+        ret = RESET;
+    }
+    return ret;
+}
+__________________________________________________________________________________________________________________________
+______________________USART_______________________________________________________________________________________________
+Fix file:
+..\Examples\USART\Half_duplex_transmitter&receiver\main.c
+fix reason:
+Modified the TX pin to open-drain output.
+
+V3.7.0:
+    gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_9);
+    gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_2);
+
+V3.8.0:
+    gpio_output_options_set(GPIOA, GPIO_OTYPE_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_9);
+    gpio_output_options_set(GPIOA, GPIO_OTYPE_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_2);
+__________________________________________________________________________________________________________________________
+______________________FMC_________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_fmc.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+    if(OB_OBSTAT_PLEVEL_HIGH == fmc_plevel){
+        return FMC_OB_HSPC;
+    }
+
+V3.8.0:
+    if(OB_OBSTAT_PLEVEL_HIGH == fmc_plevel){
+        fmc_state = FMC_OB_HSPC;
+    }else{
+__________________________________________________________________________________________________________________________
+______________________FMC_________________________________________________________________________________________________
+Fix file:
+..\Examples\FMC\Erase_program\main.c
+fix reason:
+Before operating (erasing/writing) flash and option bytes, add the operation to clear all flags.
+
+V3.7.0:
+    /* unlock the flash program/erase controller */
+    fmc_unlock();
+
+    address = FMC_WRITE_START_ADDR
+V3.8.0:
+    /* unlock the flash program/erase controller */
+    fmc_unlock();
+
+    /* clear all pending flags */
+    fmc_flag_clear(FMC_FLAG_END | FMC_FLAG_WPERR | FMC_FLAG_PGERR);
+
+    address = FMC_WRITE_START_ADDR;
+__________________________________________________________________________________________________________________________
+______________________FMC_________________________________________________________________________________________________
+Fix file:
+..\Examples\FMC\Security_protection\main.c
+fix reason:
+Before operating (erasing/writing) flash and option bytes, add the operation to clear all flags.
+V3.7.0:
+                fmc_unlock();
+                ob_unlock();
+                ob_security_protection_config(FMC_NSPC);
+
+                fmc_unlock();
+                ob_unlock();
+                ob_security_protection_config(FMC_LSPC)
+V3.8.0:
+                fmc_unlock();
+                ob_unlock();
+                /* clear all pending flags */
+                fmc_flag_clear(FMC_FLAG_END | FMC_FLAG_WPERR | FMC_FLAG_PGERR);
+                ob_security_protection_config(FMC_NSPC);
+
+                fmc_unlock();
+                ob_unlock();
+                /* clear all pending flags */
+                fmc_flag_clear(FMC_FLAG_END | FMC_FLAG_WPERR | FMC_FLAG_PGERR);
+                ob_security_protection_config(FMC_LSPC);
+_________________________________________________________________________________________________________________________
+______________________FMC_________________________________________________________________________________________________
+Fix file:
+..\Examples\FMC\Write_protection\main.c
+fix reason:
+Before operating (erasing/writing) flash and option bytes, add the operation to clear all flags.
+V3.7.0:
+        Address = WRITE_START_ADDR;
+
+        while((Address < WRITE_END_ADDR) && (fmc_state == FMC_READY)){
+            fmc_state = fmc_halfword_program(Address, data);
+            Address = Address + 2;
+        }
+V3.8.0:
+        /* clear all pending flags */
+        fmc_flag_clear(FMC_FLAG_END | FMC_FLAG_WPERR | FMC_FLAG_PGERR);
+            
+        while((Address < WRITE_END_ADDR) && (fmc_state == FMC_READY)){
+            fmc_state = fmc_halfword_program(Address, data);
+            Address = Address + 2;
+__________________________________________________________________________________________________________________________
+______________________MISC________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_misc.c
+fix reason:
+nvic_irq_enable() is modified to handle nvic_irqn less than zero.
+V3.7.0:
+void nvic_irq_enable(IRQn_Type nvic_irq, uint8_t nvic_irq_pre_priority, \
+                     uint8_t nvic_irq_sub_priority)
+{
+    uint32_t temp_priority = 0x00U, temp_pre = 0x00U, temp_sub = 0x00U;
+    
+    /* use the priority group value to get the temp_pre and the temp_sub */
+    switch((SCB->AIRCR) & (uint32_t)0x700U) {
+    case NVIC_PRIGROUP_PRE0_SUB4:
+        temp_pre = 0U;
+        temp_sub = 0x4U;
+        break;
+    case NVIC_PRIGROUP_PRE1_SUB3:
+        temp_pre = 1U;
+        temp_sub = 0x3U;
+        break;
+    case NVIC_PRIGROUP_PRE2_SUB2:
+        temp_pre = 2U;
+        temp_sub = 0x2U;
+        break;
+    case NVIC_PRIGROUP_PRE3_SUB1:
+        temp_pre = 3U;
+        temp_sub = 0x1U;
+        break;
+    case NVIC_PRIGROUP_PRE4_SUB0:
+        temp_pre = 4U;
+        temp_sub = 0x0U;
+        break;
+    default:
+        nvic_priority_group_set(NVIC_PRIGROUP_PRE2_SUB2);
+        temp_pre = 2U;
+        temp_sub = 0x2U;
+        break;
+    }
+    
+    /* get the temp_priority to fill the NVIC->IP register */
+    temp_priority = (uint32_t)nvic_irq_pre_priority << (0x4U - temp_pre);
+    temp_priority |= nvic_irq_sub_priority &(0x0FU >> (0x4U - temp_sub));
+    temp_priority = temp_priority << 0x04U;
+    NVIC->IP[nvic_irq] = (uint8_t)temp_priority;
+    
+    /* enable the selected IRQ */
+    NVIC->ISER[nvic_irq >> 0x05U] = (uint32_t)0x01U << (nvic_irq & (uint8_t)0x1FU);
+}
+
+V3.8.0:
+void nvic_irq_enable(IRQn_Type nvic_irq, uint8_t nvic_irq_pre_priority, \
+                     uint8_t nvic_irq_sub_priority)
+{
+    uint32_t nvic_prigroup, nvic_priority;
+
+    /* check current priority group */
+    switch(SCB->AIRCR & SCB_AIRCR_PRIGROUP_Msk) {
+    case NVIC_PRIGROUP_PRE0_SUB4:
+    case NVIC_PRIGROUP_PRE1_SUB3:
+    case NVIC_PRIGROUP_PRE2_SUB2:
+    case NVIC_PRIGROUP_PRE3_SUB1:
+    case NVIC_PRIGROUP_PRE4_SUB0:
+        break;
+    default:
+        nvic_priority_group_set(NVIC_PRIGROUP_PRE2_SUB2);
+        break;
+    }
+
+    /* get the priority group value */
+    nvic_prigroup = NVIC_GetPriorityGrouping();
+
+    /* encoding the pre-emption, subpriority priority */
+    nvic_priority = NVIC_EncodePriority(nvic_prigroup, (uint32_t)nvic_irq_pre_priority, (uint32_t)nvic_irq_sub_priority);
+    /* set priority */
+    NVIC_SetPriority(nvic_irq, nvic_priority);
+
+    /* enable the selected IRQ */
+    NVIC_EnableIRQ(nvic_irq);
+}
+
+__________________________________________________________________________________________________________________________
+______________________TSI_____________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_tsi.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+FlagStatus tsi_group_status_get(uint32_t group)
+{
+    if(TSI_GCTL & group) {
+        return SET;
+    } else {
+        return RESET;
+    }
+}
+
+FlagStatus tsi_flag_get(uint32_t flag)
+{
+    if(TSI_INTF & flag) {
+        return SET;
+    } else {
+        return RESET;
+    }
+}
+
+FlagStatus tsi_interrupt_flag_get(uint32_t flag)
+{
+    uint32_t interrupt_enable = 0U, interrupt_flag = 0U;
+    interrupt_flag = (TSI_INTF & flag);
+    interrupt_enable = (TSI_INTEN & flag);
+    if(interrupt_flag && interrupt_enable) {
+        return SET;
+    } else {
+        return RESET;
+    }
+}
+
+V3.8.0:
+FlagStatus tsi_group_status_get(uint32_t group)
+{
+    FlagStatus temp = RESET;
+    if(TSI_GCTL & group) {
+        temp = SET;
+    } else {
+        /* do nothing */
+    }
+    return temp;
+}
+
+FlagStatus tsi_flag_get(uint32_t flag)
+{
+    FlagStatus temp = RESET;
+    if(TSI_INTF & flag) {
+        temp = SET;
+    } else {
+        /* do nothing */
+    }
+    return temp;
+}
+
+FlagStatus tsi_interrupt_flag_get(uint32_t flag)
+{
+    FlagStatus temp = RESET;
+    uint32_t interrupt_enable = 0U, interrupt_flag = 0U;
+    interrupt_flag = (TSI_INTF & flag);
+    interrupt_enable = (TSI_INTEN & flag);
+    if(interrupt_flag && interrupt_enable) {
+        temp = SET;
+    } else {
+        /* do nothing */
+    }
+    return temp;
+}
+__________________________________________________________________________________________________________________________
+______________________SPI/I2S_____________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_spi.c
+fix reason:
+Modify code that does not comply with MISRA 14.7.
+
+V3.7.0:
+uint16_t spi_crc_get(uint32_t spi_periph, uint8_t crc)
+{
+    if(SPI_CRC_TX == crc) {
+        return ((uint16_t)(SPI_TCRC(spi_periph)));
+    } else {
+        return ((uint16_t)(SPI_RCRC(spi_periph)));
+    }
+}
+
+FlagStatus spi_i2s_flag_get(uint32_t spi_periph, uint32_t flag)
+{
+    if(RESET != (SPI_STAT(spi_periph) & flag)) {
+        return SET;
+    } else {
+        return RESET;
+    }
+}
+
+FlagStatus spi_i2s_interrupt_flag_get(uint32_t spi_periph, uint8_t interrupt)
+{
+    uint32_t reg1 = SPI_STAT(spi_periph);
+    uint32_t reg2 = SPI_CTL1(spi_periph);
+
+    switch(interrupt) {
+    /* SPI/I2S transmit buffer empty interrupt */
+    case SPI_I2S_INT_FLAG_TBE:
+        reg1 = reg1 & SPI_STAT_TBE;
+        reg2 = reg2 & SPI_CTL1_TBEIE;
+        break;
+    /* SPI/I2S receive buffer not empty interrupt */
+    case SPI_I2S_INT_FLAG_RBNE:
+        reg1 = reg1 & SPI_STAT_RBNE;
+        reg2 = reg2 & SPI_CTL1_RBNEIE;
+        break;
+    /* SPI/I2S overrun interrupt */
+    case SPI_I2S_INT_FLAG_RXORERR:
+        reg1 = reg1 & SPI_STAT_RXORERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* SPI config error interrupt */
+    case SPI_INT_FLAG_CONFERR:
+        reg1 = reg1 & SPI_STAT_CONFERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* SPI CRC error interrupt */
+    case SPI_INT_FLAG_CRCERR:
+        reg1 = reg1 & SPI_STAT_CRCERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* I2S underrun error interrupt */
+    case I2S_INT_FLAG_TXURERR:
+        reg1 = reg1 & SPI_STAT_TXURERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* SPI/I2S format error interrupt */
+    case SPI_I2S_INT_FLAG_FERR:
+        reg1 = reg1 & SPI_STAT_FERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    default :
+        break;
+    }
+    /*get SPI/I2S interrupt flag status */
+    if((0U != reg1) && (0U != reg2)) {
+        return SET;
+    } else {
+        return RESET;
+    }
+}
+
+V3.8.0:
+uint16_t spi_crc_get(uint32_t spi_periph, uint8_t crc)
+{
+    uint16_t val;
+    if(SPI_CRC_TX == crc) {
+        val = ((uint16_t)(SPI_TCRC(spi_periph)));
+    } else {
+        val = ((uint16_t)(SPI_RCRC(spi_periph)));
+    }
+    return val;
+}
+
+FlagStatus spi_i2s_flag_get(uint32_t spi_periph, uint32_t flag)
+{
+    FlagStatus ret;
+    if(RESET != (SPI_STAT(spi_periph) & flag)) {
+        ret = SET;
+    } else {
+        ret = RESET;
+    }
+    return ret;
+}
+
+FlagStatus spi_i2s_interrupt_flag_get(uint32_t spi_periph, uint8_t interrupt)
+{
+    FlagStatus ret;
+    uint32_t reg1 = SPI_STAT(spi_periph);
+    uint32_t reg2 = SPI_CTL1(spi_periph);
+
+    switch(interrupt) {
+    /* SPI/I2S transmit buffer empty interrupt */
+    case SPI_I2S_INT_FLAG_TBE:
+        reg1 = reg1 & SPI_STAT_TBE;
+        reg2 = reg2 & SPI_CTL1_TBEIE;
+        break;
+    /* SPI/I2S receive buffer not empty interrupt */
+    case SPI_I2S_INT_FLAG_RBNE:
+        reg1 = reg1 & SPI_STAT_RBNE;
+        reg2 = reg2 & SPI_CTL1_RBNEIE;
+        break;
+    /* SPI/I2S overrun interrupt */
+    case SPI_I2S_INT_FLAG_RXORERR:
+        reg1 = reg1 & SPI_STAT_RXORERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* SPI config error interrupt */
+    case SPI_INT_FLAG_CONFERR:
+        reg1 = reg1 & SPI_STAT_CONFERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* SPI CRC error interrupt */
+    case SPI_INT_FLAG_CRCERR:
+        reg1 = reg1 & SPI_STAT_CRCERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* I2S underrun error interrupt */
+    case I2S_INT_FLAG_TXURERR:
+        reg1 = reg1 & SPI_STAT_TXURERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    /* SPI/I2S format error interrupt */
+    case SPI_I2S_INT_FLAG_FERR:
+        reg1 = reg1 & SPI_STAT_FERR;
+        reg2 = reg2 & SPI_CTL1_ERRIE;
+        break;
+    default :
+        break;
+    }
+    /*get SPI/I2S interrupt flag status */
+    if((0U != reg1) && (0U != reg2)) {
+        ret = SET;
+    } else {
+        ret = RESET;
+    }
+    return ret;
+}
+__________________________________________________________________________________________________________________________
+______________________SPI/I2S_____________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_spi.c
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_spi.h
+
+fix reason: 
+Changed the I2S parameter macro from I2S_STD_PHILLIPS to I2S_STD_PHILIPS.
+
+V3.7.0:
+#define I2S_STD_PHILLIPS                I2SCTL_I2SSTD(0)                        /*!< I2S phillips standard */
+
+I2S_STD_PHILLIPS: I2S phillips standard
+
+V3.8.0:
+#define I2S_STD_PHILIPS                 I2SCTL_I2SSTD(0)                        /*!< I2S philips standard */
+
+I2S_STD_PHILIPS: I2S philips standard
+__________________________________________________________________________________________________________________________
+______________________SPI/I2S_____________________________________________________________________________________________
+Fix file:
+..\Examples\SPI\I2S_master_transmit_dma\main.c
+..\Examples\SPI\I2S_slave_recieve_dma\main.c
+
+fix reason: 
+Changed the I2S parameter macro from I2S_STD_PHILLIPS to I2S_STD_PHILIPS.
+
+V3.7.0:
+    i2s_init(SPI0, I2S_MODE_MASTERTX, I2S_STD_PHILLIPS, I2S_CKPL_HIGH);
+
+    i2s_init(SPI0, I2S_MODE_SLAVERX, I2S_STD_PHILLIPS, I2S_CKPL_HIGH);
+
+V3.8.0:
+    i2s_init(SPI0, I2S_MODE_MASTERTX, I2S_STD_PHILIPS, I2S_CKPL_HIGH);
+
+    i2s_init(SPI0, I2S_MODE_SLAVERX, I2S_STD_PHILIPS, I2S_CKPL_HIGH);
+__________________________________________________________________________________________________________________________
+______________________fwdgt_______________________________________________________________________________________________
+Fix file:
+..\Examples\FWDGT\FWDGT_key\main.c
+fix reason: 
+FWDGT consistency modification
+V3.7.0:
+   /* after 1.6 seconds to generate a reset */
+    fwdgt_enable();
+V3.8.0:
+none
+__________________________________________________________________________________________________________________________
+______________________fwdgt_______________________________________________________________________________________________
+Fix file:
+..\Examples\FWDGT\FWDGT_key\main.c
+fix reason: 
+FWDGT consistency modification
+V3.7.0:
+   /* after 1.6 seconds to generate a reset */
+    fwdgt_enable();
+V3.8.0:
+none
+__________________________________________________________________________________________________________________________
+______________________fwdgt_______________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_fwdgt.h
+fix reason: 
+FWDGT consistency modification
+V3.7.0:
+/* configure counter reload value, and prescaler divider value */
+ErrStatus fwdgt_config(uint16_t reload_value, uint8_t prescaler_div);
+V3.8.0:
+/* configure counter reload value, and prescaler divider value */
+ErrStatus fwdgt_config(uint16_t reload_value, uint8_t prescaler_value);
+__________________________________________________________________________________________________________________________
+______________________fwdgt_______________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_fwdgt.c
+fix reason: 
+FWDGT consistency modification
+V3.7.0:
+ErrStatus fwdgt_prescaler_value_config(uint16_t prescaler_value)
+{
+    uint32_t timeout = FWDGT_PSC_TIMEOUT;
+    uint32_t flag_status = RESET;
+  
+    /* enable write access to FWDGT_PSC */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+  
+    /* wait until the PUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_PUD;
+    }while((--timeout > 0U) && ((uint32_t)RESET != flag_status));
+    
+    if ((uint32_t)RESET != flag_status){
+        return ERROR;
+    }
+    
+    /* configure FWDGT */
+    FWDGT_PSC = (uint32_t)prescaler_value; 
+
+    return SUCCESS;
+}
+
+ErrStatus fwdgt_reload_value_config(uint16_t reload_value)
+{
+    uint32_t timeout = FWDGT_RLD_TIMEOUT;
+    uint32_t flag_status = RESET;
+  
+    /* enable write access to FWDGT_RLD */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+  
+    /* wait until the RUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_RUD;
+    }while((--timeout > 0U) && ((uint32_t)RESET != flag_status));
+   
+    if ((uint32_t)RESET != flag_status){
+        return ERROR;
+    }
+    
+    FWDGT_RLD = RLD_RLD(reload_value);
+
+    return SUCCESS;
+}
+
+ErrStatus fwdgt_window_value_config(uint16_t window_value)
+{
+    uint32_t time_index = FWDGT_WND_TIMEOUT;
+    uint32_t flag_status = RESET;
+
+    /* enable write access to FWDGT_WND */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+
+    /* wait until the WUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_WUD;
+    }while((--time_index > 0U) && ((uint32_t)RESET != flag_status));
+
+    if ((uint32_t)RESET != flag_status){
+        return ERROR; 
+    }
+    
+    FWDGT_WND = WND_WND(window_value);
+
+    return SUCCESS;
+}
+
+/*!
+    \brief      configure counter reload value, and prescaler divider value
+    \param[in]  reload_value: specify reload value(0x0000 - 0x0FFF)
+    \param[in]  prescaler_div: FWDGT prescaler value
+                only one parameter can be selected which is shown as below:
+      \arg        FWDGT_PSC_DIV4: FWDGT prescaler set to 4
+      \arg        FWDGT_PSC_DIV8: FWDGT prescaler set to 8
+      \arg        FWDGT_PSC_DIV16: FWDGT prescaler set to 16
+      \arg        FWDGT_PSC_DIV32: FWDGT prescaler set to 32
+      \arg        FWDGT_PSC_DIV64: FWDGT prescaler set to 64
+      \arg        FWDGT_PSC_DIV128: FWDGT prescaler set to 128
+      \arg        FWDGT_PSC_DIV256: FWDGT prescaler set to 256
+    \param[out] none
+    \retval     ErrStatus: ERROR or SUCCESS
+*/
+ErrStatus fwdgt_config(uint16_t reload_value, uint8_t prescaler_div)
+{
+    uint32_t timeout = FWDGT_PSC_TIMEOUT;
+    uint32_t flag_status = RESET;
+  
+    /* enable write access to FWDGT_PSC,and FWDGT_RLD */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+  
+    /* wait until the PUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_PUD;
+    }while((--timeout > 0U) && ((uint32_t)RESET != flag_status));
+    
+    if ((uint32_t)RESET != flag_status){
+        return ERROR;
+    }
+    
+    /* configure FWDGT */
+    FWDGT_PSC = (uint32_t)prescaler_div;       
+
+    timeout = FWDGT_RLD_TIMEOUT;    
+    /* wait until the RUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_RUD;
+    }while((--timeout > 0U) && ((uint32_t)RESET != flag_status));
+   
+    if ((uint32_t)RESET != flag_status){
+        return ERROR;
+    }
+    
+    FWDGT_RLD = RLD_RLD(reload_value);
+    
+    /* reload the counter */
+    FWDGT_CTL = FWDGT_KEY_RELOAD;
+    
+    return SUCCESS;
+}
+
+/*!
+    \brief      get flag state of FWDGT
+    \param[in]  flag: flag to get 
+                only one parameter can be selected which is shown as below:
+      \arg        FWDGT_FLAG_PUD: a write operation to FWDGT_PSC register is on going
+      \arg        FWDGT_FLAG_RUD: a write operation to FWDGT_RLD register is on going
+      \arg        FWDGT_FLAG_WUD: a write operation to FWDGT_WND register is on going
+    \param[out] none
+    \retval     FlagStatus: SET or RESET
+*/
+FlagStatus fwdgt_flag_get(uint16_t flag)
+{
+    if(RESET != (FWDGT_STAT & flag)){
+        return SET;
+    }
+
+    return RESET;
+}
+V3.8.0:
+ErrStatus fwdgt_prescaler_value_config(uint16_t prescaler_value)
+{
+    uint32_t timeout = FWDGT_PSC_TIMEOUT;
+    uint32_t flag_status;
+    ErrStatus status = SUCCESS;
+
+    /* enable write access to FWDGT_PSC */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+
+    /* configure FWDGT_PSC */
+    FWDGT_PSC = (uint32_t)prescaler_value; 
+
+    /* wait until the PUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_PUD;
+    }while((--timeout > 0U) && (0U != flag_status));
+    
+    if (0U != flag_status){
+        status = ERROR;
+    }
+
+    return status;
+}
+
+ErrStatus fwdgt_reload_value_config(uint16_t reload_value)
+{
+    uint32_t timeout = FWDGT_RLD_TIMEOUT;
+    uint32_t flag_status;
+    ErrStatus status = SUCCESS;
+
+    /* enable write access to FWDGT_RLD */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+
+    /* configure FWDGT_RLD */
+    FWDGT_RLD = RLD_RLD(reload_value);
+
+    /* wait until the RUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_RUD;
+    }while((--timeout > 0U) && (0U != flag_status));
+   
+    if (0U != flag_status){
+        status = ERROR;
+    }
+
+    return status;
+}
+
+ErrStatus fwdgt_window_value_config(uint16_t window_value)
+{
+    uint32_t time_index = FWDGT_WND_TIMEOUT;
+    uint32_t flag_status;
+    ErrStatus status = SUCCESS;
+
+    /* enable write access to FWDGT_WND */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+
+    /* wait until the WUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_WUD;
+    }while((--time_index > 0U) && (0U != flag_status));
+
+    if (0U != flag_status){
+        status = ERROR;
+    }
+
+    FWDGT_WND = WND_WND(window_value);
+
+    return status;
+}
+
+/*!
+    \brief      configure counter reload value, and prescaler divider value
+    \param[in]  reload_value: specify reload value(0x0000 - 0x0FFF)
+    \param[in]  prescaler_value: FWDGT prescaler value
+                only one parameter can be selected which is shown as below:
+      \arg        FWDGT_PSC_DIV4: FWDGT prescaler set to 4
+      \arg        FWDGT_PSC_DIV8: FWDGT prescaler set to 8
+      \arg        FWDGT_PSC_DIV16: FWDGT prescaler set to 16
+      \arg        FWDGT_PSC_DIV32: FWDGT prescaler set to 32
+      \arg        FWDGT_PSC_DIV64: FWDGT prescaler set to 64
+      \arg        FWDGT_PSC_DIV128: FWDGT prescaler set to 128
+      \arg        FWDGT_PSC_DIV256: FWDGT prescaler set to 256
+    \param[out] none
+    \retval     ErrStatus: ERROR or SUCCESS
+*/
+ErrStatus fwdgt_config(uint16_t reload_value, uint8_t prescaler_value)
+{
+    uint32_t timeout = FWDGT_PSC_TIMEOUT;
+    uint32_t flag_status;
+    ErrStatus status = SUCCESS;
+
+    /* start the free watchdog timer counter */
+    FWDGT_CTL = FWDGT_KEY_ENABLE;
+
+    /* enable write access to FWDGT_PSC,and FWDGT_RLD */
+    FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
+
+    /* configure FWDGT_PSC */
+    FWDGT_PSC = (uint32_t)prescaler_value;
+
+    /* wait until the PUD flag to be reset */
+    do{
+        flag_status = FWDGT_STAT & FWDGT_STAT_PUD;
+    }while((--timeout > 0U) && (0U != flag_status));
+    
+    if (0U != flag_status){
+        status = ERROR;
+    }
+
+    if(SUCCESS == status) {
+        /* configure FWDGT_RLD */
+        FWDGT_RLD = RLD_RLD(reload_value);
+
+        /* wait until the RUD flag to be reset */
+        timeout = FWDGT_RLD_TIMEOUT;
+        do {
+            flag_status = FWDGT_STAT & FWDGT_STAT_RUD;
+        } while((--timeout > 0U) && (0U != flag_status));
+
+        if(0U != flag_status) {
+            status = ERROR;
+        }
+    }
+
+    if(SUCCESS == status) {
+        /* reload the counter */
+        FWDGT_CTL = FWDGT_KEY_RELOAD;
+    }
+    
+    return status;
+}
+
+FlagStatus fwdgt_flag_get(uint16_t flag)
+{
+    FlagStatus flag_status = RESET;
+
+    if(RESET != (FWDGT_STAT & flag)){
+        flag_status = SET;
+    }
+
+    return flag_status;
+}
+__________________________________________________________________________________________________________________________
+______________________wwdgt_______________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_standard_peripheral\Sourcr\gd32f1x0_wwdgt.c
+fix reason: 
+WWDGT consistency modification
+V3.7.0:
+FlagStatus wwdgt_flag_get(void)
+{
+  if(RESET != (WWDGT_STAT & WWDGT_STAT_EWIF)){
+        return SET;
+    }
+    
+    return RESET;
+}
+
+V3.8.0:
+FlagStatus wwdgt_flag_get(void)
+{
+    FlagStatus flag_status = RESET;
+
+    if(RESET != (WWDGT_STAT & WWDGT_STAT_EWIF)){
+        flag_status = SET;
+    }
+    
+    return flag_status;
+}
+__________________________________________________________________________________________________________________________
+______________________PMU_________________________________________________________________________________________________
+Fix file:
+..\Examples\PMU\Deepsleep_wakeup_RTC\main.c
+fix reason:
+deepsleep example add frequency switching functionality
+
+V3.7.0:
+none
+
+V3.8.0:
+/* software delay to prevent the impact of Vcore fluctuations.
+   It is strongly recommended to include it to avoid issues caused by self-removal. */
+static void _soft_delay_(uint32_t time)
+{
+    __IO uint32_t i;
+    for(i=0; i<time*10; i++){
+    }
+}
+
+    while(1){
+        delay_1ms(50U);
+        /* The following is to prevent Vcore fluctuations caused by frequency switching. 
+           It is strongly recommended to include it to avoid issues caused by self-removal. */
+        rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV2);
+        _soft_delay_(100);
+        rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV4);
+        _soft_delay_(100);
+        /* PMU enters deepsleep mode */
+        pmu_to_deepsleepmode(PMU_LDO_LOWPOWER, WFI_CMD);
+        gd_eval_led_toggle(LED2);
+    }
+__________________________________________________________________________________________________________________________
+______________________PMU_________________________________________________________________________________________________
+Fix file:
+..\Examples\PMU\Deepsleep_wakeup_exti\main.c
+fix reason:
+deepsleep example add frequency switching functionality
+
+V3.7.0:
+none
+
+V3.8.0:
+/* software delay to prevent the impact of Vcore fluctuations.
+   It is strongly recommended to include it to avoid issues caused by self-removal. */
+static void _soft_delay_(uint32_t time)
+{
+    __IO uint32_t i;
+    for(i=0; i<time*10; i++){
+    }
+}
+
+    while(1){
+        if(RESET == gpio_input_bit_get(WAKEUP_KEY_GPIO_PORT,WAKEUP_KEY_PIN)) {
+            /* The following is to prevent Vcore fluctuations caused by frequency switching. 
+               It is strongly recommended to include it to avoid issues caused by self-removal. */
+            rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV2);
+            _soft_delay_(100);
+            rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV4);
+            _soft_delay_(100);
+            pmu_to_deepsleepmode(PMU_LDO_LOWPOWER,WFI_CMD);
+        }
+    }
+__________________________________________________________________________________________________________________________
+______________________PMU_________________________________________________________________________________________________
+Fix file:
+..\Examples\PMU\Standby_wakeup_RTC\main.c
+fix reason:
+standby  example add frequency switching functionality
+
+V3.7.0:
+none
+
+V3.8.0:
+/* software delay to prevent the impact of Vcore fluctuations.
+   It is strongly recommended to include it to avoid issues caused by self-removal. */
+static void _soft_delay_(uint32_t time)
+{
+    __IO uint32_t i;
+    for(i=0; i<time*10; i++){
+    }
+}
+
+    /* delay 2s */
+    delay_1ms(2000);
+    /* enable PMU clock */
+    rcu_periph_clock_enable(RCU_PMU);
+    /* configure RTC */
+    rtc_configuration();
+    /* The following is to prevent Vcore fluctuations caused by frequency switching. 
+       It is strongly recommended to include it to avoid issues caused by self-removal. */
+    rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV2);
+    _soft_delay_(100);
+    rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV4);
+    _soft_delay_(100);
+    pmu_flag_clear(PMU_FLAG_RESET_STANDBY);
+    /* PMU enters standby mode */
+    pmu_to_standbymode();
+__________________________________________________________________________________________________________________________
+______________________PMU_________________________________________________________________________________________________
+Fix file:
+..\Examples\PMU\Standby_wakeup_pin\main.c
+fix reason:
+standby  example add frequency switching functionality
+
+V3.7.0:
+none
+
+V3.8.0:
+/* software delay to prevent the impact of Vcore fluctuations.
+   It is strongly recommended to include it to avoid issues caused by self-removal. */
+static void _soft_delay_(uint32_t time)
+{
+    __IO uint32_t i;
+    for(i=0; i<time*10; i++){
+    }
+}
+
+    while(1){
+        if(RESET == gpio_input_bit_get(TAMPER_KEY_GPIO_PORT,TAMPER_KEY_PIN)) {
+            /* The following is to prevent Vcore fluctuations caused by frequency switching. 
+               It is strongly recommended to include it to avoid issues caused by self-removal. */
+            rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV2);
+            _soft_delay_(100);
+            rcu_ahb_clock_config(RCU_AHB_CKSYS_DIV4);
+            _soft_delay_(100);
+            pmu_to_standbymode();
+        }
+    }
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\cdc_acm\inc\gd32f1x0_it.h
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+none
+V3.8.0:
+#ifdef USBD_DOUBLE_BUFFER_ENABLE
+/* this function handles USBD high priority interrupt */
+void USBD_HP_IRQHandler(void);
+#endif /* USBD_DOUBLE_BUFFER_ENABLE */
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\cdc_acm\inc\usbd_conf.h
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+none
+V3.8.0:
+/* USBD endpoint double buffer function enable */
+//#define USBD_DOUBLE_BUFFER_ENABLE
+
+#ifndef USBD_DOUBLE_BUFFER_ENABLE
+
+#else
+/* CDC data Tx buffer address offset */
+#define BULK_TX_ADDR                       (0x01400100U)
+
+/* CDC data Rx buffer address offset */
+#define BULK_RX_ADDR                       (0x01C00180U)
+#endif /* !USBD_DOUBLE_BUFFER_ENABLE */
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\cdc_acm\src\gd32f1x0_it.c
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+none
+V3.8.0:
+#ifdef USBD_DOUBLE_BUFFER_ENABLE
+
+/*!
+    \brief      this function handles USBD high priority interrupt
+    \param[in]  none
+    \param[out] none
+    \retval     none
+*/
+void USBD_HP_IRQHandler(void)
+{
+    usbd_int_hpst();
+}
+
+#endif /* USBD_DOUBLE_BUFFER_ENABLE */
+
+Fix file:
+..\Examples\USBD\cdc_acm\src\gd32f1x0_usbd_hw.c
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+    /* 1 bit for preemption priority, 3 bits for sub-priority */
+    nvic_priority_group_set(NVIC_PRIGROUP_PRE1_SUB3);
+
+    /* enable the USB low priority interrupt */
+    nvic_irq_enable(USBD_LP_IRQn, 1U, 0U);
+V3.8.0:
+    /* 2 bit for preemption priority, 2 bits for sub-priority */
+    nvic_priority_group_set(NVIC_PRIGROUP_PRE2_SUB2);
+
+    /* enable the USB low priority interrupt */
+    nvic_irq_enable(USBD_LP_IRQn, 2U, 0U);
+
+#ifdef USBD_DOUBLE_BUFFER_ENABLE
+    /* enable the USBD high priority interrupt */
+    nvic_irq_enable(USBD_HP_IRQn, 1U, 0U);
+#endif /* USBD_DOUBLE_BUFFER_ENABLE */
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\msc_udisk\inc\gd32f1x0_it.h
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+none
+V3.8.0:
+#ifdef USBD_DOUBLE_BUFFER_ENABLE
+/* this function handles USBD high priority interrupt */
+void USBD_HP_IRQHandler(void);
+#endif /* USBD_DOUBLE_BUFFER_ENABLE */
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\msc_udisk\inc\usbd_conf.h
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+none
+V3.8.0:
+ /* USBD endpoint double buffer function enable */
+//#define USBD_DOUBLE_BUFFER_ENABLE
+
+#ifndef USBD_DOUBLE_BUFFER_ENABLE
+
+#else
+#define BULK_TX_ADDR                      0x01400100U
+#define BULK_RX_ADDR                      0x01C00180U
+#endif /* USBD_DOUBLE_BUFFER_ENABLE */
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\msc_udisk\src\gd32f1x0_it.c
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+none
+V3.8.0:
+#ifdef USBD_DOUBLE_BUFFER_ENABLE
+
+/*!
+    \brief      this function handles USBD high priority interrupt
+    \param[in]  none
+    \param[out] none
+    \retval     none
+*/
+void USBD_HP_IRQHandler(void)
+{
+    usbd_int_hpst();
+}
+
+#endif /* USBD_DOUBLE_BUFFER_ENABLE */__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\msc_udisk\src\gd32f1x0_usbd_hw.c
+fix reason: 
+Add dual buffer examples for cdc_acm.
+V3.7.0:
+    /* 1 bit for preemption priority, 3 bits for sub-priority */
+    nvic_priority_group_set(NVIC_PRIGROUP_PRE1_SUB3);
+
+    /* enable the USB low priority interrupt */
+    nvic_irq_enable(USBD_LP_IRQn, 1U, 0U);
+V3.8.0:
+    /* 2 bit for preemption priority, 2 bits for sub-priority */
+    nvic_priority_group_set(NVIC_PRIGROUP_PRE2_SUB2);
+
+    /* enable the USB low priority interrupt */
+    nvic_irq_enable(USBD_LP_IRQn, 2U, 0U);
+
+#ifdef USBD_DOUBLE_BUFFER_ENABLE
+    /* enable the USBD high priority interrupt */
+    nvic_irq_enable(USBD_HP_IRQn, 1U, 0U);
+#endif /* USBD_DOUBLE_BUFFER_ENABLE *
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\\Firmware\GD32F1x0_usbd_library\class\device\audio\Include\audio_core.h
+fix reason: 
+Add dual buffer examples for AUDIO
+V3.7.0:
+/* streaming control types */
+#define AD_OUT_STREAMING_CTRL                     0x02U                                    /*!< audio streaming control OUT */
+#define AD_IN_STREAMING_CTRL                      0x05U                                    /*!< audio streaming control IN */
+
+/* audio stream interface number */
+enum {
+    SPEAK_INTERFACE_COUNT,                                                                /*!< audio speaker interface count */
+    CONFIG_DESC_AS_ITF_COUNT                                                              /*!< audio system interface count */
+}
+
+typedef struct {
+    usb_desc_header header;           /*!< descriptor header, including type and size */
+    uint8_t  bDescriptorSubtype;      /*!< header descriptor subtype */
+    uint16_t bcdADC;                  /*!< audio device class specification release number in binary-coded decimal */
+    uint16_t wTotalLength;            /*!< total number of bytes */
+    uint8_t  bInCollection;           /*!< the number of the streaming interfaces */
+    uint8_t  baInterfaceNr;           /*!< interface number of the streaming interfaces */
+} usb_desc_AC_itf;
+
+typedef struct {
+    usb_desc_config             config;                            /*!< configuration descriptor */
+    usb_desc_itf                std_itf;                           /*!< interface descriptor */
+    usb_desc_AC_itf             ac_itf;                            /*!< auido controller interface descriptor */
+    usb_desc_input_terminal     in_terminal;                       /*!< input terminal descriptor */
+    usb_desc_mono_feature_unit  feature_unit;                      /*!< feature unit descriptor */
+    usb_desc_output_terminal    out_terminal;                      /*!< output terminal descriptor */
+    usb_desc_itf                std_as_itf_zeroband;               /*!< zeroband configuration standard audio streaming interface descriptor */
+    usb_desc_itf                std_as_itf_opera;                  /*!< standard audio streaming interface descriptor */
+    usb_desc_AS_itf             as_itf;                            /*!< audio correlation descriptor */
+    usb_desc_format_type        format_typeI;                      /*!< typeI format type descriptor */
+    usb_desc_std_ep             std_endpoint;                      /*!< standard endpoint descriptor */
+    usb_desc_AS_ep              as_endpoint;                       /*!< audio dependent isochronous data endpoint descriptor */
+} usb_desc_config_set;
+
+typedef struct {
+    /* main buffer for audio data out transfers and its relative pointers */
+    uint8_t  isoc_out_buff[TOTAL_OUT_BUF_SIZE * 2];             /*!< audio isochronous out data buff */
+    uint8_t* isoc_out_wrptr;                                    /*!< audio isochronous out data write pointer */
+    uint8_t* isoc_out_rdptr;                                    /*!< audio isochronous out data read pointer */
+    uint16_t buf_free_size;                                     /*!< audio data buff free size */
+    uint16_t dam_tx_len;                                        /*!< audio amplifier transmit length */
+
+    /* usb receive buffer */
+    uint8_t usb_rx_buffer[SPEAKER_OUT_MAX_PACKET];
+
+    /* main buffer for audio control requests transfers and its relative variables */
+    uint8_t  audioctl[64];                                      /*!< audio control requests transfers buff */
+    uint8_t  audioctl_unit;                                     /*!< audio control requests unit */
+    uint32_t audioctl_len;                                      /*!< audio control requests length */
+
+    uint32_t play_flag;
+} usbd_audio_handler;
+V3.8.0:
+/* streaming control types */
+#define AD_OUT_STREAMING_CTRL                     0x05U                                    /*!< audio streaming control OUT */
+#define AD_IN_STREAMING_CTRL                      0x02U                                    /*!< audio streaming control IN */
+
+enum {
+#ifdef USE_USB_AD_MICPHONE
+    MIC_INTERFACE_COUNT,                        /*!< audio microphone interface count */
+#endif /* USE_USB_AD_MICPHONE */
+
+#ifdef USE_USB_AD_SPEAKER
+    SPEAK_INTERFACE_COUNT,                      /*!< audio speaker interface count */
+#endif /* USE_USB_AD_SPEAKER */
+    CONFIG_DESC_AS_ITF_COUNT                    /*!< audio system interface count */
+};
+
+typedef struct {
+    usb_desc_header header;           /*!< descriptor header, including type and size */
+    uint8_t  bDescriptorSubtype;      /*!< header descriptor subtype */
+    uint16_t bcdADC;                  /*!< audio device class specification release number in binary-coded decimal */
+    uint16_t wTotalLength;            /*!< total number of bytes */
+    uint8_t  bInCollection;           /*!< the number of the streaming interfaces */
+#ifdef USE_USB_AD_MICPHONE
+    uint8_t  baInterfaceNr0;          /*!< interface number of the streaming interfaces */
+#endif /* USE_USB_AD_MICPHONE */
+
+#ifdef USE_USB_AD_SPEAKER
+    uint8_t  baInterfaceNr1;          /*!< interface number of the streaming interfaces */
+#endif /* USE_USB_AD_SPEAKER */
+} usb_desc_AC_itf;
+
+typedef struct {
+    usb_desc_header header;           /*!< descriptor header, including type and size */
+    uint8_t  bEndpointAddress;        /*!< general endpoint descriptor subtype */
+    uint8_t  bmAttributes;            /*!< transfer type and synchronization type */
+    uint16_t wMaxPacketSize;          /*!< maximum packet size this endpoint is capable of sending or receiving */
+    uint8_t  bInterval;               /*!< polling interval in milliseconds for the endpoint if it is an interrupt or isochronous type */
+    uint8_t  Refresh;                 /*!< refresh 1~9, power of 2 */
+    uint8_t  bSynchAddress;           /*!< synchronous address */
+} usb_desc_FeedBack_ep;
+
+typedef struct {
+    usb_desc_config              config;                        /*!< configuration descriptor */
+    usb_desc_itf                 std_itf;                       /*!< interface descriptor */
+    usb_desc_AC_itf              ac_itf;                        /*!< audio controller interface descriptor */
+
+#ifdef USE_USB_AD_MICPHONE
+    usb_desc_input_terminal      mic_in_terminal;               /*!< microphone input terminal descriptor */
+    usb_desc_mono_feature_unit   mic_feature_unit;              /*!< microphone feature unit descriptor */
+    usb_desc_output_terminal     mic_out_terminal;              /*!< microphone output terminal descriptor */
+#endif /* USE_USB_AD_MICPHONE */
+
+#ifdef USE_USB_AD_SPEAKER
+    usb_desc_input_terminal      speak_in_terminal;             /*!< speaker input terminal descriptor */
+    usb_desc_mono_feature_unit   speak_feature_unit;            /*!< speaker feature unit descriptor */
+    usb_desc_output_terminal     speak_out_terminal;            /*!< speaker output terminal descriptor */
+#endif /* USE_USB_AD_SPEAKER */
+
+#ifdef USE_USB_AD_MICPHONE
+    usb_desc_itf                 mic_std_as_itf_zeroband;       /*!< microphone zeroband configuration standard audio streaming interface descriptor */
+    usb_desc_itf                 mic_std_as_itf_opera;          /*!< microphone standard audio streaming interface descriptor */
+    usb_desc_AS_itf              mic_as_itf;                    /*!< microphone audio correlation descriptor */
+    usb_desc_format_type         mic_format_typeI;              /*!< microphone typeI format type descriptor */
+    usb_desc_std_ep              mic_std_endpoint;              /*!< microphone standard endpoint descriptor */
+    usb_desc_AS_ep               mic_as_endpoint;               /*!< microphone audio dependent isochronous data endpoint descriptor */
+#endif /* USE_USB_AD_MICPHONE */
+
+#ifdef USE_USB_AD_SPEAKER
+    usb_desc_itf                speak_std_as_itf_zeroband;      /*!< speaker zeroband configuration standard audio streaming interface descriptor */
+    usb_desc_itf                speak_std_as_itf_opera;         /*!< speaker standard audio streaming interface descriptor */
+    usb_desc_AS_itf             speak_as_itf;                   /*!< speaker audio correlation descriptor */
+    usb_desc_format_type        speak_format_typeI;             /*!< speaker typeI format type descriptor */
+    usb_desc_std_ep             speak_std_endpoint;             /*!< speaker standard endpoint descriptor */
+    usb_desc_AS_ep              speak_as_endpoint;              /*!< speaker audio dependent isochronous data endpoint descriptor */
+    usb_desc_FeedBack_ep        speak_feedback_endpoint;        /*!< speaker feedback endpoint descriptor */
+#endif /* USE_USB_AD_SPEAKER */
+} usb_desc_config_set;
+
+typedef struct {
+    /* main buffer for audio data out transfers and its relative pointers */
+    uint8_t  isoc_out_buff[TOTAL_OUT_BUF_SIZE];                 /*!< audio isochronous out data buff */
+    uint8_t* isoc_out_wrptr;                                    /*!< audio isochronous out data write pointer */
+    uint8_t* isoc_out_rdptr;                                    /*!< audio isochronous out data read pointer */
+    uint16_t buf_free_size;                                     /*!< audio data buff free size */
+    uint16_t dam_tx_len;                                        /*!< audio amplifier transmit length */
+
+    __IO uint32_t actual_freq;                                  /*!< audio actual frequency */
+    __IO uint8_t play_flag;                                     /*!< audio play flag */
+    uint8_t feedback_freq[3];                                   /*!< audio feedback frequency */
+    uint32_t cur_sam_freq;                                      /*!< audio current sampling frequency */
+
+    /* usb receive buffer */
+    uint8_t usb_rx_buffer[SPEAKER_OUT_MAX_PACKET];
+
+    /* main buffer for audio control requests transfers and its relative variables */
+    uint8_t audioctl[64];                                       /*!< audio control requests transfers buff */
+    uint8_t audioctl_unit;                                      /*!< audio control requests unit */
+    uint32_t audioctl_len;                                      /*!< audio control requests length */
+} usbd_audio_handler;
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\class\device\audio\Source\usbd_core.c
+fix reason: 
+Modify the firmware library and pass the self-powered CVTest.
+
+V3.7.0:
+    /* configure power management */
+    udev->pm.power_mode = (udev->desc->config_desc[7] & 0x40U) >> 5U;
+
+V3.8.0:
+    /* configure power management */
+    udev->pm.power_mode = (udev->desc->config_desc[7] & BIT(6)) >> 6;
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\class\device\audio\Source\usbd_enum.c
+fix reason: 
+Modify the firmware library and pass the self-powered CVTest.
+
+V3.7.0:
+            if(udev->pm.remote_wakeup) {
+                status[0] |= USB_STATUS_REMOTE_WAKEUP;
+            } else {
+                status[0] = 0U;
+            
+V3.8.0:
+            if(udev->pm.remote_wakeup) {
+                status[0] |= USB_STATUS_REMOTE_WAKEUP;
+            }
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\dev_firmware_update\src\inter_flash_if.c
+fix reason: 
+Modify the function name to avoid compilation errors in higher versions of the compiler.
+
+V3.7.0:
+static fmc_state_enum fmc_ready_wait(uint32_t timeout);
+static fmc_state_enum fmc_state_get(void);
+
+    status = fmc_ready_wait(FMC_TIMEOUT_COUNT);
+
+    status = fmc_ready_wait(FMC_TIMEOUT_COUNT);
+
+        status = fmc_ready_wait(FMC_TIMEOUT_COUNT);
+
+static fmc_state_enum fmc_ready_wait(uint32_t timeout)
+{
+    fmc_state_enum fmc_state = FMC_BUSY;
+
+    /* wait for FMC ready */
+    do {
+        /* get FMC state */
+        fmc_state = fmc_state_get();
+        timeout--;
+    } while((FMC_BUSY == fmc_state) && (0U != timeout));
+
+    if(FMC_BUSY == fmc_state) {
+        fmc_state = FMC_TOERR;
+    }
+    /* return the FMC state */
+    return fmc_state;
+}
+
+static fmc_state_enum fmc_state_get(void)
+{
+    fmc_state_enum fmc_state = FMC_READY;
+
+    if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_BUSY)) {
+        fmc_state = FMC_BUSY;
+    } else {
+        if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_WPERR)) {
+            fmc_state = FMC_WPERR;
+        } else {
+            if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_PGERR)) {
+                fmc_state = FMC_PGERR;
+            }
+        }
+    }
+    /* return the FMC state */
+    return fmc_state;
+}
+
+V3.8.0:
+static fmc_state_enum inter_flash_ready_wait(uint32_t timeout);
+static fmc_state_enum inter_flash_state_get(void);
+
+    status = inter_flash_ready_wait(FMC_TIMEOUT_COUNT);
+
+    status = inter_flash_ready_wait(FMC_TIMEOUT_COUNT);
+
+        status = inter_flash_ready_wait(FMC_TIMEOUT_COUNT);
+
+static fmc_state_enum inter_flash_ready_wait(uint32_t timeout)
+{
+    fmc_state_enum fmc_state = FMC_BUSY;
+
+    /* wait for FMC ready */
+    do {
+        /* get FMC state */
+        fmc_state = inter_flash_state_get();
+        timeout--;
+    } while((FMC_BUSY == fmc_state) && (0U != timeout));
+
+    if(FMC_BUSY == fmc_state) {
+        fmc_state = FMC_TOERR;
+    }
+    /* return the FMC state */
+    return fmc_state;
+}
+
+static fmc_state_enum inter_flash_state_get(void)
+{
+    fmc_state_enum fmc_state = FMC_READY;
+
+    if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_BUSY)) {
+        fmc_state = FMC_BUSY;
+    } else {
+        if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_WPERR)) {
+            fmc_state = FMC_WPERR;
+        } else {
+            if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_PGERR)) {
+                fmc_state = FMC_PGERR;
+            }
+        }
+    }
+    /* return the FMC state */
+    return fmc_state;
+} 
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Examples\USBD\in_application_program_hid\src\flash_operation.c
+fix reason:
+Modify the function name to avoid compilation errors in higher versions of the compiler.
+
+V3.7.0:
+static fmc_state_enum fmc_ready_wait(uint32_t timeout);
+static fmc_state_enum fmc_state_get(void);
+
+    status = fmc_ready_wait(FMC_TIMEOUT_COUNT);
+
+    status = fmc_ready_wait(FMC_TIMEOUT_COUNT);
+
+        status = fmc_ready_wait(FMC_TIMEOUT_COUNT);
+
+static fmc_state_enum fmc_ready_wait(uint32_t timeout)
+{
+    fmc_state_enum fmc_state = FMC_BUSY;
+
+    /* wait for FMC ready */
+    do {
+        /* get FMC state */
+        fmc_state = fmc_state_get();
+        timeout--;
+    } while((FMC_BUSY == fmc_state) && (0U != timeout));
+
+    if(FMC_BUSY == fmc_state) {
+        fmc_state = FMC_TOERR;
+    }
+    /* return the FMC state */
+    return fmc_state;
+}
+
+static fmc_state_enum fmc_state_get(void)
+{
+    fmc_state_enum fmc_state = FMC_READY;
+
+    if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_BUSY)) {
+        fmc_state = FMC_BUSY;
+    } else {
+        if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_WPERR)) {
+            fmc_state = FMC_WPERR;
+        } else {
+            if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_PGERR)) {
+                fmc_state = FMC_PGERR;
+            }
+        }
+    }
+    /* return the FMC state */
+    return fmc_state;
+}
+
+V3.8.0:
+static fmc_state_enum inter_flash_ready_wait(uint32_t timeout);
+static fmc_state_enum inter_flash_state_get(void);
+
+    status = inter_flash_ready_wait(FMC_TIMEOUT_COUNT);
+
+    status = inter_flash_ready_wait(FMC_TIMEOUT_COUNT);
+
+        status = inter_flash_ready_wait(FMC_TIMEOUT_COUNT);
+
+static fmc_state_enum inter_flash_ready_wait(uint32_t timeout)
+{
+    fmc_state_enum fmc_state = FMC_BUSY;
+
+    /* wait for FMC ready */
+    do {
+        /* get FMC state */
+        fmc_state = inter_flash_state_get();
+        timeout--;
+    } while((FMC_BUSY == fmc_state) && (0U != timeout));
+
+    if(FMC_BUSY == fmc_state) {
+        fmc_state = FMC_TOERR;
+    }
+    /* return the FMC state */
+    return fmc_state;
+}
+
+static fmc_state_enum inter_flash_state_get(void)
+{
+    fmc_state_enum fmc_state = FMC_READY;
+
+    if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_BUSY)) {
+        fmc_state = FMC_BUSY;
+    } else {
+        if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_WPERR)) {
+            fmc_state = FMC_WPERR;
+        } else {
+            if((uint32_t)0x00U != (FMC_STAT & FMC_STAT_PGERR)) {
+                fmc_state = FMC_PGERR;
+            }
+        }
+    }
+    /* return the FMC state */
+    return fmc_state;
+}
+__________________________________________________________________________________________________________________________
+______________________USBD________________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\usbd\Source\usbd_lld_core.c
+fix reason: 
+Fix the parameter initialization for the double buffer configuration.
+
+V3.7.0:
+            if(max_len > 62U) {
+                btable_ep[ep_num].tx_count = (((uint32_t)max_len << 5) - 1U) | 0x8000U;
+            } else {
+                btable_ep[ep_num].tx_count = ((max_len + 1U) & ~1U) << 9;
+            }
+
+V3.8.0:
+            if(max_len > 62U) {
+                if (transc->max_len & 0x1FU) {
+                    btable_ep[ep_num].tx_count = (((uint16_t)max_len >> 5) << 10) | 0x8000U;
+                } else {
+                    btable_ep[ep_num].tx_count = ((((uint16_t)max_len >> 5) - 1U) << 10) | 0x8000U;
+                }
+            } else {
+                btable_ep[ep_num].tx_count = ((max_len + 1U) & ~1U) << 9;
+            }
+_________________________________________________________________________________________________________________________
+
+
+******************* V3.5.0 2024-07-01 ******************************************************************************************
+______________________Common______________________________________________________________________________________________
+Fix file:
+..\Firmware\CMSIS\core_cmFunc.h
+
+fix reason:
+
+
+V3.4.0:
+
+V3.5.0:
+none
+__________________________________________________________________________________________________________________________
+
+________________________ FMC _______________________________________________________________________________________
+
+__________________________________________________________________________________________________________________________
+
+______________________PMU_____________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________RCU_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________CTC____________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________EXTI____________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________GPIO________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________CRC________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________DMA_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________DBG________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________ADC_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________DAC______________________________________________________________________________________________
+Fix file:
+GD32F1x0_Firmware_Library\Firmware\GD32F1x0_standard_peripheral\Source\gd32f1x0_cmp.c
+GD32F1x0_Firmware_Library\Firmware\GD32F1x0_standard_peripheral\Include\gd32f1x0_cmp.h
+fix reason:
+"BKIN" is changed to "BRKIN" to be consistent with the datasheet and User Manual (UM).
+V2.3.0:
+#define CMP_OUTPUT_TIMER0_BKIN                   CS_CMPXOSEL(1)                 /*!< CMP output TIMER0 break input */
+V2.4.0:
+#define CMP_OUTPUT_TIMER0_BRKIN                  CS_CMPXOSEL(1)                 /*!< CMP output TIMER0 break input */
+
+__________________________________________________________________________________________________________________________
+
+______________________CMP_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________WDGT________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________RTC_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________TIMER_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________IFRP_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________USART_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________I2C_____________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________SPI/I2S_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________HDMI-CEC_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________TSI_________________________________________________________________________________________________
+
+
+__________________________________________________________________________________________________________________________
+
+______________________USBD_______________________________________________________________________________________________
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Include\usb_iap_core.h
+fix reason: 
+Changing IAP commands due to IAP protocol modification
+V3.5.0:
+/* special commands with download request */
+#define IAP_OPTION_BYTE1                    0x01U
+#define IAP_ERASE                           0x02U
+#define IAP_DNLOAD                          0x03U
+#define IAP_LEAVE                           0x04U
+#define IAP_GETBIN_ADDRESS                  0x05U
+#define IAP_OPTION_BYTE2                    0x06U
+V3.6.0:
+/* special commands with download request */
+#define IAP_READ_OPTION_BYTE                0x01U                                  /*!< read option byte request */
+#define IAP_ERASE                           0x02U                                  /*!< erase request */
+#define IAP_DOWNLOAD                        0x03U                                  /*!< download request */
+#define IAP_LEAVE                           0x04U                                  /*!< leave request */
+#define IAP_GETBIN_ADDRESS                  0x05U                                  /*!< get bin address request */
+#define IAP_WRITE_OPTION_BYTE               0x06U                                  /*!< write option byte request */
+#define IAP_UPLOAD                          0x07U                                  /*!< upload request */
+#define IAP_CHECK_RDP                       0x08U                                  /*!< check rdp state request */
+
+#define OPERATION_SUCCESS                   0x02U                                  /*!< operation success status */
+#define OPERATION_FAIL                      0x5FU                                  /*!< operation fail status */
+#define LEAVE_FINISH                        0x04U                                  /*!< leave finish status */
+#define OB_WRITE_SUCCESS                    0x03U                                  /*!< OB write success status */
+#define IS_RDP_MODE                         0xBBU                                  /*!< MCU RDP status */
+#define IS_NORMAL_MODE                      0xA5U                                  /*!< MCU normal status */
+
+#define IAP_HOST_ID                         0x01U                                  /*!< IAP host ID */
+#define IAP_DEVICE_ID                       0x02U                                  /*!< IAP device ID */
+
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Changing IAP DATA OUT function due to IAP protocol modification
+V3.5.0:
+/*!
+    \brief      handle data out stage
+    \param[in]  udev: pointer to USB device instance
+    \param[in]  ep_num: endpoint identifier
+    \param[out] none
+    \retval     none
+*/
+static uint8_t iap_data_out (usb_dev *udev ,uint8_t ep_num)
+{
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    if (0x01U == iap->report_buf[0]) {
+        switch (iap->report_buf[1]) {
+        case IAP_DNLOAD:
+            iap_req_dnload(udev);
+            break;
+
+        case IAP_ERASE:
+            iap_req_erase(udev);
+            break;
+
+        case IAP_OPTION_BYTE1:
+            iap_req_optionbyte(udev, 0x01U);
+            break;
+
+        case IAP_LEAVE:
+            iap_req_leave(udev);
+            break;
+
+        case IAP_GETBIN_ADDRESS:
+            iap_address_send(udev);
+            break;
+
+        case IAP_OPTION_BYTE2:
+            iap_req_optionbyte(udev, 0x02U);
+            break;
+
+        default:
+            break;
+        }
+    }
+
+    usbd_ep_recev(udev, IAP_OUT_EP, iap->report_buf, IAP_OUT_PACKET);
+
+    return USBD_OK;
+}
+V3.6.0:
+/*!
+    \brief      handle data OUT stage
+    \param[in]  udev: pointer to USB device instance
+    \param[in]  ep_num: endpoint number
+    \param[out] none
+    \retval     USB device operation status
+*/
+static uint8_t iap_data_out(usb_dev *udev, uint8_t ep_num)
+{
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    if(IAP_HOST_ID == iap->report_buf[0]) {
+        switch(iap->report_buf[1]) {
+        case IAP_DOWNLOAD:
+            iap_req_download(udev);
+            break;
+
+        case IAP_ERASE:
+            iap_req_erase(udev);
+            break;
+
+        case IAP_READ_OPTION_BYTE:
+            iap_req_read_optionbyte(udev);
+            break;
+
+        case IAP_LEAVE:
+            iap_req_leave(udev);
+            break;
+
+        case IAP_GETBIN_ADDRESS:
+            iap_address_send(udev);
+            break;
+
+        case IAP_WRITE_OPTION_BYTE:
+            iap_req_write_optionbyte(udev);
+            break;
+
+        case IAP_UPLOAD:
+            iap_req_upload(udev);
+            break;
+
+        case IAP_CHECK_RDP:
+            iap_check_rdp(udev);
+            break;
+
+        default:
+            break;
+        }
+    }
+
+    usbd_ep_recev(udev, IAP_OUT_EP, iap->report_buf, IAP_OUT_PACKET);
+
+    return USBD_OK;
+}
+
+Fix file:
+\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Changing IAP download request function due to IAP protocol modification
+V3.5.0:
+/*!
+    \brief      handle the IAP_DNLOAD request
+    \param[in]  udev: pointer to usb device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_dnload(usb_dev *udev)
+{
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    if (0U != iap->transfer_times) {
+        if (1U == iap->transfer_times) {
+            if (0U == iap->lps) {
+                iap_data_write(&iap->report_buf[2], iap->base_address, TRANSFER_SIZE);
+            } else {
+                iap_data_write(&iap->report_buf[2], iap->base_address, iap->file_length % TRANSFER_SIZE);
+                iap->lps = 0U;
+            }
+
+            iap->dev_status[0] = 0x02U;
+            iap->dev_status[1] = 0x02U;
+            iap_report_send (udev, iap->dev_status, IAP_IN_PACKET);
+        } else {
+            iap_data_write(&iap->report_buf[2], iap->base_address, TRANSFER_SIZE);
+
+            iap->base_address += TRANSFER_SIZE;
+        }
+
+        iap->transfer_times--;
+    }
+}
+V3.6.0:
+/*!
+    \brief      handle the IAP_DOWNLOAD request
+    \param[in]  udev: pointer to USB device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_download(usb_dev *udev)
+{
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    iap->dev_status[0] = IAP_DEVICE_ID;
+
+    /* get the target address to download */
+    iap->base_address  = iap->report_buf[2];
+    iap->base_address |= (uint32_t)iap->report_buf[3] << 8;
+    iap->base_address |= (uint32_t)iap->report_buf[4] << 16;
+    iap->base_address |= (uint32_t)iap->report_buf[5] << 24;
+
+    /* program the target address */
+    if(FMC_READY == iap_data_write(&iap->report_buf[6], iap->base_address, TRANSFER_SIZE)) {
+        iap->dev_status[1] = OPERATION_SUCCESS;
+    } else {
+        iap->dev_status[1] = OPERATION_FAIL;
+    }
+
+    iap_report_send(udev, iap->dev_status, IAP_IN_PACKET);
+}
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Adding IAP write option byte request function due to IAP protocol modification
+V3.5.0:
+none
+V3.6.0:
+/*!
+    \brief      handle the IAP_WRITE_OPTION_BYTE request
+    \param[in]  udev: pointer to USB device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_write_optionbyte(usb_dev *udev)
+{
+    uint32_t option_byte_addr = 0U;
+    uint16_t option_byte_size = 0U;
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    /* get option byte address address */
+    option_byte_addr  = iap->report_buf[2];
+    option_byte_addr |= (uint32_t)iap->report_buf[3] << 8;
+    option_byte_addr |= (uint32_t)iap->report_buf[4] << 16;
+    option_byte_addr |= (uint32_t)iap->report_buf[5] << 24;
+
+    /* get option byte address size */
+    if(OPT_BYTE_ADDR == option_byte_addr) {
+        option_byte_size = OPT_BYTE_SIZE;
+    }
+
+    iap->dev_status[0] = IAP_DEVICE_ID;
+
+    /* write option byte address data */
+    if(FMC_READY == option_byte_write(option_byte_addr, &iap->report_buf[6], option_byte_size)) {
+        iap->dev_status[1] = OB_WRITE_SUCCESS;
+    } else {
+        iap->dev_status[1] = OPERATION_FAIL;
+    }
+
+    iap_report_send(udev, iap->dev_status, IAP_IN_PACKET);
+}
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Changing IAP erase flash request function due to IAP protocol modification
+V3.5.0:
+/*!
+    \brief      handle the IAP_ERASE request
+    \param[in]  udev: pointer to usb device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_erase(usb_dev *udev)
+{
+    uint32_t addr = 0U;
+
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    /* get base address to erase */
+    iap->base_address  = iap->report_buf[2];
+    iap->base_address |= iap->report_buf[3] << 8U;
+    iap->base_address |= iap->report_buf[4] << 16U;
+    iap->base_address |= iap->report_buf[5] << 24U;
+
+    /* get file length */
+    iap->file_length = iap->report_buf[7];
+    iap->file_length |= iap->report_buf[8] << 8U;
+    iap->file_length |= iap->report_buf[9] << 16U;
+    iap->file_length |= iap->report_buf[10] << 24U;
+
+    iap->lps = iap->file_length % TRANSFER_SIZE;
+    if (0U == iap->lps) {
+        iap->transfer_times = iap->file_length / TRANSFER_SIZE;
+    } else {
+        iap->transfer_times = iap->file_length / TRANSFER_SIZE + 1U;
+    }
+
+    /* check if the address is in protected area */
+    if (IS_PROTECTED_AREA(iap->base_address)) {
+        return;
+    }
+
+    addr = iap->base_address;
+
+    /* unlock the flash program erase controller */
+    fmc_unlock();
+
+    flash_erase(addr, iap->file_length, iap->report_buf);
+
+    fmc_lock();
+
+    iap->dev_status[0] = 0x02U;
+    iap->dev_status[1] = 0x01U;
+
+    usbd_ep_send(udev, IAP_IN_EP, iap->dev_status, IAP_IN_PACKET);
+}
+V3.6.0:
+/*!
+    \brief      handle the IAP_ERASE request
+    \param[in]  udev: pointer to USB device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_erase(usb_dev *udev)
+{
+    uint32_t addr = 0U;
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    /* get base address to erase */
+    iap->base_address  = iap->report_buf[2];
+    iap->base_address |= (uint32_t)iap->report_buf[3] << 8;
+    iap->base_address |= (uint32_t)iap->report_buf[4] << 16;
+    iap->base_address |= (uint32_t)iap->report_buf[5] << 24;
+
+    /* get file length */
+    iap->file_length = iap->report_buf[6];
+    iap->file_length |= (uint32_t)iap->report_buf[7] << 8;
+    iap->file_length |= (uint32_t)iap->report_buf[8] << 16;
+    iap->file_length |= (uint32_t)iap->report_buf[9] << 24;
+
+    /* check if the address is in protected area */
+    if(IS_PROTECTED_AREA(iap->base_address)) {
+        return;
+    }
+
+    addr = iap->base_address;
+    iap->dev_status[0] = IAP_DEVICE_ID;
+
+    if(FMC_READY == flash_erase(addr, iap->file_length)) {
+        iap->dev_status[1] = OPERATION_SUCCESS;
+    } else {
+        iap->dev_status[1] = OPERATION_FAIL;
+    }
+
+    usbd_ep_send(udev, IAP_IN_EP, iap->dev_status, IAP_IN_PACKET);
+}
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Changing IAP read option byte request function due to IAP protocol modification
+V3.5.0:
+/*!
+    \brief      handle the IAP_OPTION_BYTE request
+    \param[in]  udev: pointer to USB device instance
+    \param[in]  option_num: number of option byte
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_optionbyte(usb_dev *udev, uint8_t option_num)
+{
+    uint8_t i = 0U;
+    uint32_t address = 0U;
+
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    iap->option_byte[0] = 0x02U;
+
+    if (0x01U == option_num) {
+        address = OPT_BYTE_ADDR1;
+#ifdef OPT_BYTE_ADDR2
+    } else if (0x02U == option_num) {
+        address = OPT_BYTE_ADDR2;
+#endif
+    } else {
+        return;
+    }
+
+    for (i = 1U; i < 17U; i++) {
+        iap->option_byte[i] = *(uint8_t *)address;
+        address++;
+    }
+
+    iap_report_send (udev, iap->option_byte, IAP_IN_PACKET);
+}
+V3.6.0:
+/*!
+    \brief      handle the IAP_READ_OPTION_BYTE request
+    \param[in]  udev: pointer to USB device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_read_optionbyte(usb_dev *udev)
+{
+    uint8_t i = 0U;
+    uint32_t option_size = 0U, temp = 0U, option_address = 0U;
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    /* read option address address */
+    option_address = iap->report_buf[2] + (iap->report_buf[3] << 8) + (iap->report_buf[4] << 16) + (iap->report_buf[5] << 24);
+
+    iap->option_byte[0] = IAP_DEVICE_ID;
+
+    if(OPT_BYTE_ADDR == option_address) {
+        option_size = OPT_BYTE_SIZE;
+    }
+
+    /* read option address content */
+    for(i = 0U; i < (option_size / 4U); i++) {
+        temp =  *(uint32_t *)option_address;
+        iap->option_byte[4 * i + 5] = temp >> 24;
+        iap->option_byte[4 * i + 4] = temp >> 16;
+        iap->option_byte[4 * i + 3] = temp >> 8;
+        iap->option_byte[4 * i + 2] = temp;
+        option_address = option_address + 4U;
+    }
+    iap->option_byte[1] = OPERATION_SUCCESS;
+
+    iap_report_send(udev, iap->option_byte, IAP_IN_PACKET);
+}
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Changing leave IAP mode request function due to IAP protocol modification
+V3.5.0:
+/*!
+    \brief      handle the IAP_LEAVE request
+    \param[in]  udev: pointer to usb device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_leave(usb_dev *udev)
+{
+    /* lock the internal flash */
+    fmc_lock();
+
+    /* generate system reset to allow jumping to the user code */
+    NVIC_SystemReset();
+}
+V3.6.0:
+/*!
+    \brief      handle the IAP_LEAVE request
+    \param[in]  udev: pointer to USB device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_leave(usb_dev *udev)
+{
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    /* get base address to jump */
+    iap->base_address  = iap->report_buf[2];
+    iap->base_address |= (uint32_t)iap->report_buf[3] << 8;
+    iap->base_address |= (uint32_t)iap->report_buf[4] << 16;
+    iap->base_address |= (uint32_t)iap->report_buf[5] << 24;
+
+    iap->dev_status[0] = IAP_DEVICE_ID;
+    iap->dev_status[1] = LEAVE_FINISH;
+
+    usbd_ep_send(udev, IAP_IN_EP, iap->dev_status, IAP_IN_PACKET);
+
+    usbd_disconnect(udev);
+
+    /* reset register */
+    register_reset();
+
+    /* jump to target */
+    jump_to_execute(iap->base_address);
+}
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Changing IAP upload request function due to IAP protocol modification
+V3.5.0:
+none
+V3.6.0:
+/*!
+    \brief      handle the IAP_UPLOAD request
+    \param[in]  udev: pointer to USB device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_req_upload(usb_dev *udev)
+{
+    uint16_t packet_valid_length = 0U, i= 0U;
+    uint32_t bin_flash_addr = APP_LOADED_ADDR;
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    iap->bin_addr[0] = IAP_DEVICE_ID;
+
+    /* get target flash address */
+    bin_flash_addr  = iap->report_buf[2];
+    bin_flash_addr |= (uint32_t)iap->report_buf[3] << 8;
+    bin_flash_addr |= (uint32_t)iap->report_buf[4] << 16;
+    bin_flash_addr |= (uint32_t)iap->report_buf[5] << 24;
+
+    /* get current packet valid length */
+    packet_valid_length = iap->report_buf[6];
+    packet_valid_length |= iap->report_buf[7] << 8;
+
+    /* get target flash address content */
+    for(i = 0U; i < packet_valid_length; i++) {
+        iap->bin_addr[i + 1] = REG8(bin_flash_addr + i);
+    }
+
+    iap_report_send(udev, iap->bin_addr, IAP_IN_PACKET);
+}
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\iap\Source\usb_iap_core.c
+fix reason: 
+Adding IAP check read protected request function due to IAP protocol modification
+V3.5.0:
+none
+V3.6.0:
+/*!
+    \brief      handle the IAP_CHECK_RDP request
+    \param[in]  udev: pointer to USB device instance
+    \param[out] none
+    \retval     none
+*/
+static void iap_check_rdp(usb_dev *udev)
+{
+    uint8_t mode = 0U;
+    usbd_iap_handler *iap = (usbd_iap_handler *)udev->dev.class_data[USBD_IAP_INTERFACE];
+
+    /* check whether the SPC bit of FMC module is normal state */
+    if(0xA5U != REG8(OPT_BYTE_ADDR)) {
+        mode = IS_RDP_MODE;
+    } else {
+        mode = IS_NORMAL_MODE;
+    }
+
+    iap->bin_addr[0] = IAP_DEVICE_ID;
+    iap->bin_addr[1] = mode;
+
+    iap_report_send(udev, iap->bin_addr, IAP_IN_PACKET);
+}
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\device\class\msc\Include\usbd_msc_scsi.h
+fix reason: 
+The statement here can be removed
+V3.5.0:
+extern const uint8_t msc_page00_inquiry_data[];
+extern const uint8_t msc_mode_sense6_data[];
+extern const uint8_t msc_mode_sense10_data[];
+V3.6.0:
+none
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\usbd\Include\usbd_lld_regs.h
+fix reason: 
+MCU register operation is a read-modify-write-back process, and RX_ST and TX_ST in the
+USBD_EPxCS register are write 0 valid, write 1 invalid bits, so that if RX_ST and TX_ST
+are 0 when reading out the USBD_EPxCS register, and the hardware will set RT_ST or TX_ST
+when rewriting the value of the register, then the write-back process This interrupt has
+not yet been processed, resulting in lost interrupt processing.
+V3.5.0:
+#define USBD_EP_TX_STAT_SET(ep, stat) do {\
+    USBD_EPxCS(ep) = (USBD_EPxCS(ep) & (uint16_t)EPTX_DTGMASK) ^ (stat); \
+} while(0)
+
+#define USBD_EP_RX_STAT_SET(ep, stat) do {\
+    USBD_EPxCS(ep) = (USBD_EPxCS(ep) & (uint16_t)EPRX_DTGMASK) ^ (stat); \
+} while(0)
+
+/* clear bit EPxCS_RX_ST/EPxCS_TX_ST in the endpoint control and status register */
+
+#define USBD_EP_TX_ST_CLEAR(ep) do {\
+    USBD_EPxCS(ep) &= ~EPxCS_TX_ST & (uint16_t)EPCS_MASK; \
+} while(0)
+
+#define USBD_EP_RX_ST_CLEAR(ep) do {\
+    USBD_EPxCS(ep) &= ~EPxCS_RX_ST & (uint16_t)EPCS_MASK; \
+} while(0)
+
+/* toggle EPxCS_RX_DTG or EPxCS_TX_DTG bit in the endpoint control and status register */
+
+#define USBD_TX_DTG_TOGGLE(ep) do {\
+    USBD_EPxCS(ep) = EPxCS_TX_DTG | (USBD_EPxCS(ep) & EPCS_MASK); \
+} while(0)
+
+#define USBD_RX_DTG_TOGGLE(ep) do {\
+    USBD_EPxCS(ep) = EPxCS_RX_DTG | (USBD_EPxCS(ep) & EPCS_MASK); \
+} while(0)
+
+/* clear EPxCS_RX_DTG or EPxCS_TX_DTG bit in the endpoint control and status register */
+
+#define USBD_TX_DTG_CLEAR(ep) do {\
+    if ((USBD_EPxCS(ep_num) & EPxCS_TX_DTG) != 0U) {\
+        USBD_TX_DTG_TOGGLE(ep);\
+    } \
+} while(0)
+
+#define USBD_RX_DTG_CLEAR(ep) do {\
+    if ((USBD_EPxCS(ep_num) & EPxCS_RX_DTG) != 0U) {\
+        USBD_RX_DTG_TOGGLE(ep);\
+    } \
+} while(0)
+
+#define USBD_EP_DBL_BUF_SET(ep) (USBD_EPxCS(ep) = (USBD_EPxCS(ep) | EPxCS_KCTL) & EPCS_MASK)
+V3.6.0:
+#define USBD_EP_TX_STAT_SET(ep, stat) do { \
+    uint16_t regval; \
+    regval = (USBD_EPxCS(ep) & (uint16_t)EPTX_DTGMASK) ^ (stat); \
+    USBD_EPxCS(ep) = regval | EPxCS_RX_ST | EPxCS_TX_ST; \
+} while(0)
+
+#define USBD_EP_RX_STAT_SET(ep, stat) do { \
+    uint16_t regval; \
+    regval = (USBD_EPxCS(ep) & (uint16_t)EPRX_DTGMASK) ^ (stat); \
+    USBD_EPxCS(ep) = regval | EPxCS_RX_ST | EPxCS_TX_ST; \
+} while(0)
+
+/* clear bit EPxCS_RX_ST/EPxCS_TX_ST in the endpoint control and status register */
+
+#define USBD_EP_TX_ST_CLEAR(ep) do { \
+    uint16_t regval; \
+    regval = USBD_EPxCS(ep) & (~EPxCS_TX_ST & (uint16_t)EPCS_MASK); \
+    USBD_EPxCS(ep) = regval | EPxCS_RX_ST; \
+} while(0)
+
+#define USBD_EP_RX_ST_CLEAR(ep) do { \
+    uint16_t regval; \
+    regval = USBD_EPxCS(ep) & (~EPxCS_RX_ST & (uint16_t)EPCS_MASK); \
+    USBD_EPxCS(ep) = regval | EPxCS_TX_ST; \
+} while(0)
+
+/* toggle EPxCS_RX_DTG or EPxCS_TX_DTG bit in the endpoint control and status register */
+
+#define USBD_TX_DTG_TOGGLE(ep) do { \
+    uint16_t regval; \
+    regval = EPxCS_TX_DTG | (USBD_EPxCS(ep) & EPCS_MASK); \
+    USBD_EPxCS(ep) = regval | EPxCS_RX_ST | EPxCS_TX_ST; \
+} while(0)
+
+#define USBD_RX_DTG_TOGGLE(ep) do { \
+    uint16_t regval; \
+    regval = EPxCS_RX_DTG | (USBD_EPxCS(ep) & EPCS_MASK); \
+    USBD_EPxCS(ep) = regval | EPxCS_RX_ST | EPxCS_TX_ST; \
+} while(0)
+
+/* clear EPxCS_RX_DTG or EPxCS_TX_DTG bit in the endpoint control and status register */
+
+#define USBD_TX_DTG_CLEAR(ep) do { \
+    if(0U != (USBD_EPxCS(ep) & EPxCS_TX_DTG)) { \
+        USBD_TX_DTG_TOGGLE(ep); \
+    } \
+} while(0)
+
+#define USBD_RX_DTG_CLEAR(ep) do { \
+    if(0U != (USBD_EPxCS(ep) & EPxCS_RX_DTG)) { \
+        USBD_RX_DTG_TOGGLE(ep); \
+    } \
+} while(0)
+
+#define USBD_EP_DBL_BUF_SET(ep) do { \
+    uint16_t regval; \
+    regval = (USBD_EPxCS(ep) | EPxCS_KCTL) & EPCS_MASK; \
+    USBD_EPxCS(ep) = regval | EPxCS_RX_ST | EPxCS_TX_ST; \
+} while(0)
+
+
+Fix file:
+..\Firmware\GD32F1x0_usbd_library\usbd\Source\usbd_lld_core.c
+fix reason: 
+RBCNT register configuration error
+V3.5.0:
+btable_ep[ep_num].rx_count = ((uint16_t)((uint16_t)transc->max_len << 5) - 1U) | 0x8000U;
+V3.6.0:
+if (transc->max_len & 0x1FU) {
+	btable_ep[ep_num].rx_count = (((uint16_t)transc->max_len >> 5) << 10) | 0x8000U; 
+} else {
+	btable_ep[ep_num].rx_count = ((((uint16_t)transc->max_len >> 5) - 1U) << 10) | 0x8000U; 
+}
+
+_____________________________________________________________________________________________________________________
